@@ -1,0 +1,31 @@
+decision_planet_build_strongport_medical = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_politics
+	
+	resources = {
+		category = decisions
+		cost = {
+			influence = 100
+			energy = 1000
+		}
+	}
+	
+	potential = {
+		owner = { 
+			is_regular_empire = yes
+			has_country_flag = sfu_empire_ufp
+		}
+			NOT = { has_deposit = d_strongport_medical_research }
+	}
+	
+	allow = {
+		has_modifier = federation_full_member_planet
+	}
+	
+	effect = {
+		add_deposit = d_strongport_medical_research
+	}
+}
+
+#decision_planet_build_luna_university = {}

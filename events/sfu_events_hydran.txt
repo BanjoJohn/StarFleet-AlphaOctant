@@ -1,0 +1,24 @@
+
+namespace = sfu_hydran
+
+### Basic palace coup
+country_event = {
+	id = sfu_hydran.1
+	title = "sfu_hydran.1.name"
+	desc = "sfu_hydran.1.desc"
+	picture = GFX_evt_colony_settlement
+	show_sound = event_administrative_work
+	
+	trigger = {
+		owner = { has_country_flag = sfu_empire_hydran }
+	}
+	
+	mean_time_to_happen = {
+		months = 480
+	}
+	
+	option = {
+		name = UNFORTUNATE
+		leader = { kill_leader = { show_notification = no } }
+	}
+}

@@ -1,0 +1,115 @@
+##########################
+# SFU system spawns
+##########################
+
+namespace = sfu_spawn_klingon
+
+#Master event trigger
+event = {
+	id = sfu_spawn_klingon.1
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		### SET EVENT TARGETS (Main species, homeworld, &c.)
+		every_country = {
+			limit = { has_country_flag = sfu_empire_klingon }
+			save_event_target_as = ufp
+			owner_species = { save_event_target_as = klingonSpecies }
+		}
+		every_planet = {
+			limit = { has_planet_flag = sfu_homeworld_klinshai }
+			save_event_target_as = klingon_homeworld
+		}
+		every_country = {
+			limit = { has_country_flag = sfu_empire_klingon }
+			### SET UP SYSTEM CONTROL
+			country_event = { id = sfu_spawn_klingon.2 days=0 }
+			### SET UP KLINSHAI SYSTEM
+			country_event = { id = sfu_spawn_klingon.3 days=0 }
+		}
+	}
+}
+
+#Flip ownership of the Core Systems and build starbases
+country_event = {
+	id = sfu_spawn_klingon.2
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		##Alpha Centauri
+		#every_system = {
+		#	limit = { has_star_flag = sfu_system_alpha_centauri }
+		#	create_starbase = {
+		#		size = starbase_outpost
+		#		owner = event_target:ufp
+		#	}
+		#}
+	}
+}
+
+#Setup Homeworld System
+#NB: Home systems have special events to overwrite things, so we have to set somethings manually
+country_event = {
+	id = sfu_spawn_klingon.3
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		#Clear the planet, then start setting resources
+		every_system_within_border = {
+			limit = { has_star_flag = sfu_system_klinshai }
+			### Klinshai
+			every_planet = {
+				limit = { has_planet_flag = sfu_homeworld_klinshai }
+				planet_event = { id = sfu_spawn_klingon.10 days = 0 }
+			}
+			every_system_planet = {
+				limit = {
+					has_deposit_for = shipclass_mining_station
+					OR = {
+						has_resource = { type = minerals amount > 0 }
+						has_resource = { type = energy amount > 0 }
+					}
+					has_mining_station = no
+				}
+				create_mining_station = { owner = event_target:ufp }
+			}
+		}
+	}
+}
+
+#Setup Klinshai
+planet_event = {
+	id = sfu_spawn_klingon.10
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		clear_planet_modifiers = yes
+		
+		add_modifier = { days = -1 modifier = "klinshai_environment" }
+		
+		clear_deposits = yes
+		add_deposit = d_arid_highlands
+		add_deposit = d_searing_desert
+		add_deposit = d_geothermal_vent
+		add_deposit = d_veiny_cliffs
+		add_deposit = d_mineral_fields
+		add_deposit = d_rich_mountain
+		add_deposit = d_bountiful_plains
+		add_deposit = d_rugged_woods
+		add_deposit = d_fertile_lands
+		add_deposit = d_great_river
+		add_deposit = d_marvelous_oasis
+		
+		add_district = district_city
+		add_district = district_farming
+		
+		add_building = building_capital
+		add_building = building_factory_1
+		add_building = building_foundry_1
+		add_building = building_holo_theatres
+	}
+}

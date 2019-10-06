@@ -1,0 +1,1437 @@
+@distance = 50
+@base_moon_distance = 10
+
+#TODO:
+# Make 40 Eridani B & C a true binary with rocks instead of planets
+# Fill out Zeta Reticuli System
+
+#NOTES:
+# sfu_homeworld_* are flags for planets with pops at start, used during game spawn
+# sfu_planet_* are down the line calls to this planet for events.
+#
+# Nomenclature is for programmer clarity when doing calls
+
+########################################
+# Sol System
+########################################
+sfu_sol_system_initializer = {
+	name = "NAME_Sol"
+	
+	class = "sc_g"
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 145
+	}
+	
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 290
+	}
+	
+	flags = {
+		empire_home_system
+		sol_system
+		sol
+		sfu_ufp_home_system
+		sfu_system_sol
+	}
+	
+	usage = custom_empire
+	
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+		
+		generate_home_system_resources = no
+	}
+	
+	planet = {
+		name = "NAME_Sol"
+		class = "pc_g_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	
+	planet = {
+		name = "NAME_Mercury"
+		class = "pc_molten"
+		orbit_distance = 40
+		orbit_angle = 15
+		size = 10
+		has_ring = no
+		flags = {sfu_planet_mercury}
+	}
+	
+	planet = {
+		name = "NAME_Venus"
+		class = "pc_toxic"
+		orbit_distance = 25
+		orbit_angle = 125
+		size = 16
+		has_ring = no
+		flags = {sfu_planet_venus}
+	}
+	
+	planet = {
+		name = "NAME_Earth"
+		class = "pc_continental"
+		orbit_distance = 25
+		orbit_angle = 120
+		size = 16
+		starting_planet = yes
+		has_ring = no
+		entity = "continental_planet_earth_entity"
+		deposit_blockers = none
+		modifiers = none
+		
+		flags = { sfu_planet_earth sfu_homeworld_earth }
+		init_effect = {
+			if = {
+				limit = { NOT = { any_country = { has_country_flag = sfu_empire_ufp } } }
+				create_species = { 
+					name = "Human" 
+					class = HUM
+					portrait = human 
+					homeworld = THIS 
+					namelist = "HUMAN1"
+					traits = { 
+					trait = "trait_adaptive"
+					trait = "trait_nomadic"
+					trait = "trait_wasteful"
+					ideal_planet_class = "pc_continental" 
+					} 
+				}
+				last_created_species = { save_global_event_target_as = humanSpecies }
+				create_country = {
+					name = "United Federation of Planets"
+					ship_prefix = "USS"
+					type = default
+					ignore_initial_colony_error = yes
+					civics = { civic = "civic_beacon_of_liberty" civic = "civic_idealistic_foundation" }
+					authority = auth_democratic
+					name_list = "Human"
+					ethos = { ethic = "ethic_pacifist" ethic = "ethic_xenophile" ethic = "ethic_egalitarian" }
+					species = event_target:humanSpecies
+					flag = {
+						icon = { category = "human" file = "flag_human_9.dds" }
+						background = { category = "backgrounds" file = "00_solid.dds" }
+						colors = { "blue" "black" "null" "null" }
+					}
+					effect = { save_global_event_target_as = GET_sfu_empire_ufp }
+				}
+				set_capital = yes
+				while = {
+					count = 35
+					create_pop = { species = humanSpecies }
+				}
+			}
+		}
+		
+		moon = {
+			name = "NAME_Luna"
+			class = "pc_class_d_habitable"
+			size = 5
+			orbit_distance = 12
+			orbit_angle = 40
+			has_ring = no
+			entity = "cold_barren_planet_luna_entity"
+			
+			flags = { sfu_planet_luna sfu_homeworld_luna }
+			
+			init_effect = { prevent_anomaly = yes }
+		}
+	}
+	
+	planet = {
+		name = "NAME_Mars"
+		class = "pc_class_g_habitable"
+		orbit_distance = 25
+		orbit_angle = 60
+		size = 13
+		has_ring = no
+		entity = "barren_planet_mars_entity"
+		
+		flags = { sfu_planet_mars sfu_homeworld_mars }
+		
+		init_effect = {
+			prevent_anomaly = yes
+		}
+	}
+	
+	planet = {
+		name = "NAME_1_Ceres"
+		class = "pc_asteroid"
+		orbit_distance = 30
+		orbit_angle = -210
+		size = 5
+		has_ring = no
+		flags = {sfu_planet_ceres}
+	}
+	
+	planet = {
+		name = "NAME_2_Pallas"
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = -95
+		size = 5
+		has_ring = no
+		flags = {sfu_planet_pallas}
+	}
+	
+	planet = {
+		name = "NAME_3_Juno"
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = 285
+		size = 5
+		has_ring = no
+		flags = {sfu_planet_juno}
+	}
+	
+	planet = {
+		name = "NAME_4_Vesta"
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = -80
+		size = 5
+		has_ring = no
+		flags = {sfu_planet_vesta}
+	}
+	
+	planet = {
+		name = "NAME_Jupiter"
+		class = "pc_gas_giant"
+		orbit_distance = 40
+		orbit_angle = -160
+		size = 35
+		has_ring = no
+		entity = "gas_giant_jupiter_entity"
+		change_orbit = 6
+		flags = {sfu_planet_jupiter}
+		
+		moon = {
+			name = "NAME_Io"
+			class = "pc_molten"
+			size = 6
+			orbit_distance = 10
+			orbit_angle = 110
+			has_ring = no
+			flags = {sfu_planet_io}
+		}
+		moon = {
+			name = "NAME_Europa"
+			class = "pc_frozen"
+			size = 6
+			orbit_distance = 2.5
+			orbit_angle = 10
+			has_ring = no
+			
+			flags = { sfu_planet_europa }
+		}
+		moon = {
+			name = "NAME_Ganymede"
+			class = "pc_frozen"
+			size = 9
+			orbit_distance = 2.5
+			orbit_angle = 80
+			has_ring = no
+			flags = {sfu_planet_ganymede}
+		}
+		moon = {
+			name = "NAME_Callisto"
+			class = "pc_frozen"
+			size = 7
+			orbit_distance = 2.5
+			orbit_angle = -155
+			has_ring = no
+			flags = {sfu_planet_callisto}
+		}
+	}
+	
+	planet = {
+		name = "NAME_Saturn"
+		class = "pc_gas_giant"
+		orbit_distance = 25
+		orbit_angle = 170
+		size = 30
+		has_ring = yes
+		entity = "gas_giant_05_entity"
+		change_orbit = 7
+		flags = {sfu_planet_saturn}
+		
+		moon = {
+			name = "NAME_Titan"
+			class = "pc_frozen"
+			size = 8
+			orbit_distance = 12
+			orbit_angle = 320
+			has_ring = no
+			flags = {planet = sfu_planet_titan}
+		}
+	}
+	
+	planet = {
+		name = "NAME_Uranus"
+		class = "pc_gas_giant"
+		orbit_distance = 25
+		orbit_angle = 125
+		size = 20
+		has_ring = no
+		entity = "gas_giant_03_entity"
+		flags = {sfu_planet_uranus}
+		
+		moon = {
+			name = "Oberon"
+			class = "pc_frozen"
+			size = 3
+			orbit_distance = 12
+			orbit_angle = 222
+			has_ring = no
+			flags = {planet = sfu_planet_oberon}
+		}
+	}
+	
+	planet = {
+		name = "NAME_Neptune"
+		class = "pc_gas_giant"
+		orbit_distance = 25
+		orbit_angle = -195
+		size = 20
+		has_ring = no
+		entity = "gas_giant_02_entity"
+		change_orbit = 4
+		flags = {sfu_planet_neptune}
+		
+		moon = {
+			name = "NAME_Triton"
+			class = "pc_frozen"
+			size = 6
+			orbit_distance = 7
+			orbit_angle = 115
+			has_ring = no
+			flags = {sfu_planet_triton}
+		}
+	}
+
+	planet = {
+		name = "NAME_134340_Pluto"
+		class = "pc_asteroid"
+		orbit_distance = 30
+		orbit_angle = -210
+		size = 5
+		has_ring = no
+		flags = {sfu_planet_pluto}
+	}
+	
+	planet = {
+		name = "NAME_136472_Makemake"
+		class = "pc_ice_asteroid"
+		orbit_distance = 0
+		orbit_angle = -95
+		size = 5
+		has_ring = no
+		flags = {sfu_planet_makemake}
+	}
+	
+	planet = {
+		name = "NAME_136108_Haumea"
+		class = "pc_ice_asteroid"
+		orbit_distance = 0
+		orbit_angle = 285
+		size = 5
+		has_ring = no
+		flags = {sfu_planet_haumea}
+	}
+	
+	planet = {
+		name = "NAME_20000_Varuna"
+		class = "pc_ice_asteroid"
+		orbit_distance = 0
+		orbit_angle = -80
+		size = 5
+		has_ring = no
+		flags = {sfu_planet_varuna}
+	}
+	
+	planet = {
+		name = "Xena"
+		class = "pc_ice_asteroid"
+		orbit_distance = 0
+		orbit_angle = 45
+		size = 5
+		has_ring = no
+		flags = { sfu_planet_xena }
+	}
+	
+	neighbor_system = {
+		distance = { min = 10 max = @distance }	
+		initializer = "sfu_alpha_centauri_initializer"
+	}
+	
+	neighbor_system = {
+		distance = { min = 10 max = @distance }	
+		initializer = "sfu_40_eridani_initializer"
+	}
+	neighbor_system = {
+		distance = { min = 10 max = @distance }	
+		initializer = "sfu_epsilon_indi_initializer"
+	}
+	
+	neighbor_system = {
+		distance = { min=10 max = @distance }
+		initializer = "sfu_rigel_initializer"
+	}
+	
+	neighbor_system = {
+		distance = { min=10 max = @distance }
+		initializer = sfu_zeta_reticuli_initializer
+	}
+}
+
+########################################
+#Centauran Initializer
+########################################
+sfu_alpha_centauri_initializer = {
+	name = "Alpha Centauri"
+	class = "sc_trinary_1"
+	
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 375
+	}
+	
+	flags = { sfu_system_alpha_centauri }
+	
+	planet = {
+		name = "Rigil Kentaurus"
+		class = pc_g_star
+		size = 32
+		orbit_distance = 200
+		orbit_angle = 135
+		satellite_naming_policy = upper_case_roman_numerals
+		
+		planet = {
+			name = "Alden-Feyr"
+			class = "pc_toxic"
+			orbit_distance = 25
+			orbit_angle = { min = 0 max = 360 }
+			size = 10
+			has_ring = no
+		}
+		planet = {
+			name = "Selecia-Feyr"
+			class = "pc_toxic"
+			orbit_distance = 15
+			orbit_angle = { min = 0 max = 360 }
+			size = 10
+			has_ring = no
+		}
+		planet = {
+			name = "Culden-Feyr"
+			class = "pc_ocean"
+			orbit_distance = 20
+			orbit_angle = { min = 0 max = 360 }
+			size = 16
+			has_ring = no
+			satellite_naming_policy = lower_case_latin_letters
+			
+			flags = { sfu_homeworld_centauri sfu_planet_centauri }
+			
+			init_effect = {
+				clear_deposits = yes
+				
+				add_deposit = d_underwater_vent
+				add_deposit = d_underwater_vent
+				
+				add_deposit = d_submerged_ore_veins
+				
+				add_deposit = d_teeming_reef
+				add_deposit = d_tropical_island
+				add_deposit = d_tropical_island
+				add_deposit = d_pacific_algae_tracts
+				add_deposit = d_lush_jungle
+			}
+			
+			moon = {
+				name = "Culden-Feyr a"
+				class = pc_barren_cold
+				count = 1
+				orbit_distance = 10
+				orbit_angle = { min = 90 max = 270 }
+				flags = { sfu_planet_culden_feyr_a }
+			}
+		}
+		planet = {
+			name = "Matra-Mayr"
+			class = "pc_gas_giant"
+			orbit_distance = 50
+			orbit_angle = { min = 0 max = 360 }
+			size = 35
+			has_ring = no
+			satellite_naming_policy = lower_case_latin_letters
+			
+			flags = { sfu_planet_matra_mayr }
+			
+			change_orbit = @base_moon_distance
+			
+			moon = {
+				name = "Matra-Mayr a"
+				class = pc_molten
+				count = 1
+				orbit_distance = 10
+				orbit_angle = { min = 0 max = 360 }
+			}
+			
+			moon = {
+				name = "Matra-Mayr b"
+				class = pc_barren
+				count = 1
+				orbit_distance = 5
+				orbit_angle = { min = 0 max = 360 }
+			}
+			
+			moon = {
+				name = "Matra-Mayr c"
+				class = pc_barren
+				count = 1
+				orbit_distance = 5
+				orbit_angle = { min = 0 max = 360 }
+			}
+			
+			moon = {
+				name = "Matra-Mayr d"
+				class = pc_barren_cold
+				count = 1
+				orbit_distance = 5
+				orbit_angle = { min = 0 max = 360 }
+			}
+		}
+	}
+	
+	planet = {
+		name = "Toliman"
+		class = pc_k_star
+		size = 20
+		orbit_distance = 0
+		orbit_angle = -90
+		satellite_naming_policy = upper_case_roman_numerals
+		
+		planet = {
+			name = "Ginka-Feyer"
+			class = "pc_molten"
+			orbit_distance = 15
+			orbit_angle = { min = 0 max = 360 }
+			size = 10
+			has_ring = no
+		}
+		planet = {
+			name = "Heaa-Feyr"
+			class = "pc_frozen"
+			orbit_distance = 10
+			orbit_angle = { min = 0 max = 360 }
+			size = 10
+			has_ring = no
+			flags = { sfu_planet_heaa_feyr }
+		}
+		planet = {
+			name = "Yahhla-Mayr"
+			class = "pc_gas_giant"
+			orbit_distance = 40
+			orbit_angle = { min = 0 max = 360 }
+			size = 35
+			has_ring = no
+			satellite_naming_policy = lower_case_latin_letters
+			
+			#5 moons
+			moon = {
+				name = "Matra-Mayr a"
+				class = pc_molten
+				count = 1
+				orbit_distance = 15
+				orbit_angle = { min = 0 max = 360 }
+			}
+			moon = {
+				name = "Matra-Mayr b"
+				class = pc_barren_cold
+				count = 1
+				orbit_distance = 5
+				orbit_angle = { min = 0 max = 360 }
+			}
+			moon = {
+				name = "Matra-Mayr c"
+				class = pc_barren_cold
+				count = 1
+				orbit_distance = 5
+				orbit_angle = { min = 0 max = 360 }
+			}
+			moon = {
+				name = "Matra-Mayr d"
+				class = pc_barren_cold
+				count = 1
+				orbit_distance = 5
+				orbit_angle = { min = 0 max = 360 }
+			}
+		}
+		planet = {
+			name = "Nairaf-Mayr"
+			class = "pc_gas_giant"
+			orbit_distance = 65
+			orbit_angle = { min = 0 max = 360 }
+			size = 35
+			has_ring = no
+			satellite_naming_policy = lower_case_latin_letters
+			
+			moon = {
+				name = "Nairaf-Mayr a"
+				class = pc_barren_cold
+				count = 1
+				orbit_distance = 15
+				orbit_angle = { min = 0 max = 360 }
+			}
+			moon = {
+				name = "Nairaf-Mayr b"
+				class = pc_frozen
+				count = 1
+				orbit_distance = 5
+				orbit_angle = { min = 0 max = 360 }
+			}
+			moon = {
+				name = "Nairaf-Mayr c"
+				class = pc_frozen
+				count = 1
+				orbit_distance = 5
+				orbit_angle = { min = 0 max = 360 }
+			}
+		}
+	}
+	
+	planet = {
+		name = "Proxima Centauri"
+		class = pc_m_star
+		size = 15
+		orbit_distance = -50
+		orbit_angle = -135
+		satellite_naming_policy = upper_case_roman_numerals
+		
+		planet = {
+			name = "Alton-Kayr"
+			class = "pc_barren_cold"
+			orbit_distance = 20
+			orbit_angle = { min = 0 max = 360 }
+			size = 10
+			has_ring = no
+		}
+		planet = {
+			name = "Felieton-Kayr"
+			class = "pc_frozen"
+			orbit_distance = 20
+			orbit_angle = { min = 0 max = 360 }
+			size = 10
+			has_ring = no
+		}
+		planet = {
+			name = "Hobbiton-Kayer"
+			class = "pc_frozen"
+			orbit_distance = 20
+			orbit_angle = { min = 0 max = 360 }
+			size = 9
+			has_ring = no
+		}
+		planet = {
+			name = "Cerberus"
+			class = "pc_continental"
+			orbit_distance = 20
+			orbit_angle = { min = 0 max = 360 }
+			size = 8
+			has_ring = no
+			
+			init_effect = {
+			prevent_anomaly = yes
+			clear_deposits = yes
+			
+			add_deposit = d_rushing_waterfalls
+			
+			add_deposit = d_veiny_cliffs
+			
+			add_deposit = d_rugged_woods
+			add_deposit = d_rugged_woods
+			add_deposit = d_green_hills
+			add_deposit = d_green_hills
+			add_deposit = d_lush_jungle
+			add_deposit = d_black_soil
+			}
+		}
+	}
+}
+
+########################################
+#Vulcan Initializer
+########################################
+sfu_40_eridani_initializer = {
+	name = "40 Eridani"
+	
+	class = "sc_trinary_4" #FIXME: Replace with accurate representation
+	
+	flags = { sfu_system_vulcan }
+	
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 230
+	}
+	
+	planet = {
+		name = "Keid"
+		class = "pc_k_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+		satellite_naming_policy = upper_case_roman_numerals
+		
+		planet = {
+			name = "Vulcan"
+			class = "pc_desert"
+			orbit_distance = 25
+			orbit_angle = 125
+			size = 18
+			has_ring = no
+			
+			flags = { sfu_homeworld_vulcan sfu_planet_vulcan }
+			
+			init_effect = {
+				clear_deposits = yes
+				
+				add_deposit = d_searing_desert
+				add_deposit = d_searing_desert
+				add_deposit = d_arid_highlands
+				add_deposit = d_arid_highlands
+				
+				add_deposit = d_mineral_fields
+				add_deposit = d_mineral_fields
+				add_deposit = d_prosperous_mesa
+				add_deposit = d_prosperous_mesa
+				add_deposit = d_prosperous_mesa
+				
+				add_deposit = d_nutritious_mudland
+				add_deposit = d_nutritious_mudland
+				add_deposit = d_great_river
+				add_deposit = d_marvelous_oasis
+			}
+		}
+		
+		planet = {
+			name = "Vultrax"
+			class = "pc_class_g_habitable"
+			orbit_distance = 25
+			orbit_angle = 125
+			size = 14
+			has_ring = no
+			entity = "barren_planet_entity"
+			
+			flags = { sfu_homeworld_vultrax }
+			
+			init_effect = {
+				prevent_anomaly = yes
+				clear_deposits = yes
+				
+				add_deposit = d_geothermal_vent
+				add_deposit = d_geothermal_vent
+				
+				add_deposit = d_mineral_fields
+				add_deposit = d_mineral_fields
+				add_deposit = d_ore_rich_caverns
+				add_deposit = d_rich_mountain
+			}
+		}
+		
+		planet = {
+			name = "Leriat"
+			class = "pc_gas_giant"
+			orbit_distance = 40
+			orbit_angle = { min = 0 max = 360 }
+			size = 35
+			has_ring = no
+			
+			init_effect = {
+				prevent_anomaly = yes
+			}
+			
+			moon = {
+				name = "Leriat a"
+				class = pc_frozen
+				count = 1
+				size = 5
+				orbit_distance = 15
+				orbit_angle = { min = 0 max = 360 }
+			}
+			
+			moon = {
+				name = "Leriat b"
+				class = pc_frozen
+				count = 1
+				size = 5
+				orbit_distance = 5
+				orbit_angle = { min = 0 max = 360 }
+			}
+			
+			moon = {
+				name = "Leriat c"
+				class = pc_barren_cold
+				count = 1
+				size = 6
+				orbit_distance = 5
+				orbit_angle = { min = 0 max = 360 }
+			}
+			
+			moon = {
+				name = "Leriat d"
+				class = pc_barren_cold
+				count = 1
+				size = 14
+				orbit_distance = 5
+				orbit_angle = { min = 0 max = 360 }
+				flags = { leriat_d }
+			}
+		}
+		
+		planet = {
+			name = "VirKhar"
+			class = "pc_frozen"
+			orbit_distance = 35
+			orbit_angle = { min = 0 max = 360 }
+			size = 16
+			has_ring = no
+		}
+		
+		planet = {
+			name = "VilKahl"
+			class = "pc_frozen"
+			orbit_distance = 25
+			orbit_angle = { min = 0 max = 360 }
+			size = 16
+			has_ring = no
+		}
+		
+		planet = {
+			name = "Torvula"
+			class = "pc_barren_cold"
+			orbit_distance = 25
+			orbit_angle = { min = 0 max = 360 }
+			size = 14
+			has_ring = no
+		}
+		
+		planet = {
+		name = "40 Eridani B"
+		class = "pc_a_star"
+		orbit_distance = 100
+		orbit_angle = { min = 0 max = 360 }
+		size = 5
+		has_ring = no
+		satellite_naming_policy = upper_case_roman_numerals
+		}
+		
+		planet = {
+			name = "40 Eridani C"
+			class = "pc_m_star"
+			orbit_distance = 20
+			orbit_angle = { min = 0 max = 360 }
+			size = 15
+			has_ring = no
+			satellite_naming_policy = upper_case_roman_numerals
+		}
+	}
+}
+
+########################################
+#Andorian Initializer
+########################################
+sfu_epsilon_indi_initializer = {
+	name = "Epsilon Indi"
+	
+	class = "sc_k"
+	
+	flags = { sfu_system_andor }
+	
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 170
+	}
+	
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 260
+	}
+	
+	planet = {
+		name = "Tos Vlest"
+		class = "pc_k_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Lasa"
+		class = "pc_molten"
+		orbit_distance = 20
+		orbit_angle = 15
+		size = 10
+		has_ring = no
+	}
+	planet = {
+		name = "Andor"
+		class = "pc_arctic"
+		orbit_distance = 25
+		orbit_angle = 120
+		size = 16
+		has_ring = yes
+		flags = { sfu_planet_andoria sfu_homeworld_andor }
+		
+		init_effect = {
+			clear_deposits = yes
+			
+			add_deposit = d_geothermal_vent
+			add_deposit = d_frozen_gas_lake
+			add_deposit = d_hot_springs
+			add_deposit = d_hot_springs
+			
+			add_deposit = d_veiny_cliffs
+			add_deposit = d_veiny_cliffs
+			add_deposit = d_ore_rich_caverns
+			add_deposit = d_rich_mountain
+			
+			add_deposit = d_lichen_fields
+			add_deposit = d_lichen_fields
+			add_deposit = d_fungal_caves
+			add_deposit = d_fungal_forest
+		}
+	}
+	
+	planet = {
+		name = "Sapphirex"
+		class = "pc_class_g_habitable"
+		orbit_distance = 25
+		orbit_angle = 120
+		size = 13
+		has_ring = no
+		flags = { sfu_planet_sapphirex sfu_homeworld_sapphirex }
+		
+		init_effect = {
+			clear_deposits = yes
+			
+			add_deposit = d_geothermal_vent
+			add_deposit = d_geothermal_vent
+			add_deposit = d_geothermal_vent
+			
+			add_deposit = d_mineral_fields
+			add_deposit = d_mineral_fields
+			add_deposit = d_ore_rich_caverns
+			add_deposit = d_rich_mountain
+		}
+	}
+	
+	planet = {
+		name = "Dhowkreen"
+		class = "pc_gas_giant"
+		orbit_distance = 50
+		orbit_angle = {min=0 max=360}
+		size = 35
+		has_ring = no
+		
+		moon = {
+			name = "Dhowkreen a"
+			class = pc_molten
+			count = 1
+			size = 14
+			orbit_distance = 15
+			orbit_angle = { min = 0 max = 360 }
+		}
+		
+		moon = {
+			name = "Dhowkreen b"
+			class = pc_arctic
+			count = 1
+			size = 16
+			orbit_distance = 10
+			orbit_angle = { min = 0 max = 360 }
+			
+			flags = { sfu_homeworld_dhowkreen sfu_planet_dhowkreen }
+			
+			init_effect = {
+				clear_deposits = yes
+				
+				add_deposit = d_geothermal_vent
+				add_deposit = d_hot_springs
+				add_deposit = d_hot_springs
+				
+				add_deposit = d_mineral_fields
+				add_deposit = d_mineral_fields
+				add_deposit = d_ore_rich_caverns
+				add_deposit = d_rich_mountain
+				
+				add_deposit = d_forgiving_tundra
+				add_deposit = d_forgiving_tundra
+				add_deposit = d_fungal_caves
+			}
+		}
+		moon = {
+			name = "Dhowkreen c"
+			class = pc_frozen
+			count = 1
+			size = 5
+			orbit_distance = 10
+			orbit_angle = { min = 0 max = 360 }
+		}
+	}
+	
+	planet = {
+		name = "Zhurkarak"
+		class = "pc_gas_giant"
+		orbit_distance = 95
+		orbit_angle = {min=0 max=360}
+		size = 35
+		has_ring = no
+		
+		moon = {
+			name = "Zhurkarak a"
+			class = pc_molten
+			count = 1
+			size = 5
+			orbit_distance = 15
+			orbit_angle = { min = 0 max = 360 }
+		}
+		moon = {
+			name = "Zhurkarak b"
+			class = pc_barren_cold
+			count = 1
+			size = 10
+			orbit_distance = 5
+			orbit_angle = { min = 0 max = 360 }
+		}
+		moon = {
+			name = "Zhurkarak c"
+			class = pc_frozen
+			count = 1
+			size = 5
+			orbit_distance = 5
+			orbit_angle = { min = 0 max = 360 }
+		}
+		moon = {
+			name = "Zhurkarak d"
+			class = pc_class_d_habitable
+			count = 1
+			size = 5
+			orbit_distance = 5
+			orbit_angle = { min = 0 max = 360 }
+			
+			flags = { sfu_homeworld_zhurkarak sfu_planet_zhurkarak }
+			
+			init_effect = {
+				clear_deposits = yes
+				
+				add_deposit = d_geothermal_vent
+				
+				add_deposit = d_mineral_fields
+				add_deposit = d_mineral_fields
+				add_deposit = d_ore_rich_caverns
+				add_deposit = d_ore_rich_caverns
+				add_deposit = d_ore_rich_caverns
+				add_deposit = d_rich_mountain
+			}
+		}
+	}
+}
+
+
+########################################
+#Rigellian Initializer
+########################################
+sfu_rigel_initializer = {
+	
+	name = "Rigel"
+	
+	class = "sc_b"
+	
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 325
+	}
+	
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 450
+	}
+	
+	flags = { sfu_system_rigel }
+	
+	planet = {
+			name = "Rigel"
+			class = "pc_b_star"
+			orbit_distance = 0
+			orbit_angle = 1
+			size = 60
+			has_ring = no
+		}
+	
+	planet = {
+		name = "Pres'lar"
+		class = "pc_toxic"
+		orbit_distance = 60
+		orbit_angle = {min=0 max=360}
+		size = 32
+		has_ring = no
+	}
+	planet = {
+		name = "Thell'naar"
+		class = "pc_gas_giant"
+		orbit_distance = 50
+		orbit_angle = {min=0 max=360}
+		size = 30
+		has_ring = no
+		
+		moon = {
+			name = "Thell'naar"
+			class = pc_class_d_habitable
+			count = 1
+			size = 6
+			orbit_distance = 15
+			orbit_angle = { min = 0 max = 360 }
+			flags = { sfu_planet_thellnaar sfu_homeworld_thellnaar }
+			
+			init_effect = {
+				clear_deposits = yes
+				
+				add_deposit = d_geothermal_vent
+				
+				add_deposit = d_mineral_fields
+				add_deposit = d_ore_rich_caverns
+				add_deposit = d_ore_rich_caverns
+				add_deposit = d_rich_mountain
+			}
+		}
+	}
+	
+	planet = {
+		name = "Yee'laa"
+		class = "pc_gas_giant"
+		orbit_distance = 50
+		orbit_angle = {min=0 max=360}
+		size = 30
+		has_ring = no
+		satellite_naming_policy = lower_case_latin_letters
+		
+		moon = {
+			name = "Yee'laa"
+			class = pc_class_d_habitable
+			count = 1
+			size = 6
+			orbit_distance = 15
+			orbit_angle = { min = 0 max = 360 }
+			
+			flags = { sfu_planet_yeelaa sfu_homeworld_yeelaa }
+			
+			init_effect = {
+				clear_deposits = yes
+				
+				add_deposit = d_geothermal_vent
+				
+				add_deposit = d_mineral_fields
+				add_deposit = d_ore_rich_caverns
+				add_deposit = d_ore_rich_caverns
+				add_deposit = d_rich_mountain
+			}
+		}
+	}
+	
+	planet = {
+		name = "Rigel"
+		class = "pc_class_m_uv"
+		orbit_distance = 50
+		orbit_angle = { min = 0 max = 360 }
+		size = 16
+		has_ring = no
+		satellite_naming_policy = lower_case_latin_letters
+		
+		flags = { sfu_homeworld_rigel sfu_planet_rigel }
+		
+		init_effect = {
+			clear_deposits = yes
+			
+			add_deposit = d_underwater_vent
+			add_deposit = d_underwater_vent
+			
+			add_deposit = d_ore_rich_caverns
+			add_deposit = d_rich_mountain
+			add_deposit = d_rich_mountain
+			add_deposit = d_rich_mountain
+			
+			add_deposit = d_tropical_island
+			add_deposit = d_lush_jungle
+		}
+		
+		moon = {
+			name = "Rigel a"
+			class = pc_barren_cold
+			count = 1
+			size = 6
+			orbit_distance = 10
+			orbit_angle = { min = 0 max = 360 }
+			
+		}
+		moon = {
+			name = "Rigel b"
+			class = pc_barren_cold
+			count = 1
+			size = 6
+			orbit_distance = 5
+			orbit_angle = { min = 0 max = 360 }
+			
+		}
+	}
+	
+	planet = {
+		name = "Strongport"
+		class = "pc_class_m_uv"
+		orbit_distance = 30
+		orbit_angle = { min = 0 max = 360 }
+		size = 16
+		has_ring = no
+		satellite_naming_policy = lower_case_latin_letters
+		
+		flags = { sfu_homeworld_strongport sfu_planet_strongport }
+		
+		init_effect = {
+			clear_deposits = yes
+			
+			add_deposit = d_underwater_vent
+			add_deposit = d_underwater_vent
+			add_deposit = d_underwater_vent
+			add_deposit = d_underwater_vent
+			
+			add_deposit = d_rich_mountain
+			add_deposit = d_rich_mountain
+			add_deposit = d_rich_mountain
+			
+			add_deposit = d_tropical_island
+			add_deposit = d_tropical_island
+			add_deposit = d_lush_jungle
+			add_deposit = d_lush_jungle
+		}
+	}
+	
+	planet = {
+		name = "Filii'lon"
+		class = "pc_gas_giant"
+		orbit_distance = 30
+		orbit_angle = {min=0 max=360}
+		size = 30
+		has_ring = no
+		
+		moon = {
+			name = "Filii'lon"
+			class = pc_class_d_habitable
+			count = 1
+			size = 6
+			orbit_distance = 15
+			orbit_angle = { min = 0 max = 360 }
+			
+			flags = { sfu_homeworld_filiilon sfu_planet_filiilon }
+			
+			init_effect = {
+				clear_deposits = yes
+				
+				add_deposit = d_geothermal_vent
+				
+				add_deposit = d_mineral_fields
+				add_deposit = d_ore_rich_caverns
+				add_deposit = d_ore_rich_caverns
+				add_deposit = d_rich_mountain
+			}
+		}
+	}
+	
+	planet = {
+		name = "Kaha'lar"
+		class = "pc_class_m_uv"
+		orbit_distance = 30
+		orbit_angle = { min = 0 max = 360 }
+		size = 16
+		has_ring = no
+		satellite_naming_policy = lower_case_latin_letters
+		
+		flags = { sfu_homeworld_kaylar sfu_planet_kaylar }
+		
+		init_effect = {
+			prevent_anomaly = yes
+			create_species = {
+				name = "Kaylar"
+				class = HUM
+				portrait = human
+				homeworld = THIS
+				namelist = "HUMAN1"
+				traits = {
+					trait = "trait_sfu_radiation_resistance"
+					trait = "trait_very_strong"
+					trait = "trait_resilient"
+					trait = "trait_repugnant"
+					trait = "trait_quarrelsome"
+					trait = "trait_sedentary"
+					ideal_planet_class = "pc_continental" 
+				}
+			}
+			last_created_species = { save_global_event_target_as = kaylarSpecies }
+			create_country = {
+				name = "Kaylar"
+				civics = random
+				authority = random
+				species = event_target:kaylarSpecies
+				ethos = { ethic = "ethic_fanatic_xenophobe" ethic = "ethic_militarist" }
+				flag = {
+					icon = { category = "special" file = "primitive.dds" }
+					background = { category = "backgrounds" file = "new_dawn.dds" }
+					colors = { "turquoise" "green" "null" "null" }
+				}
+				type = primitive
+			}
+			last_created_country = {
+				set_graphical_culture = preindustrial_01
+				set_country_flag = iron_age
+				set_primitive_age = iron_age
+				save_global_event_target_as = sfu_empire_kaylar
+			}
+			#set_owner = event_target:kaylar
+			while = {
+				count = 6
+				create_pop = {
+					species = event_target:kaylarSpecies
+					ethos = { ethic = "ethic_xenophobe" }
+				}
+			}
+			while = {
+				count = 3
+				create_pop = {
+					species = event_target:kaylarSpecies
+					ethos = { ethic = "ethic_militarist" }
+				}
+			}
+			reroll_deposits = yes
+			add_building = building_stone_palace
+			add_building = building_primitive_dwellings
+		}
+	}
+	
+	planet = {
+		name = "Del'harom"
+		class = "pc_gas_giant"
+		orbit_distance = 40
+		orbit_angle = {min=0 max=360}
+		size = 30
+		has_ring = no
+		satellite_naming_policy = lower_case_latin_letters
+		
+		moon = {
+			orbit_distance = 15
+			orbit_angle =  { min = 0 max = 360 }
+		}
+	}
+	
+	planet = {
+		name = "Tel'amoken"
+		class = "pc_gas_giant"
+		orbit_distance = 40
+		orbit_angle = {min=0 max=360}
+		size = 30
+		has_ring = no
+		satellite_naming_policy = lower_case_latin_letters
+		
+		moon = {
+			orbit_distance = 15
+			orbit_angle = { min = 0 max = 360 }
+		}
+	}
+	
+	planet = {
+		name = "Vor'nak"
+		class = "pc_gas_giant"
+		orbit_distance = 40
+		orbit_angle = {min=0 max=360}
+		size = 30
+		has_ring = no
+		satellite_naming_policy = lower_case_latin_letters
+		
+		moon = {
+			orbit_distance = 15
+			orbit_angle = { min = 0 max = 360 }
+		}
+	}
+	
+	planet = {
+		name = "Gas'lak"
+		class = "pc_barren"
+		orbit_distance = 20
+		orbit_angle = {min=0 max=360}
+		size = 8
+		has_ring = no
+		satellite_naming_policy = lower_case_latin_letters
+	}
+}
+
+########################################
+#Zeta Reticuli
+########################################
+sfu_zeta_reticuli_initializer = {
+	
+	name = "Zeta Reticuli"
+	
+	class = "sc_binary_8"
+	
+	flags = { sfu_system_zeta_reticuli }
+	
+	planet = {
+		name = "Zeta Reticuli A"
+		class = pc_g_star
+		size = 30
+		orbit_distance = 0
+		orbit_angle = 0
+		satellite_naming_policy = upper_case_roman_numerals
+		
+		planet = {
+			name = "Serpo"
+			class = "pc_nuked"
+			orbit_distance = 40
+			orbit_angle = 0#{min=0 max=360}
+			size = 16
+			has_ring = no
+			satellite_naming_policy = lower_case_latin_letters
+		}
+		planet = {
+			class = "pc_barren"
+			orbit_distance = 40
+			orbit_angle = 0#{min=0 max=360}
+			size = 16
+			has_ring = no
+			satellite_naming_policy = lower_case_latin_letters
+		}
+	}
+	planet = {
+		name = "Zeta Reticuli B"
+		class = pc_g_star
+		size = 30
+		orbit_distance = 200
+		orbit_angle = 0
+		satellite_naming_policy = upper_case_roman_numerals
+		
+		planet = {
+			orbit_distance = 40
+			orbit_angle = 0
+		}
+	}
+}

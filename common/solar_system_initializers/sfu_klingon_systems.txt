@@ -1,0 +1,240 @@
+@distance = 50
+@base_moon_distance = 10
+
+#TODO:
+# Make 40 Eridani B & C a true binary with rocks instead of planets
+# Fill out Zeta Reticuli System
+
+#NOTES:
+# sfu_homeworld_* are flags for planets with pops at start, used during game spawn
+# sfu_planet_* are down the line calls to this planet for events.
+#
+# Nomenclature is for programmer clarity when doing calls
+
+########################################
+# Sol System
+########################################
+sfu_klinshai_system_initializer = {
+	name = "Klinshai"
+	
+	class = "sc_g"
+	
+	flags = {
+		empire_home_system
+		sfu_klingon_home_system
+		sfu_system_klinshai
+	}
+	
+	usage = custom_empire
+	
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+		generate_home_system_resources = no
+	}
+	
+	planet = {
+		name = "Klinshai Primary"
+		class = "pc_g_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+		satellite_naming_policy = upper_case_roman_numerals
+	}
+	
+	planet = {
+		name = "Klinshai I"
+		class = "pc_molten"
+		orbit_distance = 40
+		orbit_angle = 0
+		size = 10
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Marak"
+		class = "pc_class_d_habitable"
+		orbit_distance = 25
+		orbit_angle = 0
+		size = 9
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Keress"
+		class = "pc_continental"
+		orbit_distance = 25
+		orbit_angle = 0
+		size = 16
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Klinshai"
+		class = "pc_class_klinshai"
+		orbit_distance = 25
+		orbit_angle = 0
+		size = 16
+		starting_planet = yes
+		has_ring = no
+		deposit_blockers = none
+		modifiers = none
+		
+		flags = { sfu_planet_klinshai sfu_homeworld_klinshai }
+		init_effect = {
+			if = {
+				limit = { NOT = { any_country = { has_country_flag = sfu_empire_klingon } } }
+				create_species = { 
+					class = "HUM"
+					portrait = "humanoid_02"
+					name = "Klingon"
+					plural = "Klingons"
+					adjective = "Klingon"
+					name_list = "HUM2"
+					traits = { 
+						trait = "trait_communal"
+						trait = "trait_strong"
+						trait = "trait_talented"
+						trait = "trait_decadent"
+						ideal_planet_class = "pc_class_klinshai"
+					}
+				}
+				last_created_species = { save_global_event_target_as = klingonSpecies }
+				create_country = {
+					name = "Klingon Star Empire"
+					ship_prefix = "IKV"
+					type = default
+					ignore_initial_colony_error = yes
+					civics = { civic = "civic_klingon_administration" civic = "civic_empire_security_service" }
+					authority = auth_dictatorial
+					name_list = "Human"
+					ethos = { ethic = "ethic_authoritarian" ethic = "ethic_xenophobe" ethic = "ethic_militarist" }
+					species = event_target:klingonSpecies
+					flag = {
+						icon = { category = "pointy" file = "flag_pointy_9.dds" }
+						background = { category = "backgrounds" file = "00_solid.dds" }
+						colors = { "red" "black" "null" "null" }
+					}
+					effect = { save_global_event_target_as = GET_sfu_empire_klingon }
+				}
+				set_capital = yes
+				while = {
+					count = 33
+					create_pop = { species = klingonSpecies }
+				}
+			}
+		}
+	}
+	
+	planet = {
+		name = "Kovar"
+		class = "pc_gas_giant"
+		orbit_distance = 100
+		orbit_angle = 0
+		size = 40
+		starting_planet = no
+		has_ring = yes
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			name = "Kovar a"
+			class = pc_barren_cold
+			orbit_distance = 10
+			orbit_angle=0
+			size=4
+		}
+		moon = {
+			name = "Kovar b"
+			class = pc_barren_cold
+			orbit_distance = 10
+			orbit_angle=0
+			size=8
+		}
+		moon = {
+			name = "Kovar c"
+			class = pc_barren_cold
+			orbit_distance = 10
+			orbit_angle=0
+			size=6
+		}
+		moon = {
+			name = "Kovar d"
+			class = "pc_class_d_habitable"
+			orbit_distance = 20
+			orbit_angle=0
+			size = 10
+		}
+	}
+	
+	planet = {
+		name = "Klinshai VI"
+		class = "pc_gas_giant"
+		orbit_distance = 100
+		orbit_angle = 0
+		size = 30
+		starting_planet = no
+		has_ring = yes
+		satellite_naming_policy = lower_case_latin_letters
+		
+		moon = {
+			name = "Klinshai VIa"
+			class = pc_barren_cold
+			orbit_distance = 10
+			orbit_angle=0
+			size=6
+		}
+		moon = {
+			name = "Klinshai VIb"
+			class = pc_barren_cold
+			orbit_distance = 10
+			orbit_angle=0
+			size=12
+		}
+		moon = {
+			name = "Klinshai VIc"
+			class = pc_barren_cold
+			orbit_distance = 10
+			orbit_angle=0
+			size=7
+		}
+	}
+	
+	planet = {
+		name = "Klinshai VII"
+		class = "pc_frozen"
+		orbit_distance = 40
+		orbit_angle = 0
+		size = 10
+		starting_planet = no
+	}
+	
+#	neighbor_system = {
+#		distance = { min = 10 max = @distance }	
+#		initializer = "sfu_alpha_centauri_initializer"
+#	}
+#	
+#	neighbor_system = {
+#		distance = { min = 10 max = @distance }	
+#		initializer = "sfu_40_eridani_initializer"
+#	}
+#	neighbor_system = {
+#		distance = { min = 10 max = @distance }	
+#		initializer = "sfu_epsilon_indi_initializer"
+#	}
+#	
+#	neighbor_system = {
+#		distance = { min=10 max = @distance }
+#		initializer = "sfu_rigel_initializer"
+#	}
+#	
+#	neighbor_system = {
+#		distance = { min=10 max = @distance }
+#		initializer = sfu_zeta_reticuli_initializer
+#	}
+}

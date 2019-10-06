@@ -1,0 +1,10 @@
+# Sets the project for the first time
+on_game_start = {
+	events = {
+		#sfu_generic_events.1 #Clears unemployment benefits/criminal underworld modifiers
+		sfu_spawn_fed.1 #Federation system flips
+		sfu_spawn_fed_minors.1 #Fed minor spawns
+		sfu_spawn_klingon.1#Spawns Klingons
+		sfu_spawn_hydran.1 #Spawns hydrans
+	}
+}

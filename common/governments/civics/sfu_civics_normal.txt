@@ -1,0 +1,248 @@
+#civic_example = {
+#	playable = {}								# AND trigger, no scope; use this to prevent the civic from being selectable by the player (UI)
+#	potential = {}								# requirements list, see ../readme_requirements.txt
+#	possible = {}								# requirements list, see ../readme_requirements.txt
+#	pickable_at_start = yes / no				# default: yes
+#	modification = yes / no						# default: yes, set to no to prevent adding or removing this after creation of the empire
+#
+#	random_weight = { base = 5 }				# scriptable weight for randomizing a civic; required, else the civic will not get assigned randomly
+#
+#	modifier = {}								# modifier added to the country if the civic is selected and valid
+#	can_build_ruler_ship = yes / no				# default: no
+#	traits = { trait = ... }					# default: empty; trait set to enforce on the primary species. They cannot be removed, but more can be added if points/picks permit
+#	has_secondary_species = {					# default: none; if present, will enable secondary species customization in empire designer and will create secondary species & pops at galaxy generation time (see empire_init_create_capital_secondary_pops)
+#		traits = { trait = ... }					# default: empty; trait set to enforce on the secondary species. They cannot be removed, but more can be added if points/picks permit
+#	}
+#}
+
+#TODO: Give federation_charter some of the same diplomatic restrictions as inward perfection
+#      namely: (cannot make claims?)
+
+#TODO: Add reduced Nav Cap added by solider jobs for federation_charter
+#TODO: Add Noble buildings and Merchnat Buildings for Hydran Civics
+
+civic_federation_charter = {
+	possible = {
+		ethics = {
+			OR = {
+				value = ethic_egalitarian
+				value = ethic_fanatic_egalitarian
+			}
+		}
+		civics = {
+			NOR = {
+				#Invalid democratic civics
+				value = civic_parliamentary_system
+				value = civic_beacon_of_liberty
+				value = civic_nationalistic_zeal
+				value = civic_citizen_service
+				value = civic_idealistic_foundation
+				value = civic_slaver_guilds
+				#Other invalid civics
+				value = civic_inwards_perfection
+				value = civic_police_state
+				value = civic_shadow_council
+				value = civic_technocracy
+				value = civic_exalted_priesthood
+				value = civic_aristocratic_elite
+				value = civic_imperial_cult
+				#Other unremovable civics #Irrelevant but done for completeness
+				value = civic_fanatic_purifiers
+				value = civic_mechanists
+				value = civic_syncretic_evolution
+				value = civic_life_seeded
+				value = civic_post_apocalyptic
+				value = civic_barbaric_despoilers
+			}
+		}
+		authority = { value = auth_democratic }
+	}
+	pickable_at_start = no
+	modification = no
+	random_weight = { base = 0 }
+	
+	modifier = {
+		#Upside
+		pop_factions_produces_mult = 0.50
+		country_admin_cap_add = 50
+		pop_government_ethic_attraction = 0.50
+		country_leader_pool_size = 1
+		edict_length_mult = 0.20
+		#Downside
+		country_unity_produces_mult = -0.50 #Because of heterogenous nature
+		country_claim_influence_cost_mult = 10.0 #Stand in for no claims
+		country_war_exhaustion_mult = 0.1 #Dislikes war
+		country_naval_cap_mult = -0.50 #Gets partially corrected with formation of Star Fleet event
+	}
+}
+
+civic_social_contract = {
+	possible = {
+		ethics = {
+			OR = {
+				value = ethic_egalitarian
+				value = ethic_fanatic_egalitarian
+			}
+		}
+		authority = { value = auth_democratic }
+		civics = {
+			NOR = {
+				value = civic_idealistic_foundation
+				value = civic_inwards_perfection
+				value = civic_merchant_guilds
+				value = civic_shared_burden
+				value = civic_slaver_guilds
+			}
+		}
+	}
+	pickable_at_start = no
+	modification = no
+	random_weight = { base = 0 }
+	
+	modifier = {
+		#Upside
+		planet_jobs_consumer_goods_produces_mult = 0.10
+		trade_value_mult = 0.10
+		pop_citizen_happiness = 0.10
+		planet_amenities_mult = 0.10
+		#Downside
+		planet_jobs_alloys_produces_mult = -0.10
+		armies_upkeep_mult = 0.1
+		starbase_shipyard_build_cost_mult = 0.1
+		ships_upkeep_mult = 0.1
+	}
+}
+
+civic_klingon_administration = {
+	icon = "gfx/interface/icons/governments/civics/civic_byzantine_bureaucracy.dds"
+	
+	possible = {
+		ethics = {
+			OR = {
+				value = ethic_authoritarian
+				value = ethic_fanatic_authoritarian
+			}
+		}
+		authority = { value = auth_dictatorial }
+		civics = {
+			NOR = {
+				value = civic_idealistic_foundation
+				value = civic_inwards_perfection
+				value = civic_cutthroat_politics
+				value = civic_free_haven
+				value = civic_byzantine_bureaucracy
+			}
+		}
+	}
+	pickable_at_start = no
+	modification = no
+	random_weight = { base = 0 }
+	
+	modifier = {
+		#Upside
+		planet_jobs_alloys_produces_mult = 0.10
+		starbase_shipyard_build_cost_mult = -0.2
+		country_naval_cap_mult = 0.20
+		#Downsides
+		pop_growth_from_immigration = -0.15
+		planet_jobs_consumer_goods_produces_mult = -0.10
+		trade_value_mult = -0.25
+	}
+}
+
+civic_empire_security_service = {
+	icon = "gfx/interface/icons/governments/civics/civic_police_state.dds"
+	
+	possible = {
+		ethics = {
+			OR = {
+				value = ethic_authoritarian
+				value = ethic_fanatic_authoritarian
+			}
+		}
+		authority = { value = auth_dictatorial }
+		civics = {
+			NOR = {
+				value = civic_idealistic_foundation
+				value = civic_inwards_perfection
+				value = civic_police_state
+			}
+		}
+	}
+	pickable_at_start = no
+	modification = no
+	random_weight = { base = 0 }
+	
+	modifier = {
+		#Upside
+		planet_stability_add = 10
+		country_war_exhaustion_mult = -0.1
+		#Downsides
+		planet_jobs_specialist_produces_mult = -0.05
+	}
+}
+
+civic_hydran_monarchy = {
+	icon = "gfx/interface/icons/governments/civics/civic_philosopher_king.dds"
+	possible = {
+		ethics = { NOT = { value = ethic_gestalt_consciousness } }
+		authority = { NOT = { value = auth_corporate } }
+		civics = {
+			NOR = {
+				value = civic_byzantine_bureaucracy
+				value = civic_technocracy
+				value = civic_aristocratic_elite
+				value = civic_philosopher_king
+				value = civic_exalted_priesthood
+			}
+		}
+	}
+	pickable_at_start = no
+	modification = no
+	random_weight = { base = 0 }
+	modifier = {
+		#Upside
+		ruler_skill_levels = 2
+		admiral_skill_levels = 1
+		governor_skill_levels = 1
+		general_skill_levels = 1
+		country_command_limit_add = 10
+		pop_factions_produces_mult = 0.35
+		#Downside
+		country_admin_cap_add = -20
+		planet_stability_add = -5
+	}
+}
+
+#Hydran Guilds add 2 merchants to capitals on top of admin jobs
+civic_hydran_merchant_guilds = {
+	icon = "gfx/interface/icons/governments/civics/civic_merchant_guilds.dds"
+	possible = {
+		ethics = { NOT = { value = ethic_gestalt_consciousness } }
+		authority = { NOT = { value = auth_corporate } }
+		civics = {
+			NOR = {
+				value = civic_byzantine_bureaucracy
+				value = civic_technocracy
+				value = civic_aristocratic_elite
+				value = civic_exalted_priesthood
+				value = civic_functional_architecture
+			}
+		}
+	}
+	pickable_at_start = no
+	modification = no
+	random_weight = { base = 0 }
+	modifier = {
+		#Upside
+		planet_jobs_consumer_goods_produces_mult = 0.30
+		trade_value_mult = 0.10
+		planet_structures_cost_mult = -0.10
+		planet_structures_upkeep_mult = -0.10
+		#Downside
+		pop_demotion_time_mult = 0.50
+		pop_citizen_happiness = -0.10
+		country_unity_produces_mult = -0.50
+		edicts_cost_mult = 0.50
+	}
+}

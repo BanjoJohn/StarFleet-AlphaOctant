@@ -1,0 +1,5 @@
+	NGameplay = {
+		START_YEAR = 15 #MODIFIED
+		#Tweak to deal with Hydran issues
+		MIN_HABITABILITY = 0.3					# Planet habitability must be at least this value to be able to colonize
+}

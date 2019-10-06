@@ -1,0 +1,419 @@
+@base_moon_distance = 10
+
+##########################################################################
+# ANTAREANS
+##########################################################################
+
+sfu_antares_initializer = {
+	name = "Antares"
+	
+	class = "sc_trinary_4" #FIXME: Replace with accurate representation
+	
+	flags = { sfu_system_antares }
+	
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 390
+	}
+	
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 140
+	}
+	
+	planet = {
+		name = "Antar-eane'se"
+		class = "pc_g_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 40
+		has_ring = no
+		satellite_naming_policy = upper_case_roman_numerals
+		
+		planet = {
+			name ="Pokares"
+			class = pc_toxic
+			orbit_distance = 40
+			orbit_angle = {min=0 max=360}
+			size = 14
+			has_ring = no
+			
+		}
+		
+		planet = {
+			name = "Rojares"
+			class = pc_toxic
+			orbit_distance = 25
+			orbit_angle = {min=0 max=360}
+			size = 11
+			has_ring = no
+		}
+		
+		planet = {
+			name = "Uvares"
+			class = pc_barren
+			orbit_distance = 25
+			orbit_angle = {min=0 max=360}
+			size = 8
+			has_ring = no
+		}
+		
+		planet = {
+			name = "Antares"
+			class = "pc_continental"
+			orbit_distance = 25
+			orbit_angle = {min=0 max=360}
+			size = 16
+			has_ring = no
+			deposit_blockers = none
+			modifiers = none
+			
+			flags = { sfu_planet_antares }
+			init_effect = {
+				clear_deposits = yes
+				
+				add_deposit = d_hot_springs
+				add_deposit = d_rushing_waterfalls
+				
+				add_deposit = d_prosperous_mesa
+				add_deposit = d_rich_mountain
+				
+				add_deposit = d_green_hills
+				add_deposit = d_rugged_woods
+				add_deposit = d_lush_jungle
+			}
+		}
+		
+		planet = {
+			name = "Zopores"
+			class = "pc_gas_giant"
+			orbit_distance = 70
+			orbit_angle = {min=0 max=360}
+			size = 30
+			has_ring = yes
+			
+			change_orbit = @base_moon_distance
+			
+			moon = {
+				count = { min=0 max = 4}
+				class = pc_barren_cold
+				size = 5
+				orbit_distance = 5
+				orbit_angle = { min=0 max=360 }#{ min = 0 max = 360 }
+			}
+		}
+		
+		planet = {
+			name = "Doraves"
+			class = "pc_gas_giant"
+			orbit_distance = 70
+			orbit_angle = {min=0 max=360}
+			size = 30
+			has_ring = yes
+			
+			change_orbit = @base_moon_distance
+			
+			moon = {
+				count = { min=0 max = 4}
+				class = pc_barren_cold
+				size = 5
+				orbit_distance = 5
+				orbit_angle = { min=0 max=360 }#{ min = 0 max = 360 }
+			}
+		}
+		
+		planet = {
+			name = "Anatres B"
+			class = pc_m_star
+			size = 20
+			orbit_angle = {min=0 max=360}
+			orbit_distance = 80
+		}
+		
+		planet = {
+			name = "Anatres C"
+			class = pc_m_star
+			size = 20
+			orbit_angle = {min=0 max=360}
+			orbit_distance = 30
+		}
+	}
+}
+
+##########################################################################
+# ORIONS
+##########################################################################
+
+sfu_orion_initializer = {
+	name = "Orion"
+	
+	class = "sc_g"
+	
+	flags = { sfu_system_orion }
+	
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 250
+	}
+	
+	planet = {
+		name = "Orion"
+		class = "pc_g_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 35
+		has_ring = no
+		satellite_naming_policy = upper_case_roman_numerals
+	}
+	
+	planet = {
+		name = "Esteh'la"
+		class = pc_toxic
+		size = 10
+		orbit_angle = { min=0 max=360 }
+		orbit_distance = 25
+	}
+	
+	planet = {
+		name = "Elletha"
+		class = pc_toxic
+		size = 19
+		orbit_angle = { min=0 max=360 }
+		orbit_distance = 25
+		
+		moon = {
+			name = "Thalna"
+			class = pc_barren
+			size = 12
+			orbit_angle = { min=0 max=360 }
+			orbit_distance = 10
+		}
+	}
+	
+	planet = {
+		name = "Onel Katuga"
+		class = pc_desert
+		size = 12
+		orbit_angle = { min=0 max=360 }
+		orbit_distance = 25
+	}
+	
+	planet = {
+		name = "Ore'nn"
+		class = pc_continental
+		size = 15
+		orbit_angle = { min=0 max=360 }
+		orbit_distance = 25
+		
+		flags = { sfu_planet_orion }
+	}
+	
+	planet = {
+		name = "Voniv"
+		class = pc_arctic
+		size = 14
+		orbit_angle = { min=0 max=360 }
+		orbit_distance = 25
+	}
+	
+	planet = {
+		name = "Ameg Vand"
+		class = pc_barren_cold
+		size = 7
+		orbit_angle = { min=0 max=360 }
+		orbit_distance = 25
+	}
+	
+	planet = {
+		name = "Ameg Layor"
+		class = pc_barren_cold
+		size = 10
+		orbit_angle = { min=0 max=360 }
+		orbit_distance = 25
+	}
+	
+	planet = {
+		name = "Glaf Nan"
+		class = pc_gas_giant
+		size = 30
+		orbit_angle = { min=0 max=360 }
+		orbit_distance = 70
+		satellite_naming_policy = upper_case_roman_numerals
+		
+		moon = {
+			name = "Glaf Nan a"
+			class = pc_molten
+			orbit_angle = { min=0 max=360 }
+			orbit_distance = 15
+		}
+		moon = {
+			name = "Glaf Nan b"
+			class = pc_barren_cold
+			orbit_angle = { min=0 max=360 }
+			orbit_distance = 10
+		}
+	}
+	
+	planet = {
+		name = "Dom'kin La"
+		class = pc_gas_giant
+		size = 25
+		orbit_angle = { min=0 max=360 }
+		orbit_distance = 80
+		satellite_naming_policy = upper_case_roman_numerals
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min=2 max=2 }
+			orbit_angle = { min=0 max=360 }
+			orbit_distance = 10
+		}
+	}
+	
+	planet = {
+		name = "Ball'khan"
+		class = pc_gas_giant
+		size = 25
+		orbit_angle = { min=0 max=360 }
+		orbit_distance = 80
+		satellite_naming_policy = upper_case_roman_numerals
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min=2 max=2 }
+			orbit_angle = { min=0 max=360 }
+			orbit_distance = 10
+		}
+	}
+	
+	planet = {
+		name = "Felka's World"
+		class = pc_class_s
+		size = 20
+		orbit_angle = { min=0 max=360 }
+		orbit_distance = 70
+		
+		flags = { sfu_planet_felka }
+	}
+	
+	neighbor_system = {
+		distance = { min = 10 max = @distance }	
+		initializer = "sfu_osiris_initializer"
+	}
+}
+
+sfu_osiris_initializer = {
+	name = "Osiris"
+	
+	class = "sc_g"
+	
+	flags = { sfu_system_orion }
+	
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 25
+	}
+	
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 50
+	}
+	
+	planet = {
+		name = "Osiris"
+		class = "pc_g_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 25
+		has_ring = no
+		satellite_naming_policy = upper_case_roman_numerals
+	}
+	
+	planet = {
+		name = "Osiris"
+		class = pc_ocean
+		size = 15
+		orbit_angle = 0
+		orbit_distance = 75
+	}
+	
+	planet = {
+		name = "Hathor"
+		class = pc_barren
+		orbit_angle = 0
+		orbit_distance = 25
+	}
+	
+	planet = {
+		name = "Isis"
+		class = pc_frozen
+		orbit_angle = 0
+		orbit_distance = 25
+	}
+	
+	planet = {
+		name = "Anubis"
+		class = pc_gas_giant
+		orbit_angle = 0
+		orbit_distance = 75
+		
+		change_orbit = @basemoondistance
+		
+		moon = {
+			name = "Anubis a"
+			class = pc_molten
+			orbit_angle = 0
+			orbit_distance = 10
+		}
+		moon = {
+			name = "Anubis b"
+			class = pc_frozen
+			orbit_angle = 0
+			orbit_distance = 10
+		}
+		moon = {
+			name = "Anubis c"
+			class = pc_frozen
+			orbit_angle = 0
+			orbit_distance = 10
+		}
+		moon = {
+			name = "Anubis d"
+			class = pc_barren_cold
+			orbit_angle = 0
+			orbit_distance = 10
+		}
+	}
+	
+	planet = {
+		name = "Apophis"
+		class = pc_gas_giant
+		orbit_angle = 0
+		orbit_distance = 75
+		
+		change_orbit = @basemoondistance
+		
+		moon = {
+			name = "Apophis a"
+			class = pc_frozen
+			orbit_angle = 0
+			orbit_distance = 10
+		}
+		moon = {
+			name = "Apophis"
+			class = pc_barren_cold
+			orbit_angle = 0
+			orbit_distance = 10
+		}
+	}
+	
+	planet = {
+		name = "Sekhmet"
+		class = pc_ice_asteroid
+		orbit_angle = 0
+		orbit_distance = 75
+		size = 20
+	}
+}

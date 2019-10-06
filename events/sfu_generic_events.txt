@@ -1,0 +1,38 @@
+##########################
+# SFU generic events
+##########################
+
+namespace = sfu_generic_events
+
+##On action for clearing employment problems
+#event = {
+#	id = sfu_generic_events.1
+#	hide_window = yes
+#	is_triggered_only = yes
+#	
+#	immediate = {
+#		every_country = {
+#			every_planet_within_border = {
+#				planet_event = { id = sfu_generic_events.2 days=25 }
+#			}
+#		}
+#	}
+#}
+#
+##Clear every country's negative employment modifiers
+#planet_event = {
+#	id = sfu_generic_events.2
+#	hide_window = yes
+#	is_triggered_only = yes
+#	
+#	immediate = {
+#		if = {
+#			limit = { has_planet_modifier = criminal_underworld }
+#			remove_planet_modifier = { criminal_underworld }
+#		}
+#		if = {
+#			limit = { has_planet_modifier = unemployment_benefits }
+#			remove_planet_modifier = { unemployment_benefits }
+#		}
+#	}
+#}

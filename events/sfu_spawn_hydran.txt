@@ -1,0 +1,660 @@
+##########################
+# SFU system spawns
+##########################
+
+namespace = sfu_spawn_hydran
+
+#TODO: Fix multiple Hydran subspecies spawning
+
+#Master event trigger
+event = {
+	id = sfu_spawn_hydran.1
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		### SET EVENT TARGETS (Main species, homeworld, &c.)
+		every_country = {
+			limit = { has_country_flag = sfu_empire_hydran }
+			save_event_target_as = hydran
+			owner_species = { save_event_target_as = hydranSpecies }
+		}
+		every_planet = {
+			limit = { has_planet_flag = sfu_homeworld_hydrax }
+			save_event_target_as = hydran_homeworld
+		}
+		every_country = {
+			### Capital Spawn
+			limit = { has_country_flag = sfu_empire_hydran }
+			### SET UP SYSTEM CONTROL
+			country_event = { id = sfu_spawn_hydran.2 days=0 }
+			### SET UP HYDRAX SYSTEM
+			country_event = { id = sfu_spawn_hydran.3 days=0 }
+			### SET UP HYREAK SYSTEM
+			country_event = { id = sfu_spawn_hydran.4 days=0 }
+			### SET UP ANTHRAXAN SYSTEM
+			country_event = { id = sfu_spawn_hydran.5 days=0 }
+			### SET UP HYDRAMAX
+			country_event = { id = sfu_spawn_hydran.6 days=0 }
+		}
+	}
+}
+
+#Flip ownership of the Core Systems and build starbases
+country_event = {
+	id = sfu_spawn_hydran.2
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		#Homeworld
+		every_system = {
+			limit = { has_star_flag = sfu_system_beta_capi_c}
+			create_starbase = {
+				size = starbase_starport
+				owner = event_target:hydran
+				module = shipyard
+				module = trading_hub
+				building = crew_quarters
+			}
+		}
+		every_system = {
+			limit = { has_star_flag = sfu_system_alpha_capi }
+			create_starbase = {
+				size = starbase_starport
+				owner = event_target:hydran
+				module = shipyard
+				module = trading_hub
+				building = crew_quarters
+			}
+		}
+		every_system = {
+			limit = { has_star_flag = sfu_system_gamma_capi }
+			create_starbase = {
+				size = starbase_starport
+				owner = event_target:hydran
+				module = shipyard
+				module = trading_hub
+				building = resource_silo
+			}
+		}
+		every_system = {
+			limit = { has_star_flag = sfu_system_delta_capi }
+			create_starbase = {
+				size = starbase_starport
+				owner = event_target:hydran
+				module = shipyard
+				module = trading_hub
+				building = resource_silo
+			}
+		}
+	}
+}
+
+#Setup Homeworld System
+#NB: Home systems have special events to overwrite things, so we have to set somethings manually
+country_event = {
+	id = sfu_spawn_hydran.3
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		#Clear the planet, then start setting resources
+		every_system_within_border = {
+			limit = { has_star_flag = sfu_system_beta_capi_c }
+			### HYDRAX
+			every_planet = {
+				limit = { has_planet_flag = sfu_homeworld_hydrax }
+				planet_event = { id = sfu_spawn_hydran.10 days = 0 }
+			}
+			every_system_planet = {
+				limit = {
+					has_deposit_for = shipclass_mining_station
+					OR = {
+						has_resource = { type = minerals amount > 0 }
+						has_resource = { type = energy amount > 0 }
+					}
+					has_mining_station = no
+				}
+				create_mining_station = { owner = event_target:hydran }
+			}
+		}
+	}
+}
+
+#Setup Hydrax
+planet_event = {
+	id = sfu_spawn_hydran.10
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		while = {
+			count = 67
+			create_pop = { species = event_target:hydranSpecies }
+		}
+		
+		clear_planet_modifiers = yes
+		
+		add_modifier = { days = -1 modifier = "hydran_homeworld" }
+		
+		clear_deposits = yes
+		
+		add_deposit = d_methane_springs
+		add_deposit = d_methane_springs
+		add_deposit = d_methane_springs
+		add_deposit = d_methane_springs
+		add_deposit = d_chlorine_gas_lake
+		add_deposit = d_chlorine_gas_lake
+		add_deposit = d_methane_waterfalls
+		add_deposit = d_methane_waterfalls
+		add_deposit = d_methane_waterfalls
+		add_deposit = d_hydrogen_thermal_vent
+		add_deposit = d_hydrogen_thermal_vent
+		
+		add_deposit = d_diamond_glacier
+		add_deposit = d_diamond_glacier
+		add_deposit = d_mercury_plain
+		add_deposit = d_mercury_plain
+		add_deposit = d_xenon_fields
+		add_deposit = d_xenon_fields
+		add_deposit = d_xenon_fields
+		
+		add_deposit = d_hydrocarbon_slurry
+		add_deposit = d_hydrocarbon_slurry
+		add_deposit = d_prey_animals
+		
+		add_district = district_city
+		add_district = district_city
+		add_district = district_city
+		add_district = district_city
+		add_district = district_city
+		add_district = district_city
+		add_district = district_city
+		add_district = district_city
+		add_district = district_city
+		add_district = district_city
+		
+		add_district = district_generator
+		add_district = district_generator
+		add_district = district_generator
+		add_district = district_generator
+		add_district = district_generator
+		add_district = district_generator
+		add_district = district_generator
+		
+		add_district = district_mining
+		add_district = district_mining
+		add_district = district_mining
+		add_district = district_mining
+		add_district = district_mining
+		add_district = district_mining
+		add_district = district_mining
+		add_district = district_mining
+		
+		add_building = building_capital
+		
+		add_building = building_factory_1
+		add_building = building_factory_1
+		add_building = building_factory_1
+		
+		add_building = building_foundry_1
+		
+		add_building = building_research_lab_1
+		
+		add_building = building_holo_theatres
+		add_building = building_holo_theatres
+		add_building = building_holo_theatres
+		
+		add_building = building_precinct_house
+		add_building = building_precinct_house
+		add_building = building_temple
+	}
+}
+
+country_event = {
+	id = sfu_spawn_hydran.4
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		#Clear the planet, then start setting resources
+		every_system_within_border = {
+			limit = { has_star_flag = sfu_system_alpha_capi }
+			### HYDRAX
+			every_planet = {
+				limit = { has_planet_flag = sfu_homeworld_hyreak }
+				planet_event = { id = sfu_spawn_hydran.11 days = 0 }
+			}
+			every_system_planet = {
+				limit = {
+					has_deposit_for = shipclass_mining_station
+					OR = {
+						has_resource = { type = minerals amount > 0 }
+						has_resource = { type = energy amount > 0 }
+					}
+					has_mining_station = no
+				}
+				create_mining_station = { owner = event_target:hydran }
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = sfu_spawn_hydran.11
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		set_owner = event_target:hydran
+		
+		while = {
+			count = 44
+			create_pop = { species = event_target:hydranSpecies }
+		}
+		
+		clear_planet_modifiers = yes
+		
+		add_modifier = { days = -1 modifier = "hydran_major_planet" }
+		
+		clear_deposits = yes
+		
+		add_deposit = d_methane_springs
+		add_deposit = d_methane_springs
+		add_deposit = d_chlorine_gas_lake
+		add_deposit = d_methane_waterfalls
+		add_deposit = d_methane_waterfalls
+		add_deposit = d_hydrogen_thermal_vent
+		
+		add_deposit = d_diamond_glacier
+		add_deposit = d_mercury_plain
+		add_deposit = d_xenon_fields
+		add_deposit = d_xenon_fields
+		
+		add_deposit = d_hydrocarbon_slurry
+		
+		add_district = district_city
+		add_district = district_city
+		add_district = district_city
+		add_district = district_city
+		add_district = district_city
+		add_district = district_city
+		
+		add_district = district_generator
+		add_district = district_generator
+		add_district = district_generator
+		add_district = district_generator
+		
+		add_district = district_mining
+		add_district = district_mining
+		add_district = district_mining
+		add_district = district_mining
+		
+		add_district = district_farming
+		add_district = district_farming
+		
+		add_building = building_capital
+		
+		add_building = building_factory_1
+		add_building = building_factory_1
+		
+		add_building = building_research_lab_1
+		
+		add_building = building_holo_theatres
+		
+		add_building = building_precinct_house
+		
+		add_building = building_temple
+	}
+}
+
+country_event = {
+	id = sfu_spawn_hydran.5
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		#Clear the planet, then start setting resources
+		every_system_within_border = {
+			limit = { has_star_flag = sfu_system_gamma_capi }
+			### ANTHRAXAN
+			every_planet = {
+				limit = { has_planet_flag = sfu_homeworld_anthraxan }
+				planet_event = { id = sfu_spawn_hydran.12 days = 0 }
+			}
+			### HOPLISHKA
+			every_planet = {
+				limit = { has_planet_flag = sfu_homeworld_hoplishka }
+				planet_event = { id = sfu_spawn_hydran.13 days = 0 }
+			}
+			every_system_planet = {
+				limit = {
+					has_deposit_for = shipclass_mining_station
+					OR = {
+						has_resource = { type = minerals amount > 0 }
+						has_resource = { type = energy amount > 0 }
+					}
+					has_mining_station = no
+				}
+				create_mining_station = { owner = event_target:hydran }
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = sfu_spawn_hydran.12
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		set_owner = event_target:hydran
+		
+		while = {
+			count = 67
+			create_pop = { species = event_target:hydranSpecies }
+		}
+		
+		clear_planet_modifiers = yes
+		
+		add_modifier = { days = -1 modifier = "hydran_major_planet" }
+		
+		clear_deposits = yes
+		
+		add_deposit = d_methane_springs
+		add_deposit = d_methane_springs
+		add_deposit = d_chlorine_gas_lake
+		add_deposit = d_methane_waterfalls
+		add_deposit = d_methane_waterfalls
+		add_deposit = d_hydrogen_thermal_vent
+		
+		add_deposit = d_diamond_glacier
+		add_deposit = d_mercury_plain
+		add_deposit = d_mercury_plain
+		add_deposit = d_xenon_fields
+		
+		add_deposit = d_hydrocarbon_slurry
+		add_deposit = d_hydrocarbon_slurry
+		add_deposit = d_hydrocarbon_slurry
+		add_deposit = d_hydrocarbon_slurry
+		
+		add_district = district_city
+		add_district = district_city
+		add_district = district_city
+		add_district = district_city
+		add_district = district_city
+		add_district = district_city
+		add_district = district_city
+		add_district = district_city
+		add_district = district_city
+		add_district = district_city
+		add_district = district_city
+		
+		add_district = district_generator
+		add_district = district_generator
+		add_district = district_generator
+		add_district = district_generator
+		
+		add_district = district_mining
+		add_district = district_mining
+		add_district = district_mining
+		add_district = district_mining
+		add_district = district_mining
+		add_district = district_mining
+		
+		add_district = district_farming
+		add_district = district_farming
+		
+		add_building = building_capital
+		
+		add_building = building_factory_1
+		add_building = building_factory_1
+		add_building = building_factory_1
+		add_building = building_factory_1
+		add_building = building_factory_1
+		
+		add_building = building_foundry_1
+		add_building = building_foundry_1
+		
+		add_building = building_research_lab_1
+		add_building = building_research_lab_1
+		
+		add_building = building_holo_theatres
+		add_building = building_holo_theatres
+		
+		add_building = building_precinct_house
+		
+		add_building = building_temple
+	}
+}
+
+planet_event = {
+	id = sfu_spawn_hydran.13
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		set_owner = event_target:hydran
+		
+		while = {
+			count = 46
+			create_pop = { species = event_target:hydranSpecies }
+		}
+		
+		clear_planet_modifiers = yes
+		
+		add_modifier = { days = -1 modifier = "hydran_major_planet" }
+		
+		clear_deposits = yes
+		
+		add_deposit = d_methane_springs
+		add_deposit = d_chlorine_gas_lake
+		add_deposit = d_methane_waterfalls
+		add_deposit = d_hydrogen_thermal_vent
+		add_deposit = d_hydrogen_thermal_vent
+		
+		add_deposit = d_diamond_glacier
+		add_deposit = d_diamond_glacier
+		add_deposit = d_mercury_plain
+		add_deposit = d_xenon_fields
+		
+		add_deposit = d_prey_animals
+		
+		add_district = district_city
+		add_district = district_city
+		add_district = district_city
+		add_district = district_city
+		add_district = district_city
+		add_district = district_city
+		
+		add_district = district_generator
+		add_district = district_generator
+		add_district = district_generator
+		add_district = district_generator
+		add_district = district_generator
+		
+		add_district = district_mining
+		add_district = district_mining
+		add_district = district_mining
+		add_district = district_mining
+		
+		add_district = district_farming
+		add_district = district_farming
+		
+		add_building = building_capital
+		
+		add_building = building_factory_1
+		
+		add_building = building_foundry_1
+		
+		add_building = building_research_lab_1
+		
+		add_building = building_holo_theatres
+		
+		add_building = building_precinct_house
+		
+		add_building = building_temple
+	}
+}
+
+country_event = {
+	id = sfu_spawn_hydran.6
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		#Clear the planet, then start setting resources
+		every_system_within_border = {
+			limit = { has_star_flag = sfu_system_delta_capi }
+			### ANTHRAXAN
+			every_planet = {
+				limit = { has_planet_flag = sfu_homeworld_hynopkerm }
+				planet_event = { id = sfu_spawn_hydran.14 days = 0 }
+			}
+			### HOPLISHKA
+			every_planet = {
+				limit = { has_planet_flag = sfu_homeworld_hydramax }
+				planet_event = { id = sfu_spawn_hydran.15 days = 0 }
+			}
+			every_system_planet = {
+				limit = {
+					has_deposit_for = shipclass_mining_station
+					OR = {
+						has_resource = { type = minerals amount > 0 }
+						has_resource = { type = energy amount > 0 }
+					}
+					has_mining_station = no
+				}
+				create_mining_station = { owner = event_target:hydran }
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = sfu_spawn_hydran.14
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		set_owner = event_target:hydran
+		
+		while = {
+			count = 28
+			create_pop = { species = event_target:hydranSpecies }
+		}
+		
+		clear_planet_modifiers = yes
+		
+		add_modifier = { days = -1 modifier = "hydran_major_planet" }
+		
+		clear_deposits = yes
+		
+		add_deposit = d_methane_springs
+		add_deposit = d_methane_springs
+		add_deposit = d_methane_waterfalls
+		add_deposit = d_hydrogen_thermal_vent
+		
+		add_deposit = d_mercury_plain
+		add_deposit = d_mercury_plain
+		add_deposit = d_mercury_plain
+		add_deposit = d_xenon_fields
+		
+		add_deposit = d_hydrocarbon_slurry
+		add_deposit = d_hydrocarbon_slurry
+		add_deposit = d_hydrocarbon_slurry
+		add_deposit = d_hydrocarbon_slurry
+		
+		add_district = district_city
+		add_district = district_city
+		add_district = district_city
+		add_district = district_city
+		
+		add_district = district_generator
+		add_district = district_generator
+		add_district = district_generator
+		
+		add_district = district_mining
+		add_district = district_mining
+		
+		add_district = district_farming
+		
+		add_building = building_capital
+		
+		add_building = building_factory_1
+		
+		add_building = building_foundry_1
+		
+		add_building = building_research_lab_1
+	}
+}
+
+planet_event = {
+	id = sfu_spawn_hydran.15
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		set_owner = event_target:hydran
+		
+		while = {
+			count = 44
+			create_pop = { species = event_target:hydranSpecies }
+		}
+		
+		clear_planet_modifiers = yes
+		
+		add_modifier = { days = -1 modifier = "hydran_major_planet" }
+		
+		clear_deposits = yes
+		
+		add_deposit = d_methane_springs
+		add_deposit = d_chlorine_gas_lake
+		add_deposit = d_chlorine_gas_lake
+		add_deposit = d_hydrogen_thermal_vent
+		
+		add_deposit = d_diamond_glacier
+		add_deposit = d_mercury_plain
+		add_deposit = d_mercury_plain
+		add_deposit = d_xenon_fields
+		
+		add_deposit = d_hydrocarbon_slurry
+		add_deposit = d_hydrocarbon_slurry
+		add_deposit = d_hydrocarbon_slurry
+		add_deposit = d_prey_animals
+		
+		add_district = district_city
+		add_district = district_city
+		add_district = district_city
+		add_district = district_city
+		add_district = district_city
+		add_district = district_city
+		
+		add_district = district_generator
+		add_district = district_generator
+		add_district = district_generator
+		add_district = district_generator
+		add_district = district_generator
+		
+		add_district = district_mining
+		add_district = district_mining
+		add_district = district_mining
+		add_district = district_mining
+		add_district = district_mining
+		
+		add_district = district_farming
+		
+		add_building = building_capital
+		
+		add_building = building_factory_1
+		
+		add_building = building_research_lab_1
+		
+		add_building = building_holo_theatres
+		
+		add_building = building_precinct_house
+		
+		add_building = building_temple
+	}
+}

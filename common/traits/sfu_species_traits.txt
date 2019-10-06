@@ -1,0 +1,181 @@
+### Role-Playing Traits
+# Unmoddable no-cost traits that cover parts of lore
+trait_sfu_transplant = {
+	cost = 0
+	
+	initial = no
+	modification = no
+	randomized = no
+
+	allowed_archetypes = { BIOLOGICAL }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+trait_sfu_psionic = {
+	cost = 0
+	
+	initial = no
+	modification = no
+	randomized = no
+
+	allowed_archetypes = { BIOLOGICAL }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+### Species-specific traits
+trait_sfu_low_pain_tolerance = {
+	cost = 0
+	
+	initial = no
+	modification = no
+	randomized = no
+	
+	modifier = {
+		army_defense_damage_mult = -0.05
+		army_damage_mult = -0.05
+	}
+	
+	allowed_archetypes = { BIOLOGICAL }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+trait_sfu_perceptive = {
+	cost = 0
+	
+	initial = no
+	modification = no
+	randomized = no
+	
+	modifier = {
+		pop_environment_tolerance = 0.05
+		species_leader_exp_gain = 0.10
+	}
+	
+	allowed_archetypes = { BIOLOGICAL }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+trait_sfu_radiation_resistance = {
+	cost = 0
+	icon = "gfx/interface/icons/traits/trait_pc_nuked_preference.dds"
+	
+	initial = no
+	modification = no
+	randomized = no
+	
+	allowed_archetypes = { BIOLOGICAL }
+	
+	modifier = {
+		pc_class_m_uv_habitability = 0.8
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+trait_sfu_methane_breathers = {
+	cost = 0
+	icon = "gfx/interface/icons/traits/trait_robot_durable.dds"
+	
+	initial = yes
+	modification = no
+	randomized = no
+	
+	allowed_archetypes = { BIOLOGICAL }
+	
+	modifier = {
+		planet_pops_food_upkeep_mult = -0.75
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+trait_sfu_trisexual = {
+	cost = -2
+	icon = "gfx/interface/icons/traits/trait_slow_breeders.dds"
+	
+	initial = yes
+	modification = no
+	randomized = no
+	
+	allowed_archetypes = { BIOLOGICAL }
+	
+	modifier = {
+		pop_growth_speed = -0.05
+		planet_pops_consumer_goods_upkeep_mult = 0.1
+		pop_housing_usage_mult = 0.2
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+### Additional traits
+
+trait_extravagant = {
+	icon = "gfx/interface/icons/traits/trait_wasteful.dds"
+	cost = -4
+	modifier = {
+		planet_pops_consumer_goods_upkeep_mult = 0.20
+		pop_housing_usage_mult = 0.1
+	}
+}
+
+#Think Vulcans over humans
+trait_long_childhood = {
+	cost = -1
+	opposites = { "trait_short_childhood" }
+	modifier = {
+		leader_age = 10
+		planet_jobs_unity_produces_mult = 0.05
+		pop_growth_speed = -0.05
+	}
+}
+
+#Think klingons
+trait_short_childhood = {
+	cost = 1
+	opposites = { "trait_long_childhood" }
+	modifier = {
+		pop_growth_speed = +0.05
+	}
+}
+
+#For the Vulcans
+trait_very_slow_breeders = {
+	cost = -3
+	opposites = { "trait_very_fast_breeders" }
+	modifier = {
+		leader_age = 10
+		leader_skill_levels = 2
+		pop_growth_speed = -0.25
+	}
+}
+
+#For the Seltorians
+trait_very_fast_breeders = {
+	cost = 4
+	opposites = { "trait_short_childhood" }
+	modifier = {
+		leader_age = -10
+		leader_skill_levels = -1
+		species_leader_exp_gain = 0.25
+		pop_growth_speed = 0.20
+	}
+}

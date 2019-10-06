@@ -1,0 +1,190 @@
+##########
+# ENERGY #
+##########
+
+@high = 16
+@med = 8
+@low = 4
+
+@high_rare = 0.5
+@mid_rare = 0.25
+@low_rare = 0.1
+
+@planet_type_bonus = 1.5
+
+###
+# ENERGY
+###
+
+d_methane_springs = {
+	is_for_colonizeable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_energy
+	
+	use_weights_for_terraforming_swap_types = no
+	should_swap_deposit_on_terraforming = no
+	
+	planet_modifier = {
+		district_generator_max = 1
+		district_farming_max = 1
+	}
+	
+	potential = { is_planet_class = pc_class_s }
+	
+	drop_weight = { weight = @high }
+}
+
+d_chlorine_gas_lake = {
+	is_for_colonizeable = yes
+	use_for_min_max_adjustments = yes
+	
+	use_weights_for_terraforming_swap_types = no
+	should_swap_deposit_on_terraforming = no
+	
+	category = deposit_cat_energy
+	
+	planet_modifier = {
+		district_generator_max = 2
+	}
+	
+	potential = { is_planet_class = pc_class_s }
+	
+	drop_weight = { weight = @med }
+}
+
+d_methane_waterfalls = {
+	is_for_colonizeable = yes
+	use_for_min_max_adjustments = yes
+	
+	use_weights_for_terraforming_swap_types = no
+	should_swap_deposit_on_terraforming = no
+	
+	category = deposit_cat_energy
+	
+	planet_modifier = {
+		district_generator_max = 3
+		district_farming_max = 1
+	}
+	
+	potential = { is_planet_class = pc_class_s }
+	
+	drop_weight = { weight = @low }
+}
+
+d_hydrogen_thermal_vent = {
+	is_for_colonizeable = yes
+	use_for_min_max_adjustments = yes
+	
+	use_weights_for_terraforming_swap_types = no
+	should_swap_deposit_on_terraforming = no
+	
+	category = deposit_cat_energy
+	
+	planet_modifier = {
+		district_generator_max = 5
+		district_farming_max = 1
+	}
+	
+	potential = { is_planet_class = pc_class_s }
+	
+	drop_weight = { weight = @low }
+}
+
+###
+# MINERALS
+###
+
+d_diamond_glacier = {
+	is_for_colonizeable = yes
+	use_for_min_max_adjustments = yes
+	
+	use_weights_for_terraforming_swap_types = no
+	should_swap_deposit_on_terraforming = no
+	
+	category = deposit_cat_minerals
+	
+	planet_modifier = {
+		district_mining_max = 10
+	}
+	
+	potential = { is_planet_class = pc_class_s }
+	
+	drop_weight = { weight = @low }
+}
+
+d_mercury_plain = {
+	is_for_colonizeable = yes
+	use_for_min_max_adjustments = yes
+	
+	use_weights_for_terraforming_swap_types = no
+	should_swap_deposit_on_terraforming = no
+	
+	category = deposit_cat_minerals
+	
+	planet_modifier = {
+		district_mining_max = 6
+	}
+	
+	potential = { is_planet_class = pc_class_s }
+	
+	drop_weight = { weight = @med }
+}
+
+d_xenon_fields = {
+	is_for_colonizeable = yes
+	use_for_min_max_adjustments = yes
+	
+	use_weights_for_terraforming_swap_types = no
+	should_swap_deposit_on_terraforming = no
+	
+	category = deposit_cat_minerals
+	
+	planet_modifier = {
+		district_mining_max = 3
+	}
+	
+	potential = { is_planet_class = pc_class_s }
+	
+	drop_weight = { weight = @high }
+}
+
+###
+# Farming
+###
+d_hydrocarbon_slurry = {
+	is_for_colonizeable = yes
+	use_for_min_max_adjustments = yes
+	
+	use_weights_for_terraforming_swap_types = no
+	should_swap_deposit_on_terraforming = no
+	
+	category = deposit_cat_food
+	
+	planet_modifier = {
+		district_generator_max = 1
+		district_mining_max = 3
+	}
+	
+	potential = { is_planet_class = pc_class_s }
+	
+	drop_weight = { weight = @high }
+}
+
+d_prey_animals = {
+	is_for_colonizeable = yes
+	use_for_min_max_adjustments = yes
+	
+	use_weights_for_terraforming_swap_types = no
+	should_swap_deposit_on_terraforming = no
+	
+	category = deposit_cat_food
+	
+	planet_modifier = {
+		district_farming_max = 10
+	}
+	
+	potential = { is_planet_class = pc_class_s }
+	
+	drop_weight = { weight = @low }
+}

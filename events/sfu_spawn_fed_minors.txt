@@ -1,0 +1,242 @@
+
+namespace = sfu_spawn_fed_minors
+
+###TODO: Rename Squidbillies
+
+### TODO: Create orion ships for start, customize orion, Presapients on Felka's World
+
+### FED Minors Order:
+### FTL: Orions (#2), Tellarites (#3)
+### ESA: Antares (#4)
+
+### Minors TODO:
+### Arcturia (ESA), Bis'en (ESA),Brecolaris (ESA), Cygnus (ESA), Deians (ESA), Fralia (ESA)
+### Mantor (ESA), Mynieni (ESA), Prelaria (ESA), Tellarites (FTL)
+### 
+### Gamma Artemis III (Stone), Tenoira V (Iron), Alpha Veras (Industrial), Janus VI (Horta), 
+#### Mezan (Machine)
+### 
+### Fnania (Special Non-Corporeal), 
+
+event = {
+	id = sfu_spawn_fed_minors.1
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		every_country = {
+			limit = { has_country_flag = sfu_empire_ufp }
+			### Orions
+			country_event = { id=sfu_spawn_fed_minors.2 days=0 }
+			### ANTAREANS
+			country_event = { id=sfu_spawn_fed_minors.3 days=0 }
+		}
+	}
+}
+
+country_event = {
+	id = sfu_spawn_fed_minors.2
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		### Spawn Orion
+		random_system = {
+			limit = {
+				NOR = {
+					has_star_flag = empire_home_system
+					has_star_flag = empire_cluster
+				}
+			}
+			spawn_system = {
+				min_distance = 10
+				max_distance = 10
+				initializer = sfu_orion_initializer
+				hyperlane = yes
+			}
+		}
+		every_system = {
+			limit = { has_star_flag = sfu_system_orion }
+			spawn_system = {
+				min_distance = 10
+				max_distance = 10
+				initializer = sfu_osiris_initializer
+				hyperlane = yes
+			}
+		}
+		### Orion System
+		every_system = {
+			limit = { has_star_flag = sfu_system_orion }
+			### Orion Planet
+			every_system_planet = {
+				limit = { has_planet_flag = sfu_planet_orion }
+				create_species = {
+					name = "Orion"
+					class = HUM
+					portrait = humanoid_hp_12
+					homeworld = THIS
+					namelist = "HUMAN1"
+					traits = {
+						trait = "trait_thrifty" #+2
+						trait = "trait_charismatic" #+2
+						trait = "trait_conservational" #+1
+						trait = "trait_deviants" #-2
+						trait = "trait_quarrelsome" #-1
+						ideal_planet_class = "pc_continental" 
+					}
+				}
+				last_created_species = { save_global_event_target_as = orionSpecies }
+				create_country = {
+					name = "Orion Union"
+					name_list = "HUMAN1"
+					civics = {
+						civic = civic_ruthless_competition
+						civic = civic_free_traders
+					}
+					authority = auth_corporate
+					species = event_target:orionSpecies
+					flag = random
+					ethos = {
+						ethic = ethic_xenophile
+						ethic = ethic_militarist
+						ethic = ethic_egalitarian
+					}
+				}
+				last_created_country = { save_event_target_as = sfu_minor_orion }
+				set_owner = event_target:sfu_minor_orion
+				
+				generate_start_deposits_and_blockers = {}
+				generate_start_buildings_and_districts = {}
+				
+				add_district = district_generator
+				add_district = district_generator
+				add_district = district_mining
+				add_district = district_farming
+				
+				while = {
+					count = 12
+					create_pop = {
+						species = event_target:orionSpecies
+						ethos = {ethic = "ethic_militarist"}
+					}
+				}
+				while = {
+					count = 12
+					create_pop = {
+						species = event_target:orionSpecies
+						ethos = {ethic = "ethic_xenophile"}
+					}
+				}
+				while = {
+					count = 12
+					create_pop = {
+						species = event_target:orionSpecies
+						ethos = {ethic = "ethic_egalitarian"}
+					}
+				}
+				
+				clear_planet_modifiers = yes
+				add_modifier = { modifier = orion_society days=-1}
+				
+			}### End Ore'nn Planet
+			every_system_planet = {
+				limit = { has_planet_flag = sfu_planet_orion }
+				create_species = {
+					name = "Squidbillies"
+					class = "MOL"
+					portrait = random
+					namelist = "MOL3"
+					homeworld = THIS
+					traits = random
+					sapient = no
+				}
+				last_created_species = { save_global_event_target_as = orionPresapientSpecies }
+				while = {
+					count = 12
+					create_pop = { species = event_target:orionPresapientSpecies }
+				}
+			}
+			create_starbase = {
+				size = starbase_starport
+				owner = event_target:sfu_minor_orion
+				module = shipyard
+				module = trading_hub
+				building = crew_quarters
+			}
+		}#End system effects
+	}#Immediate
+}
+
+country_event = {
+	id = sfu_spawn_fed_minors.3
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		### Spawn Antares
+		random_system = {
+			limit = {
+				NOR = {
+					has_star_flag = empire_home_system
+					has_star_flag = empire_cluster
+				}
+			}
+			spawn_system = {
+				min_distance = 10
+				max_distance = 100
+				initializer = sfu_antares_initializer
+				hyperlane = yes
+			}
+		}
+		### Antares System
+		every_system = {
+			limit = { has_star_flag = sfu_system_antares }
+			### Antares Planet
+			every_system_planet = {
+				limit = { has_planet_flag = sfu_planet_antares }
+				create_species = {
+					name = "Antarean" 
+					class = HUM
+					portrait = humanoid_04
+					homeworld = THIS
+					namelist = "HUMAN1"
+					traits = {
+						trait = "trait_sfu_transplant" #0
+						trait = "trait_ingenious" #2
+						trait = "trait_strong" #1
+						trait = "trait_traditional" #1
+						trait = "trait_sfu_perceptive" #1
+						trait = "trait_slow_breeders" #-2
+						trait = "trait_sfu_low_pain_tolerance" #-1
+						ideal_planet_class = "pc_continental" 
+					}
+				}
+				last_created_species = { save_global_event_target_as = antareanSpecies }
+				create_country = {
+					name = "Antareans"
+					type = primitive
+					name_list = "HUMAN1"
+					civics = random
+					authority = random
+					species = event_target:antareanSpecies
+					flag = random
+					ethos = {
+						ethic = ethic_fanatic_spiritualist
+						ethic = ethic_egalitarian
+					}
+				}
+				last_created_country = {
+					set_graphical_culture = preindustrial_01
+					set_country_flag = early_space_age
+					set_primitive_age = early_space_age
+					save_event_target_as = sfu_minor_antares
+				}
+				set_owner = event_target:sfu_minor_antares
+				
+				add_modifier = { days=-1 modifier = "antarean_society" }
+				
+				setup_primitive_planet = {}
+				
+			}### End Antares Planet
+		}#End system effects
+	}#Immediate
+}

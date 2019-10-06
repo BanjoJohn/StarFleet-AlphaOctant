@@ -1,0 +1,10 @@
+##########################################################################
+# Planet Modifiers
+##########################################################################
+
+### Specific Planet modifiers
+klinshai_environment = {
+	pop_environment_tolerance = -0.20
+	icon = "gfx/interface/icons/planet_modifiers/pm_tidal_locked.dds"
+	icon_frame = 1
+}

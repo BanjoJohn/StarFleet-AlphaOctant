@@ -1,0 +1,21 @@
+##########################################################################
+# Planet Modifiers
+##########################################################################
+
+### Specific Colony modifiers
+antarean_society = {
+	pop_ethic_spiritualist_attraction_mult = 2
+	pop_ethic_materialist_attraction_mult = -2
+	job_high_priest_add = 1
+	job_priest_per_pop = 0.025 #1 per 40
+	icon = "gfx/interface/icons/planet_modifiers/pm_consecrated_worlds.dds"
+	icon_frame = 1
+}
+
+orion_society = {
+	job_merchant_add = 1
+	job_entertainer_per_pop = 0.05 #1 per 20
+	job_manager_per_pop = 0.05 #1 per 20
+	icon = "gfx/interface/icons/planet_modifiers/pm_consecrated_worlds.dds"
+	icon_frame = 1
+}

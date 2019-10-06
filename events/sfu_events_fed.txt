@@ -1,0 +1,352 @@
+
+namespace = sfu_fed
+
+### TODO: Events to strip membership on conclusion of wars.
+
+#Event 1-10 - Membership Events
+#Event 20-29 - Martian Event Chain
+#Event 30-39 - Social Contract Event Chain
+
+### Planet applies for associate membership
+planet_event = {
+	id = sfu_fed.1
+	title = "sfu_fed.1.name"
+	desc = "sfu_fed.1.desc"
+	picture = GFX_evt_colony_settlement
+	show_sound = event_administrative_work
+	location = ROOT
+
+	pre_triggers = {
+		has_owner = yes
+		is_homeworld = no
+		original_owner = yes
+		has_ground_combat = no
+		is_capital = no
+		is_occupied_flag = no
+	}
+	
+	trigger = {
+		owner = { has_country_flag = sfu_empire_ufp }
+		num_pops > 30
+		NOR = {
+			has_modifier = federation_associate_member_planet
+			has_modifier = federation_full_member_planet
+			has_modifier = federation_associate_member_planet_denied
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	option = {
+		name = "Grant them Associate Membership"
+		allow = {
+			owner = {
+				AND = {
+					resource_stockpile_compare = { resource = influence value >= 50 }
+					resource_stockpile_compare = { resource = energy value >= 1000 }
+				}
+			}
+		}
+		owner = {
+			add_resource = { influence = -100 }
+			add_resource = { energy = -1000 }
+		}
+		add_modifier = { days = -1 modifier = "federation_associate_member_planet" }
+	}
+	option = {
+		name = "They are not ready for Associate Membership"
+		add_modifier = { months = 120 modifier = "federation_associate_member_planet_denied" }
+	}
+}
+
+### Planet applies for full membership
+planet_event = {
+	id = sfu_fed.2
+	title = "sfu_fed.2.name"
+	desc = "sfu_fed.2.desc"
+	picture = GFX_evt_colony_settlement
+	show_sound = event_administrative_work
+	location = ROOT
+
+	pre_triggers = {
+		has_owner = yes
+		is_homeworld = no
+		original_owner = yes
+		has_ground_combat = no
+		is_capital = no
+		is_occupied_flag = no
+	}
+	
+	trigger = {
+		owner = { has_country_flag = sfu_empire_ufp }
+		num_pops > 60
+		NOR = {
+			has_modifier = federation_full_member_planet
+			has_modifier = federation_associate_member_planet_denied
+			has_modifier = federation_full_member_planet_denied
+		}
+		has_modifier = federation_associate_member_planet
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	option = {
+		name = "Grant them Full Membership"
+		allow = {
+			owner = {
+				AND = {
+					resource_stockpile_compare = { resource = influence value >= 200 }
+					resource_stockpile_compare = { resource = energy value >= 2500 }
+				}
+			}
+		}
+		owner = {
+			add_resource = { influence = -100 }
+			add_resource = { energy = -1000 }
+		}
+		add_modifier = { days = -1 modifier = "federation_full_member_planet" }
+		remove_modifier = federation_associate_member_planet
+	}
+	option = {
+		name = "They are not ready for Full Membership"
+		add_modifier = { months = 120 modifier = "federation_full_member_planet_denied" }
+	}
+}
+
+### MARTIAN EVENT CHAIN
+#Add option to refuse martian independence?
+
+#Some people die
+planet_event = {
+	id = sfu_fed.20
+	title = "sfu_fed.20.name"
+	desc = "sfu_fed.20.desc"
+	picture = GFX_evt_colony_settlement
+	show_sound = event_administrative_work
+	location = ROOT
+	
+	fire_only_once = yes
+
+	pre_triggers = {
+		has_owner = yes
+		is_homeworld = no
+		original_owner = yes
+		has_ground_combat = no
+		is_capital = no
+		is_occupied_flag = no
+	}
+	
+	trigger = {
+		owner = { has_country_flag = sfu_empire_ufp }
+		has_modifier = martian_colonization_authority
+		OR = {
+			num_pops > 20
+			happiness_planet < 10
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	immediate = {
+		random_owned_pop = { kill_pop = yes }
+	}
+	
+	option = {
+		name = "Monitor the situation."
+		add_modifier = { days = 3600 modifier = martian_unhappiness }
+		set_planet_flag = martian_revolt_starts
+	}
+}
+
+#Fundamental declaration
+planet_event = {
+	id = sfu_fed.21
+	title = "sfu_fed.21.name"
+	desc = "sfu_fed.21.desc"
+	picture = GFX_evt_colony_settlement
+	show_sound = event_administrative_work
+	location = ROOT
+	fire_only_once = yes
+
+	pre_triggers = {
+		has_owner = yes
+		is_homeworld = no
+		original_owner = yes
+		has_ground_combat = no
+		is_capital = no
+		is_occupied_flag = no
+	}
+	
+	trigger = {
+		owner = { has_country_flag = sfu_empire_ufp }
+		has_planet_flag = sfu_planet_mars
+		has_modifier = martian_colonization_authority
+		NOT = { has_modifier = martian_unhappiness }
+		has_planet_flag = martian_revolt_starts
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "Consider a course of action."
+		add_modifier = { days = -1 modifier = fundemental_declaration_martian_colony }
+		remove_planet_flag = martian_revolt_starts
+		set_planet_flag = fundamental_declaration
+	}
+}
+
+#Independence
+planet_event = {
+	id = sfu_fed.22
+	title = "sfu_fed.22.name"
+	desc = "sfu_fed.22.desc"
+	picture = GFX_evt_colony_settlement
+	show_sound = event_administrative_work
+	location = ROOT
+	fire_only_once = yes
+
+	pre_triggers = {
+		has_owner = yes
+		is_homeworld = no
+		original_owner = yes
+		has_ground_combat = no
+		is_capital = no
+		is_occupied_flag = no
+	}
+	
+	trigger = {
+		owner = { has_country_flag = sfu_empire_ufp }
+		has_planet_flag = sfu_planet_mars
+		has_modifier = martian_colonization_authority
+		NOT = { has_modifier = martian_unhappiness }
+		has_planet_flag = fundamental_declaration
+	}
+	
+	mean_time_to_happen = {
+		days = 360
+	}
+	
+	option = {
+		name = "Grant them independence."
+		remove_modifier = fundemental_declaration_martian_colony
+		remove_modifier = martian_colonization_authority
+		remove_planet_flag = fundamental_declaration
+		set_planet_flag = mars_independent
+		add_modifier = { days = 3600 modifier = martian_independence }
+	}
+}
+
+#Mars becomes full member
+planet_event = {
+	id = sfu_fed.23
+	title = "sfu_fed.23.name"
+	desc = "sfu_fed.23.desc"
+	picture = GFX_evt_colony_settlement
+	show_sound = event_administrative_work
+	location = ROOT
+	fire_only_once = yes
+
+	pre_triggers = {
+		has_owner = yes
+		is_homeworld = no
+		original_owner = yes
+		has_ground_combat = no
+		is_capital = no
+		is_occupied_flag = no
+	}
+	
+	trigger = {
+		owner = { has_country_flag = sfu_empire_ufp }
+		has_planet_flag = sfu_planet_mars
+		has_planet_flag = mars_independent
+	}
+	
+	mean_time_to_happen = {
+		days = 360
+	}
+	
+	option = {
+		name = "Give them Full Federation Membership."
+		remove_planet_flag = mars_independent
+		add_modifier = { days = -1 modifier = federation_full_member_planet }
+		add_modifier = { days = -1 modifier = martian_mafia }
+		hidden_effect = {
+			owner = { set_country_flag = mars_full_member }
+		}
+	}
+}
+
+#Luna is freed
+planet_event = {
+	id = sfu_fed.24
+	title = "sfu_fed.24.name"
+	desc = "sfu_fed.24.desc"
+	picture = GFX_evt_colony_settlement
+	show_sound = event_administrative_work
+	location = ROOT
+
+	pre_triggers = {
+		has_owner = yes
+		is_homeworld = no
+		original_owner = yes
+		has_ground_combat = no
+		is_capital = no
+		is_occupied_flag = no
+	}
+	
+	trigger = {
+		owner = { 
+			has_country_flag = sfu_empire_ufp
+			has_country_flag = mars_full_member
+		}
+		has_planet_flag = sfu_planet_luna
+	}
+	
+	mean_time_to_happen = {
+		days = 360
+	}
+	
+	option = {
+		name = "Give Luna Confederation Status"
+		remove_modifier = lunar_colonization_authority
+		add_modifier = { days = -1 modifier = lunar_bonus }
+	}
+}
+
+### SOCIAL CONTRACT EVENT CHAIN
+country_event = {
+	id = sfu_fed.30
+	title = "sfu_fed.30.name"
+	desc = "sfu_fed.30.desc"
+	picture = GFX_evt_colony_settlement
+	show_sound = event_administrative_work
+	
+	trigger = {
+		owner = { has_country_flag = sfu_empire_ufp }
+		years_passed = 20
+	}
+	
+	mean_time_to_happen = {
+		days = 1800
+	}
+	
+	option = {
+		name = "Adopt the Social Contract"
+		change_government = {
+			authority = "auth_democratic"
+			civics = {
+				civic = civic_federation_charter
+				civic = civic_social_contract
+			}
+		}
+		add_modifier = { days=3600 modifier = recently_adopted_social_contract }
+	}
+}

@@ -1,0 +1,586 @@
+prescript_federation = {
+	name = "United Federation of Planets"
+	adjective = "Federation"
+	spawn_enabled = always # yes / no / always
+	ignore_portrait_duplication = no
+	
+	ship_prefix = "USS"
+	
+	species = {
+		class = "HUM"
+		portrait = "human"
+		name = "Human"
+		plural = "Humans"
+		adjective = "Human"
+		name_list = "HUMAN1"
+		trait = "trait_adaptive"
+		trait = "trait_nomadic"
+		trait = "trait_wasteful"
+	}
+	
+	room = "personality_federation_builders_room"
+	
+	authority = "auth_democratic"
+	civics = { "civic_federation_charter" "civic_free_haven" }
+	government = gov_representative_democracy
+	
+	ethic = "ethic_egalitarian"
+	ethic = "ethic_pacifist"
+	ethic = "ethic_xenophile"
+	
+	flags = {
+		custom_start_screen
+		sfu_empire_ufp
+		}
+	
+	planet_name = "NAME_Earth"
+	planet_class = "pc_continental"
+	initializer = "sfu_sol_system_initializer"
+	system_name = "NAME_Sol"
+	
+	graphical_culture = "humanoid_01"
+	city_graphical_culture = "humanoid_01"
+	
+	empire_flag = {
+		icon= {
+			category = "human"
+			file = "flag_human_9.dds"
+		}
+		background= {
+			category = "backgrounds"
+			file = "00_solid.dds"
+		}
+		colors={
+			"blue"
+			"black"
+			"null"
+			"null"
+		}
+	}
+	
+	ruler = {
+		name = "Li Zhaoxing"
+		gender = male
+		portrait = "human_male_02"
+		texture = 2
+		hair = 12
+		clothes = 2
+		leader_class = ruler
+	}
+}
+
+prescript_klingons = {
+	name = "Klingon Star Empire"
+	adjective = "Klingon"
+	spawn_enabled = always # yes / no / always
+	ignore_portrait_duplication = no
+	
+	ship_prefix = "IKV"
+	
+	species = {
+		class = "HUM"
+		portrait = "humanoid_02"
+		name = "Klingon"
+		plural = "Klingons"
+		adjective = "Klingon"
+		name_list = "HUM2"
+		trait = "trait_communal"
+		trait = "trait_strong"
+		trait = "trait_talented"
+		trait = "trait_decadent"
+		ideal_planet_class = "pc_class_klinshai"
+	}
+	
+	flags = {
+		custom_start_screen
+		sfu_empire_klingon
+	}
+	
+	room = "personality_honorbound_warriors_room"
+	
+	authority = "auth_dictatorial"
+	civics = { "civic_klingon_administration" "civic_empire_security_service" }
+	government = gov_star_empire
+	
+	ethic = "ethic_militarist"
+	ethic = "ethic_xenophobe"
+	ethic = "ethic_authoritarian"
+	
+	planet_name = "Klinshai"
+	planet_class = "pc_class_klinshai"
+	initializer = "sfu_klinshai_system_initializer"
+	system_name = "Klinshai"
+	
+	graphical_culture = "humanoid_01"
+	city_graphical_culture = "humanoid_01"
+	
+	empire_flag = {
+		icon= {
+			category = "pointy"
+			file = "flag_pointy_9.dds"
+		}
+		background= {
+			category = "backgrounds"
+			file = "00_solid.dds"
+		}
+		colors={
+			"red"
+			"black"
+			"null"
+			"null"
+		}
+	}
+	
+	ruler = {
+		name = "Tilus Krall"
+		gender = male
+		portrait = "humanoid_02"
+		texture = 0
+		hair = 1
+		clothes = 0
+		leader_class = ruler
+	}
+}
+
+prescript_romulans = {
+	name = "Romulan Star Empire"
+	adjective = "Romulan"
+	spawn_enabled = always # yes / no / always
+	ignore_portrait_duplication = no
+	
+	ship_prefix = "IRV"
+	
+	species = {
+		class = "HUM"
+		portrait = "humanoid_05"
+		name = "Romulans"
+		plural = "Romulan"
+		adjective = "Romulan"
+		name_list = "HUM3"
+		trait = "trait_enduring"
+		trait = "trait_decadent"
+		trait = "trait_quarrelsome"
+	}
+	
+	authority = "auth_dictatorial"
+	civics = { "civic_nationalistic_zeal" "civic_cutthroat_politics" }
+	government = gov_star_empire
+	
+	ethic = "ethic_militarist"
+	ethic = "ethic_authoritarian"
+	ethic = "ethic_xenophobe"
+	
+	planet_name = "Romulus"
+	planet_class = "pc_desert"
+	system_name = "Romulus"
+	
+	graphical_culture = "humanoid_01"
+	city_graphical_culture = "humanoid_01"
+	
+	empire_flag = {
+		icon= {
+			category = "pointy"
+			file = "flag_pointy_1.dds"
+		}
+		background= {
+			category = "backgrounds"
+			file = "00_solid.dds"
+		}
+		colors={
+			"red"
+			"black"
+			"null"
+			"null"
+		}
+	}
+	
+	ruler = {
+		name = "Romulus Augustulus"
+		gender = male
+		portrait = "humanoid_05"
+		texture = 0
+		hair = 1
+		clothes = 0
+		leader_class = ruler
+	}
+}
+
+prescript_gorns = {
+	name = "Gorn Confederation"
+	adjective = "Gorn"
+	spawn_enabled = always # yes / no / always
+	ignore_portrait_duplication = no
+	
+	ship_prefix = "GCS"
+	
+	species = {
+		class = "REP"
+		portrait = "rep4"
+		name = "Gorns"
+		plural = "Gorn"
+		adjective = "Gorn"
+		name_list = "REP3"
+		trait = "trait_conservational"
+		trait = "trait_natural_engineers"
+	}
+	
+	authority = "auth_democratic"
+	civics = { "civic_efficient_bureaucracy" "civic_beacon_of_liberty" }
+	government = gov_representative_democracy
+	
+	ethic = "ethic_fanatic_egalitarian"
+	ethic = "ethic_pacifist"
+	
+	planet_name = "Ghidar III"
+	planet_class = "pc_continental"
+	system_name = "Ghidar"
+	
+	graphical_culture = "reptilian_01"
+	city_graphical_culture = "reptilian_01"
+	
+	empire_flag = {
+		icon= {
+			category = "pointy"
+			file = "flag_pointy_1.dds"
+		}
+		background= {
+			category = "backgrounds"
+			file = "00_solid.dds"
+		}
+		colors={
+			"blue"
+			"red"
+			"null"
+			"null"
+		}
+	}
+	
+	ruler = {
+		name = "Gorn Gorn"
+		gender = male
+		portrait = "rep4"
+		texture = 0
+		hair = 1
+		clothes = 0
+		leader_class = ruler
+	}
+}
+
+prescript_tholians = {
+	name = "Tholian Holdfast"
+	adjective = "Tholian"
+	spawn_enabled = always # yes / no / always
+	ignore_portrait_duplication = no
+	
+	ship_prefix = "THS"
+	
+	species = {
+		class = "MOL"
+		portrait = "mol17"
+		name = "Tholians"
+		plural = "Tholian"
+		adjective = "Tholian"
+		name_list = "MOL3"
+		trait = "trait_conformists"
+		trait = "trait_natural_engineers"
+		trait = "trait_repugnant"
+	}
+	
+	authority = "auth_oligarchic"
+	civics = { "civic_efficient_bureaucracy" "civic_functional_architecture" }
+	government = gov_plutocratic_oligarchy
+	
+	ethic = "ethic_fanatic_xenophobe"
+	ethic = "ethic_pacifist"
+	
+	planet_name = "Tholia"
+	planet_class = "pc_desert"
+	system_name = "Tholia"
+	
+	graphical_culture = "molluscoid_01"
+	city_graphical_culture = "molluscoid_01"
+	
+	empire_flag = {
+		icon= {
+			category = "pointy"
+			file = "flag_pointy_1.dds"
+		}
+		background= {
+			category = "backgrounds"
+			file = "00_solid.dds"
+		}
+		colors={
+			"blue"
+			"red"
+			"null"
+			"null"
+		}
+	}
+	
+	ruler = {
+		name = "Tholian Tholian"
+		gender = male
+		portrait = "mol17"
+		texture = 0
+		hair = 1
+		clothes = 0
+		leader_class = ruler
+	}
+}
+
+prescript_kzinti = {
+	name = "Kzinti Hegemony"
+	adjective = "Kzinti"
+	spawn_enabled = always # yes / no / always
+	ignore_portrait_duplication = no
+	
+	ship_prefix = "KHS"
+	
+	species = {
+		class = "MAM"
+		portrait = "mam14"
+		name = "Kzinti"
+		plural = "Kzinti"
+		adjective = "Kzinti"
+		name_list = "MAM3"
+		trait = "trait_very_strong"
+		trait = "trait_decadent"
+		trait = "trait_repugnant"
+	}
+	
+	authority = "auth_imperial"
+	civics = { "civic_aristocratic_elite" "civic_philosopher_king" }
+	government = gov_star_empire
+	
+	ethic = "ethic_xenophobe"
+	ethic = "ethic_militarist"
+	ethic = "ethic_authoritarian"
+	
+	planet_name = "Kzintai"
+	planet_class = "pc_continental"
+	system_name = "Kzintai"
+	
+	graphical_culture = "mammalian_01"
+	city_graphical_culture = "mammalian_01"
+	
+	empire_flag = {
+		icon= {
+			category = "pointy"
+			file = "flag_pointy_1.dds"
+		}
+		background= {
+			category = "backgrounds"
+			file = "00_solid.dds"
+		}
+		colors={
+			"blue"
+			"black"
+			"null"
+			"null"
+		}
+	}
+	
+	ruler = {
+		name = "Kzinti Kzinti"
+		gender = male
+		portrait = "mam14"
+		texture = 0
+		hair = 1
+		clothes = 0
+		leader_class = ruler
+	}
+}
+
+prescript_lyran = {
+	name = "Lyran Star Empire"
+	adjective = "Lyran"
+	spawn_enabled = always # yes / no / always
+	ignore_portrait_duplication = no
+	
+	ship_prefix = "LES"
+	
+	species = {
+		class = "MAM"
+		portrait = "mam3"
+		name = "Lyran"
+		plural = "Lyran"
+		adjective = "Lyran"
+		name_list = "MAM3"
+		trait = "trait_strong"
+	}
+	
+	authority = "auth_imperial"
+	civics = { "civic_aristocratic_elite" "civic_philosopher_king" }
+	government = gov_star_empire
+	
+	ethic = "ethic_xenophobe"
+	ethic = "ethic_militarist"
+	ethic = "ethic_authoritarian"
+	
+	planet_name = "Lyrantan"
+	planet_class = "pc_continental"
+	system_name = "Lyrantan"
+	
+	graphical_culture = "mammalian_01"
+	city_graphical_culture = "mammalian_01"
+	
+	empire_flag = {
+		icon= {
+			category = "pointy"
+			file = "flag_pointy_1.dds"
+		}
+		background= {
+			category = "backgrounds"
+			file = "00_solid.dds"
+		}
+		colors={
+			"blue"
+			"black"
+			"null"
+			"null"
+		}
+	}
+	
+	ruler = {
+		name = "Lyran Lyran"
+		gender = male
+		portrait = "mam3"
+		texture = 0
+		hair = 1
+		clothes = 0
+		leader_class = ruler
+	}
+}
+
+#TODO: Fix multiple Hydran subspecies spawn issue
+prescript_hydran = {
+	name = "Hydran Kingdom"
+	adjective = "Hydran"
+	spawn_enabled = always # yes / no / always
+	ignore_portrait_duplication = no
+	
+	ship_prefix = "HKS"
+	
+	species = {
+		name = "Hydran"
+		class = "MOL"
+		portrait = "mol16"
+		plural = "Hydrans"
+		adjective = "Hydran"
+		name_list = "HYDRAN"
+		trait = trait_sfu_methane_breathers #+0
+		trait = "trait_thrifty" #+2
+		trait = "trait_charismatic" #+2
+		trait = "trait_sfu_trisexual" #-2
+	}
+	
+	room = "personality_peaceful_traders_room"
+	
+	authority = "auth_imperial"
+	civics = { "civic_hydran_monarchy" "civic_hydran_merchant_guilds" }
+	government = gov_hydran_kingdom
+	
+	ethic = "ethic_authoritarian"
+	ethic = "ethic_spiritualist"
+	ethic = "ethic_xenophile"
+	
+	flags = {
+		custom_start_screen
+		sfu_empire_hydran
+	}
+	
+	planet_name = "Hydrax"
+	planet_class = "pc_class_s"
+	initializer = "sfu_beta_capi_c_initializer"
+	system_name = "Beta Capi C"
+	
+	graphical_culture = "molluscoid_01"
+	city_graphical_culture = "molluscoid_01"
+	
+	empire_flag = {
+		icon= {
+			category = "pointy"
+			file = "flag_pointy_1.dds"
+		}
+		background= {
+			category = "backgrounds"
+			file = "00_solid.dds"
+		}
+		colors={
+			"green"
+			"yellow"
+			"null"
+			"null"
+		}
+	}
+	
+	ruler = {
+		name = "Hydraxan VI"
+		gender = male
+		portrait = "mol16"
+		texture = 0
+		hair = 1
+		clothes = 0
+		leader_class = ruler
+	}
+}
+
+prescript_ISC = {
+	name = "Intestellar Concordium"
+	adjective = "ISC"
+	spawn_enabled = always # yes / no / always
+	ignore_portrait_duplication = no
+	
+	ship_prefix = "CSS"
+	
+	species = {
+		class = "HUM"
+		portrait = "humanoid_hp_09"
+		name = "Veltrassa"
+		plural = "Veltrassans"
+		adjective = "Veltrassan"
+		name_list = "MOL3"
+		trait = "trait_thrifty"
+	}
+	
+	authority = "auth_democratic"
+	civics = { "civic_byzantine_bureaucracy" "civic_parliamentary_system" }
+	government = gov_representative_democracy
+	
+	ethic = "ethic_fanatic_pacifist"
+	ethic = "ethic_xenophile"
+	
+	planet_name = "Veltrassa"
+	planet_class = "pc_continental"
+	system_name = "Veltrassa"
+	
+	graphical_culture = "humanoid_01"
+	city_graphical_culture = "humanoid_01"
+	
+	empire_flag = {
+		icon= {
+			category = "pointy"
+			file = "flag_pointy_1.dds"
+		}
+		background= {
+			category = "backgrounds"
+			file = "00_solid.dds"
+		}
+		colors={
+			"yellow"
+			"black"
+			"null"
+			"null"
+		}
+	}
+	
+	ruler = {
+		name = "ISC ISC"
+		gender = male
+		portrait = "humanoid_hp_09"
+		texture = 0
+		hair = 1
+		clothes = 0
+		leader_class = ruler
+	}
+}

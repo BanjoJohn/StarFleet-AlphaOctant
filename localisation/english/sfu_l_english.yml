@@ -1,0 +1,228 @@
+﻿l_english:
+ ####################################
+ # Civics
+ ####################################
+ #Description from Federation PD20M by Amarillo Design Bureau
+ civic_social_contract:0 "Social Contract"
+ civic_social_contract_desc:0 "The basic bargain that the Federation strikes with its citizens is called the Social Contract System. The principle is simple: anyone who is able-bodied and/or ableminded (and unable to find and hold a job in the private sector), who is willing to work 30 hours a week on community service projects, receives enough monetary compensation and support from society to have what is called the 'baseline' lifestyle: food, clothing, shelter, education, health care, and opportunities for leisure and entertainment."
+ #Description from Federation PD20M by Amarillo Design Bureau
+ civic_federation_charter:0 "Federation Charter"
+ civic_federation_charter_desc:0 "The structure of the Federation government is outlined in the Federation Charter, effectively the Federation Constitution. This document outlines the basic rights, laws, and structure of the overall government, while respecting the rights of the original planetary governments."
+ #Klingon Civics
+ civic_klingon_administration:0 "Klingon Administration"
+ civic_klingon_administration_desc:0 "Klingon Adminstration remains a heavily militarized command-oriented economy. While the civilian sector exists, it is ultimately beholden to the needs of the state. This bolsters military spending, at the cost of the civilian sector."
+ #Description from Federation PD20M by Amarillo Design Bureau
+ civic_empire_security_service:0 "Empire Security Service"
+ civic_empire_security_service_desc:0 ""You are under arrest by the Internal Security Forces. You have the duty to give a full and complete accounting of your actions in answer to our questions. If you feel we have overlooked any information relevant to your case, you have the duty to call it to our attention. If you feel we have misunderstood or misconstrued any of your answers, you have the duty to provide further elaboration or explanation. If you feel some of your actions mitigate your guilt, you have the duty to call these to our attention. If you are confused by our questions or procedures, we will explain them to you. You may provide evidence against others as part of your answer, but false accusations are punished. A legal advisor will help you prepare for trial after you answer our questions."\n Klingon 'Notice of Duties and Procedures' upon arrest. \n\n£job_soldier£ §Y$job_soldier_plural$§! also produce §Y2§! £unity£ Unity\n\n£job_enforcer §Y$job_enforcer_plural$§! also produce §Y1§! £unity£ Unity"
+ #Hydran Civics
+ civic_hydran_monarchy:0 "Hydran Monarchy"
+ civic_hydran_monarchy_desc:0 "The Hydran government is technically imperial, but most power is ultimately weilded by the Guilds. Nevertheless, this system has its advantages: the government is keenly focused on its primary duties of enforcing the few laws that exist, combating piracy, and protecting the Kingdom from external enemies."
+ civic_hydran_merchant_guilds:0 "Hydran Merchant Guilds"
+ civic_hydran_merchant_guilds_desc:0 "Merchant Guilds form the basis of much of Hydran Society and provide many services that would be commonly done by governments. This saves the government significant money and improves the overall health and efficency of the economy, at the cost of the happiness and unity of the populace. \n\n§YCapital Buildings§! provide additional £job_merchant£ §Y$job_merchant$§!"
+ 
+ ####################################
+ # Planet Classes
+ ####################################
+ #Description from Federation PD20M by Amarillo Design Bureau
+ pc_class_d_habitable:0 "Class D Planet"
+ pc_class_d_habitable_desc:0 "This is an airless rock such as Luna. Classes D, I, and J are three different points on the same spectrum of airless rocks floating in space."
+ #Description from Federation PD20M by Amarillo Design Bureau
+ pc_class_g_habitable:0 "Class G Planet"
+ pc_class_g_habitable_desc:0 "A dry desert planet with no oceans, such as Mars. It may be cold or hot. Its atmosphere may be thin or without oxygen. There is rarely a biosphere."
+ pc_class_m_uv:0 "Class M Planet (Irradiated)"
+ pc_class_m_uv_desc:0 "A typical class M world, except for the large amount of Ultraviolet radition from the host star. While conformal to class M standards, many species will have difficulty thriving here."
+ #Description from Hydran PD20M by Amarillo Design Bureau
+ pc_class_s:0 "Class S Planet"
+ pc_class_s_desc:0 "A small gas giant with frozen methane oceans with floating continents, such as Hydrax."
+ #Description from ADB
+ pc_class_klinshai:0 "Class M (Borderline Class L)"
+ pc_class_klinshai_desc:0 "A borderline class M world, much drier than most but the environment has been sufficiently rescuplted to closer-to-original norms"
+ 
+ ####################################
+ # Traits
+ ####################################
+ #Special SFU traits
+ trait_sfu_transplant:0 "Transplanted"
+ trait_sfu_transplant_desc:2 "This species is not originally from their homeworld but was transplanted here eons ago, long enough to have adapted to their new homeworld."
+ trait_sfu_psionic:0 "Psionic"
+ trait_sfu_psionic_desc:2 "This species has a high rate of psionics in its population and leaders will often show great psionic ability."
+ trait_sfu_low_pain_tolerance:0 "Low Pain Tolerance"
+ trait_sfu_low_pain_tolerance_desc:2 "Andorians are known for their low pain tolerance, which makes them slightly ineffective as ground troops."
+ trait_sfu_perceptive:0 "Perceptive"
+ trait_sfu_perceptive_desc:2 "Andorians are known for their perception. It gives them an edge in uncertain environments and helps them learn quicker than others."
+ trait_sfu_radiation_resistance:0 "Radiation Resistance"
+ trait_sfu_radiation_resistance_desc:2 "This species has evolved on a world with extremely high radiation levels and has a corresponding adaptation to it."
+ trait_sfu_methane_breathers:0 "Methane Breathers"
+ trait_sfu_methane_breathers_desc:0 "This species metabolizes the methane in their atmosphere for energy, greatly reducing food consumption."
+ trait_sfu_trisexual:0 "Trisexual"
+ trait_sfu_trisexual_desc:0 "This species utilizes trisexual reproduction. The matriarchal sex, being non-sapient, still requires space and some goods to help propagate the species, wile adding little to the economy."
+ #Other traits
+ trait_long_childhood:0 "Long Childhood"
+ trait_long_childhood_desc:2 "This species has an extended period of adolesence. While this means the population has a greater sense of unity and on the whole lives longer, population growth is curtailed."
+ trait_short_childhood:0 "Short Childhood"
+ trait_short_childhood_desc:2 "This species has a short period of adolesence. Population growth is mildly higher than in other species with 'normal' periods of adolesence."
+ trait_very_fast_breeders:0 "Very Fast Breeders"
+ trait_very_fast_breeders_desc:2 "This species breeds like the Terran lagomorphs. While leaders die younger and are less skilled, quantity has a quality all its own."
+ trait_very_slow_breeders:0 "Very Slow Breeders"
+ trait_very_slow_breeders_desc:2 "This species historically has dealt with long periods of very few resources, greatly reducing its population growth rate."
+ trait_extravagant:0 "Extravagant"
+ trait_extravagant_desc:1 "This species has a taste for the finest things in life and requires much room for themselves."
+ #Planet traits
+ trait_pc_class_m_uv_preference:0 "Class M (Irradiated) Preference"
+ trait_pc_class_m_uv_preference_desc:1 "§LClimate preference is determined at the genetic level, by eons of evolution or skillful manipulation.§!"
+ mod_pc_class_m_uv_habitability:0 "Class M (Irradiated) Habitability"
+ trait_pc_class_s_preference:0 "Class S Preference"
+ trait_pc_class_s_preference_desc:1 "§LClimate preference is determined at the genetic level, by eons of evolution or skillful manipulation.§!"
+ mod_pc_class_s_habitability:0 "Class S Habitability"
+ trait_pc_class_klinshai_preference:0 "Class M (Borderline L) Preference"
+ trait_pc_class_klinshai_preference_desc:1 "§LClimate preference is determined at the genetic level, by eons of evolution or skillful manipulation.§!"
+ mod_pc_class_klinshai_habitability:0 "Class M (Borderline L) Habitability"
+ 
+ ####################################
+ # Planet Modifiers
+ ####################################
+ ### HUMAN
+ fedex_headquarters:0 "Federation Express Corporation Headquarters"
+ fedex_headquarters_desc:0 "The headquarters of the Federation Express Corporation, when counting everything from the largest long-haul freighter to the smallest skiff, would make up the octant's sixth largest fleet. As such, its HQ brings a commiserate boost to trade."
+ europan_life:0 "Europan Life"
+ europan_life_desc:0 "The existence of non-sentient life in Europa's subsurface liquid water ocean sent shockwaves throughout human society. Today, Europa is a nature preserve and is off-limits to exploitation and exploration."
+ martian_mafia:0 "The Martian Mafia"
+ martian_mafia_desc:0 "'The Martian Mafia' refers to the consortium of defense contractors based on Mars that have a noticable impact on the local political scene and the Federation defense sector."
+ martian_unhappiness:0 "Unhappiness and Discontent"
+ martian_unhappiness_desc:0 "Mars recently suffered a devistating calamity caused by government incompetence, weakening loyalty to the United Earth government and sowing great unhappiness amongst the population."
+ #Description from Federation PD20M
+ lunar_bonus:0 "Lunar Economy"
+ lunar_bonus_desc:0 "Despite Luna's small size and aided by its proximity to Earth, its economy is so productive that the moon rates as a minor industrial world equivalent to many much larger planets in the galaxy."
+ #Description from Federation PD20M
+ martian_colonization_authority:0 "Martian Colonization Authority"
+ martian_colonization_authority_desc:0 "The current status of Mars is more akin to a colony than a member of the human community. Resource extraction is the central focus of the current 'government', at the expense of citizen freedom."
+ lunar_colonization_authority:0 "Lunar Colonization Authority"
+ lunar_colonization_authority_desc:0 "The current status of Luna is more akin to a colony than a member of the human community. Resource extraction is the central focus of the current 'government', at the expense of citizen freedom."
+ martian_terraforming:0 "Martian Environment"
+ martian_terraforming_desc:0 "Since colonization, Mars has been terraformed into a Class-K environment. Water from directed-comet impacts has created shallow seas. Genetically engineered algae and plant life, along with mechanical atmospheric processors (originally imported from Vulcan and Rigel), gradually thicken and oxygenate the atmosphere. By this time, the atmosphere was approaching Earth standard in composition, but was still too thin for humans to breathe without a respirator in most areas."
+ earth_development:0 "Earth Development"
+ earth_development_desc:0 "Despite previous setbacks, by Y0, humanity has managed to greatly expand its exploitation of Earth while minimally disrupting its ecosystem and has developed Earth past anything previously imagined. However, the loss of biodiversity on Earth has left a longing for the previous 'Eden' that once existed."
+ human_society:0 "Human Society"
+ human_society_desc:0 "Humans long history of internal conflict has made the planet a melting pot of a whole assortment of philosophies and beliefs, some of which are not in line with government ideals. On the other hand, this provides humans with significant strength from their diversity."
+ ### CENTAURI
+ centauran_society:0 "Centauran Society"
+ centauran_society_desc:0 "Historically, Centauran society has had a traditionally war-like stance, which continues to influence modern politics. Centaurans are the most 'conservative' of the Federation member species and will often be the first to support flexing the Federation's military muscle to resolve a crisis."
+ ### VULCAN
+ vulcan_society:0 "Vulcan Society"
+ vulcan_society_desc:0 "Since the time of Surak, the Vulcans have prided themselves on rationality, non-violence, and a willingness to embrace the alien. This history continues to influence the shape of modern Vulcan society."
+ ### ANDORIAN
+ andorian_society:0 "Andorian Society"
+ andorian_society_desc:0 "Since time immemorial, dueling has been embedded as a means of settling dispute. This has left its mark on Andorian society to the current age"
+ ### RIGELLIAN
+ #Description from Federation PD20M
+ rigellian_society:0 "Rigellian Society"
+ rigellian_society_desc:0 "Rigellian Society has a long history of peace, prosperity, and openess to all. Crime and dishonesty are virtually unheard of in Rigellian culture, and families provide for the material and emotional needs of their members."
+ ### ANTAREAN
+ antarean_society:0 "Antarean Society"
+ antarean_society_desc:0 "Antarean Society has long been conservative and fundamentalist. Even after the discovery of other lifeforms, religious influences play a major role in Antarean society."
+ ### FEDERATION
+ #Description from Federation PD20M
+ federation_full_member_planet:0 "Federation Full Member Planet"
+ federation_full_member_planet_desc:0 "Member planets are the major industrial and economic worlds which drive the Federation economy and fund most of its miliary. These planets have membership on the Council and a major say in all decisions. All member planets must meet the standards of the Federation charter for a multi-party free-market democracy with an independent press and judiciary, and must adhere to the sentient-rights standards of the Federation Charter."
+ #Description from Federation PD20M
+ federation_associate_member_planet:0 "Federation Associate Member Planet"
+ federation_associate_member_planet_desc:0 "Associate member planets are those with major populations, significant industry, spaceflight capability, and advanced technology, but which have not yet reached full member status. These planets have seats in the Assembly but non-voting seats in the Council, and pay a lower tax rate. They must meet the same political and sentient rights standards as full members."
+ federation_associate_member_planet_denied:0 "Federation Associate Membership Denied"
+ federation_associate_member_planet_denied_desc:0 "Associate Membership was recently denied to this planet, angering the local populace." 
+ ### COUNTRY WIDE MODIFIERS
+ ### Federation-wide events
+ recently_adopted_social_contract:0 "Recently Adopted Social Contract"
+ recently_adopted_social_contract_desc:0 "The recently adopted Social Contract is impacting our economy as we adapt to the social program."
+ 
+ ### HYDRAN
+ hydran_homeworld:0 "Hydran Homeworld"
+ hydran_homeworld_desc:0 "The Hydran homeworld is the center of Hydran civilization and remains a long-established commercial center with rich traditions."
+ hydran_major_planet:0 "Major Hydran Planet"
+ hydran_major_planet_desc:0 "This world has been a Hydran colony since the time of the Spirit Kings and as such has long-established rituals and bureaucracy."
+ 
+ ### KLINGON
+ klinshai_environment:0 "Klinshai Environment"
+ klinshai_environment_desc:0 "Despite the drastic change in environmental conditions following the asteroid impact of ca. -Y3000, the environment of Klinshai has notably improved, but it is no longer the Class M planet it once was."
+ 
+ ### Generic modifiers
+ mod_country_produces_mult:0 "Country Production Multiplier"
+ mod_planet_pops_food_upkeep_mult: "Food Required Per Pop"
+ 
+ ####################################
+ # Deposits
+ ####################################
+ #Description from Federation PD20M by Amarillo Design Bureau
+ d_luna_university:0 "Luna University"
+ d_luna_university_desc:0 "Luna University has become the most respected civilian human learning institution in the Federation, exceeding even the great historic universities of Earth itself."
+ d_vulcan_science_academy:0 "Vulcan Science Academy"
+ d_vulcan_science_academy_desc:0 "The premier Vulcan institute of higher-learning for over a thousand years, the Academy educates some of the brightest minds in the Federation."
+ d_strongport_medical_research:0 "Strongport Medical Research Complex"
+ d_strongport_medical_research_desc:0 "The premier Federation medical research facility, advancing Federation medicine one researcher at a time."
+ #Class S planetary deposits
+ d_methane_springs:0 "Methane Springs"
+ d_methane_springs_desc:0 "Springs of methane bubble up from the ground, providing a source of both energy and food."
+ d_chlorine_gas_lake:0 "Chlorine Gas Lake"
+ d_chlorine_gas_lake_desc:0 "Pools of liquid chlorine dot this region, providing space for plentiful energy generation."
+ d_methane_waterfalls:0 "Cascading Methane Waterfalls"
+ d_methane_waterfalls_desc:0 "Geography and topography collide, leading to bountiful energy generation spots and marginal food production increases."
+ d_hydrogen_thermal_vent:0 "Hydrogen Thermal Vent"
+ d_hydrogen_thermal_vent_desc:0 "Hydrogen leaks out of the crust in copious quantities, leading to improved energy production."
+ d_diamond_glacier:0 "Diamond Glacier"
+ d_diamond_glacier_desc:0 "A glacier of pure diamond comes up from the gas giant's core, ready for exploitation."
+ d_mercury_plain:0 "Mercury Plain"
+ d_mercury_plain_desc:0 "At the tempratures of Class S planets, mercury is a solid material; it is easily extracted and processed."
+ d_xenon_fields:0 "Xenon Fields"
+ d_xenon_fields_desc:0 "At the tempratures of Class S planets, xenon is a solid material; it is easily extracted and processed."
+ d_hydrocarbon_slurry:0 "Hydrocarbon Slurry"
+ d_hydrocarbon_slurry_desc:0 "A hydrocarbon slurry is perfect for growing vegetables, and buring some of the byproducts for fuel as well."
+ d_prey_animals:0 "Prey Animals"
+ d_prey_animals_desc:0 "Various prey animals run freely in this region, providing prodigous food supplies."
+ 
+ #################
+ # Start Screens #
+ #################
+ START_SCREEN_FED:0 "A mere 15 years ago, humanity broke the light-speed barrier. Four years later, the United Federation of Planets was formed with the signing of the Federation Charter in San Francisco on Earth, bringing Earth, Vulcan, Alpha Centauri, Andor, and Rigel into a common framework.\n\n This paved the way to a unified government, founded on the principles of 'Development of friendly, equal relations among the member worlds, based on the principles of the Universal Equanimity of all Sentients and the right of self-determination for all peoples, to the achievement of mutal interstellar cooperation in the resolution of social, cultural, political, and economic concerns, and to serve as the center for harmonizing theactions of member species in the attainment of these common ends.'\n\n Eleven years later, the Federation is beginning to explore the galaxy in earnest, in interest of peace and diversity."
+ START_SCREEN_HYDRAN:0 "For nearly a thousand years, the Spirit Kings had utilized the Hydrans as employees, helping to exploit otherwise difficult to use Class S worlds in a mutally beneficial relationship. This relationship eventually solidified into the guild system which continues to dominate Hydran society.\n\nForty years ago, the Spirit Kings left the sector, leaving the Hydran Monarchy with a few low-technology warships. \n\n Having reverse engineered the ships the Spirit Kings left behind, the Hydran Kingdom looks forward to claiming its rightful place in the cosmos."
+ 
+ ###############
+ # GOVERNMENTS #
+ ###############
+ gov_hydran_kingdom: "Hydran Kingdom"
+ gov_hydran_kingdom_desc: "The Hydran Kingdom, in which the King rules over the kingdom, vying with the Guilds for power."
+ RT_HYDRAN:0 "King"
+ HT_HYDRAN:0 "Crown Prince"
+ 
+ ##############
+ # Fed Events #
+ ##############
+ #Colony Membership events
+ sfu_fed.1.name:0 "[This.GetName] Applies for Associate Membership"
+ sfu_fed.1.desc:0 "After decades of development, the planet [This.GetName] has decided to formally apply for Federation Associate Membership."
+ sfu_fed.2.name:0 "[This.GetName] Applies for Full Membership"
+ sfu_fed.2.desc:0 "After decades of development, the planet [This.GetName] has decided to formally apply for Federation Full Membership."
+ #Martian and Luna Event chain
+ sfu_fed.20.name:0 "[This.GetName] suffers severe accident"
+ sfu_fed.20.desc:0 "[This.GetName] has long been treated as little more than a resource colony. This has led to neglect and exploitation by the United Earth government. A serious industrial accident has occured, claiming the lives of hundreds of Martians. This has led to widespread discontentment and resentment of Earth."
+ sfu_fed.21.name:0 "Fundemenatal Declaration of the Martian Colonies"
+ sfu_fed.21.desc:0 "[This.GetName] has long been treated as little more than a resource colony. This has culminated in open revolt, with [This.GetName] declaring independence from Earth, leading to a political crisis in the United Earth government. The UE government now considers its course of action."
+ sfu_fed.22.name:0 "Martian Independence"
+ sfu_fed.22.desc:0 "After much deliberation, the United Earth Government recognizes the independence of the Martian People. Earth now recognizes Mars as a nation separate from Earth."
+ sfu_fed.23.name:0 "Mars Petitions for Full Membership"
+ sfu_fed.23.desc:0 "Having established itself as an independent polity, Mars now formally requests full Federation Membership."
+ sfu_fed.24.name:0 "Lunar Confederation Status"
+ sfu_fed.24.desc:0 "Luna, long living in Earth's shadow, has grown weary of being treated like a resource colony and requests membership as part of the United Earth government."
+ #Social Contract Event
+ sfu_fed.30.name:0 "Social Contract Proposed"
+ sfu_fed.30.desc:0 "With the growing wealth of the Federation, [Root.Leader.GetName] has proposed the Social Contract: a new bargain for Federation Citizens, guarenteeing a standard of living for any citizen who is wiling to work 30 hours a week on government sponsored programs."
+ 
+ #################
+ # Hydran Events #
+ #################
+ sfu_hydran.1.name:0 "[This.GetName] Suffers a Palace Coup"
+ sfu_hydran.1.desc:0 "The scheming and plotting that surround the palace have resulted in a coup! [Root.Leader.GetName] is dead!"
+ 
+ #################
+ # Fed Decisions #
+ #################
+ decision_planet_build_strongport_medical:0 "Build Strongport Medical Complex"
+ decision_planet_build_strongport_medical_desc:0 "Now that Strongport is a major colony, we can consolidate its numerous medical facitlies into the Federation's central medical research facility."

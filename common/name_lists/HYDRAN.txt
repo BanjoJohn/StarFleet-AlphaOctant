@@ -1,0 +1,204 @@
+﻿HYDRAN = {
+	randomized = no
+
+	ship_names = {
+		
+		corvette = {
+			Bold Courageous Daring Dauntless Fearless Defiant Valiant Reliant Vainglory Active
+			Aggressive Brave Brazen Fervent Gallant Hardy Rapid Obdurate Obedient Valouous
+			Vehement Vigorous Vigilant Sentinel Wanderlust Vanguard Veracity Guardian Garrison
+			Defender Protector Steadfast Constant Faithful Dexterous Bastion Duty Integrity 
+			Loyalty Redoubt Resistance Sanctity Hullcrusher Savage Thuderbolt Voarcious 
+			Catkiller Striker Retribution Onslaught Blood Iron Fire Testudo Schiltron Foulkon
+			Capacious Copius Voluminous
+			#FFL
+			Faithful "True Believer" Smiter "Prince Hnaypts" "Prince Hrakskit" "Prince Hbltor"
+			Infidel Heretic Blasphemer
+		}
+		
+		destroyer = {
+			#DDL
+			Soldier Sailor Marine Swordsman Gladiator Captain Major Pilot
+			#DD
+			Thought Idea Concept Notion Plan Theory Hypothesis Intuition Attitude Swarmer 
+			Scorpion Assurance Adroit Adept Agile Justicar Inevitable Invulnerable 
+			Indeterable Insouciant Indefatigable Indomitable Inexorable Inflexible
+			Illustrious Insoluable Implacable Impetuous Impetus
+			Impudent Improbable Tedious Hesitance Virtuous Prudence Diligent
+			Inescapable
+			#DW
+			"Commodore Horatl" Superior Superlative Outstanding Leading Pinacle
+			Righteous Just Deserving Entitle Pride Faithful Warder Mystic Seer
+		}
+		
+		cruiser = {
+			#CC
+			Regency Chancellor Excalibur Venegeance Testament Retribution Covenant "Soverign Prince"
+			Eminence Successor Champion Revenge Resoluiton
+			#CA
+			Restoration Deliverance Loyalty Bravery Tenacity Punctuality Charity Modesty 
+			Chivalry Devotion Majestic Glorious Colossus Victorious Superb Exultant Magnificent
+			Paragon Alacrity Felicity Fortitude Harmony Purity Resolution Tranquility Zenith
+			Ebullient Effusive Triumphant
+			#NCA
+			Reprisal Excellent Gallant Strongbow Shieldbreaker Starguild Spearhead Stalwart 
+			Faithkeeper Honorkeeper
+			#CL
+			Terror Striker Entangler Horror Upholder Assailer Endeavor Eliminator Penetrator
+			Retificator Impaler Interloper Attacker Harvester Uplifter Avenger Achiever 
+			Eradicator Fearsome Gallant Gauntlest Journeyman Repulse Superb Devastator Liberty
+			Thunderer "King's Champion" Retribution Reconsideration Dedication Engage Reveal
+			Quest Sapper Engineer Artisan "Cold Fury"
+			#CM
+			Pride Nation Strength Virtue Fierce Sacrifice Sanctity "Cartel Granyx" 
+			"Cartel Slotzin" "Cartel Vespe" Calazar Zealous Perilous Tenacious Dangerous 
+			"Dark Rider" Ghostrider Nomad Trident Liberator Warhammer Assassin Strongbow 
+			"Poisoned Arrow"
+			#PGS
+			Endurance Perseverance Reliable Continuity "Royal Ark" "Winged Victory" 
+			"Winged Revenge" "Winged Fury "Winged Havoc "Arduous Victory" "Arduous Campaign"
+			Continuity "Distant Thunder" "Distance Vengeance" "Distant Lightning"
+			"Distant Justice" "Distant Fury" Endurance Reliable Continuity
+		}
+		
+		battleship = {
+			#BC Hulls
+			"Noble House" Penath Baronette Aristocrat "Celestial Transcendency" "Imperious Majesty"
+			"Lord Regent" "Knight Regent" "Baron Regent"
+		}
+
+		titan = {
+			#DN Class Names
+			"Iron Chancellor" Exchequer "Royal Sovereign" Hydrax Malatryx Fematryx 
+			"Great Hydraxan" Triumph Victory Majestryx Success
+		}
+
+		colossus = {
+			#Battleship names (Placeholder)
+			Monarch
+		}
+
+		constructor = {
+			Provender Provision Comodious Capacious
+		}
+		
+		colonizer = {
+			Mayflower Abundance Bountiful Felicity Hope Opportunity Serenity Unity Destiny Britannia Byzantium Caledonia "El Dorado" Knossos Memphis 
+			Olympus Persepolis "Sierra de la Plata" Sparta Valhalla "Crystal Palace" Alaska Angola Australia Brazil Canada Congo Guinea India Indonesia 
+			Jamaica Macau Mozambique Philippines Somalia "Sri Lanka" Taiwan
+		}
+
+		sponsored_colonizer = { # needed when there are no generic names
+			Mayflower Abundance Bountiful Felicity Hope Opportunity Serenity Unity Destiny Britannia Byzantium Caledonia "El Dorado" Knossos Memphis 
+			Olympus Persepolis "Sierra de la Plata" Sparta Valhalla "Crystal Palace" Alaska Angola Australia Brazil Canada Congo Guinea India Indonesia 
+			Jamaica Macau Mozambique Philippines Somalia "Sri Lanka" Taiwan
+		}
+		
+		science = {
+			Devotion Quest Challenger Voyager
+		}
+		
+		transport = {
+			Ferry
+		}
+
+		military_station_small = {
+			Defender
+		}
+
+		ion_cannon = {
+			"Grand Defender"
+		}
+	}
+
+	fleet_names = {
+		sequential_name = "%O% Fleet"
+	}
+	
+	army_names = {
+	
+		defense_army = {
+			sequential_name = "%O% Planetary Guard"
+		}
+
+		assault_army = {
+			sequential_name = "%O% Expeditionary Force"
+		}
+		
+		slave_army = {
+			sequential_name = "%O% Indentured Rifles"
+		}
+		
+		clone_army = { 
+			sequential_name = "%O% Clone Army"
+		}
+		
+		robotic_army = {
+			sequential_name = "%O% Hunter-Killer Group"
+		}
+
+		robotic_defense_army = {
+			sequential_name = "%O% Ground Defense Matrix"
+		}
+		
+		psionic_army = { 
+			sequential_name = "%O% Psi Commando"
+		}
+		
+		xenomorph_army = {
+			sequential_name = "%O% Bio-Warfare Division"
+		}
+		
+		gene_warrior_army = {
+			random_names = {
+				"SARC-A 'Gladiators'" "SARC-B 'Widowmakers'" "SARC-C 'Immortals'" "SARC-D 'Berserkers'" "SARC-E 'Assassins'"
+				"SARC-F 'Reapers'" "SARC-G 'Nighthawks'" "SARC-H 'Desperados'" "SARC-I 'Grey Knights'" "SARC-J 'Roughnecks'" 
+			}
+			sequential_name = "%O% Bio-Engineered Squadron"
+		}
+
+		occupation_army = {
+			sequential_name = "%O% Garrison Force"
+		}
+
+		robotic_occupation_army = {
+			sequential_name = "%O% Mechanized Garrison"
+		}
+
+		primitive_army = {
+			sequential_name = "Primitive Army %C%"
+		}
+		industrial_army = {
+			sequential_name = "Industrial Army %C%"
+		}
+		postatomic_army = {
+			sequential_name = "Post-Atomic Army %C%"
+		}
+	}
+
+	planet_names = {
+		generic = {
+			names = {
+				#Random names cooked up
+				Hydraschafen Hydragate Hydraphon Hydratron Kroot Ptah-Fala
+			}
+		}
+		
+		pc_class_s = {
+			names = {
+				Altroth Hydrafahl Hydraxaport Krooth Minxitith Phtha
+				#Technically Sector names, but what can you do?
+				Horvath-Laikind Hyplan-Portaka Hylex-Prakta
+			}
+		}
+	}
+	
+	### CHARACTERS
+	character_names = {
+		default = {
+			full_names = {Hulakehm S'Lenthna S'Ultana Hrakskit Hbltor Hnaypts}
+			regnal_first_names = { Hydraxan }
+			regnal_second_names = {}
+		}
+	}
+}

@@ -1,0 +1,1020 @@
+##########################
+# SFU system spawns
+##########################
+
+namespace = sfu_spawn_fed
+
+###
+# UFP Sequence
+###
+
+#TODO: Have event fire to produce Luna University
+#TODO: Martian Terraforming event sequence
+
+#Master event trigger
+event = {
+	id = sfu_spawn_fed.1
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		### SET EVENT TARGETS (Main species, homeworld, &c.)
+		every_country = {
+			limit = { has_country_flag = sfu_empire_ufp }
+			save_event_target_as = ufp
+			owner_species = { save_event_target_as = humanSpecies }
+		}
+		every_planet = {
+			limit = { has_planet_flag = sfu_homeworld_earth }
+			save_event_target_as = human_homeworld
+		}
+		every_country = {
+			### Capital Spawn
+			limit = { has_country_flag = sfu_empire_ufp }
+			### SET UP SYSTEM CONTROL
+			country_event = { id = sfu_spawn_fed.2 days=0 }
+			### SET UP SOL SYSTEM
+			country_event = { id = sfu_spawn_fed.3 days=0 }
+			### SET UP ALPHA CENTARUI SYSTEM
+			country_event = { id = sfu_spawn_fed.4 days=0 }
+			### SET UP VULCAN SYSTEM
+			country_event = { id = sfu_spawn_fed.5 days=0 }
+			### SET UP ANDOR SYSTEM
+			country_event = { id = sfu_spawn_fed.6 days=0 }
+			### SET UP RIGEL SYSTEM
+			country_event = { id = sfu_spawn_fed.7 days=0 }
+		}
+	}
+}
+
+#Flip ownership of the Core Systems and build starbases
+country_event = {
+	id = sfu_spawn_fed.2
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		#Alpha Centauri
+		every_system = {
+			limit = { has_star_flag = sfu_system_alpha_centauri }
+			create_starbase = {
+				size = starbase_outpost
+				owner = event_target:ufp
+			}
+		}
+		#Vulcan
+		every_system = {
+			limit = { has_star_flag = sfu_system_vulcan}
+			create_starbase = {
+				size = starbase_starport
+				owner = event_target:ufp
+				module = shipyard
+				module = trading_hub
+				building = resource_silo
+			}
+		}
+		#Andoria
+		every_system = {
+			limit = { has_star_flag = sfu_system_andor }
+			create_starbase = {
+				size = starbase_starport
+				owner = event_target:ufp
+				module = shipyard
+				module = anchorage
+				building = crew_quarters
+			}
+		}
+		#Rigel
+		every_system = {
+			limit = { has_star_flag = sfu_system_rigel }
+			create_starbase = {
+				size = starbase_starport
+				owner = event_target:ufp
+				module = shipyard
+				module = trading_hub
+				building = resource_silo
+			}
+		}
+	}
+}
+
+#Setup Homeworld System
+#NB: Home systems have special events to overwrite things, so we have to set somethings manually
+country_event = {
+	id = sfu_spawn_fed.3
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		#Clear the planet, then start setting resources
+		every_system_within_border = {
+			limit = { has_star_flag = sfu_system_sol }
+			### EARTH
+			every_planet = {
+				limit = { has_planet_flag = sfu_homeworld_earth }
+				planet_event = { id = sfu_spawn_fed.10 days = 0 }
+			}
+			### LUNA
+			every_planet = {
+				limit = { has_planet_flag = sfu_homeworld_luna }
+				planet_event = { id = sfu_spawn_fed.11 days = 0 }
+			}
+			### MARS
+			every_planet = {
+				limit = { has_planet_flag = sfu_homeworld_mars }
+				planet_event = { id = sfu_spawn_fed.12 days = 0 }
+			}
+			### JUPITER
+			every_planet = {
+				limit = { has_planet_flag = sfu_planet_europa }
+				clear_deposits = yes
+				add_modifier = { days = -1 modifier = "europan_life" }
+			}
+			### XENA
+			every_planet = {
+				limit = { has_planet_flag = sfu_planet_xena }
+				clear_deposits = yes
+				add_deposit = d_fedex_headquarters
+				add_modifier = { days = -1 modifier = "fedex_headquarters" }
+			}
+			every_system_planet = {
+				limit = {
+					has_deposit_for = shipclass_mining_station
+					OR = {
+						has_resource = { type = minerals amount > 0 }
+						has_resource = { type = energy amount > 0 }
+					}
+					has_mining_station = no
+				}
+				create_mining_station = { owner = event_target:ufp }
+			}
+		}
+	}
+}
+
+#Setup Earth
+planet_event = {
+	id = sfu_spawn_fed.10
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		clear_planet_modifiers = yes
+		
+		add_modifier = { days = -1 modifier = "federation_full_member_planet" }
+		add_modifier = { days = -1 modifier = "earth_development" }
+		add_modifier = { days = -1 modifier = "human_society" }
+		
+		clear_deposits = yes
+		
+		add_deposit = d_pacific_algae_tracts
+		add_deposit = d_saharan_irrigation_project
+		add_deposit = d_black_soil
+		
+		add_deposit = d_mesopotamian_urban_corridor
+		add_deposit = d_rich_mountain
+		
+		add_deposit = d_delhi_sprawl
+		add_deposit = d_boswash_metropolitan_axis
+		add_deposit = d_pearl_river_agglomerate
+		add_deposit = d_rushing_waterfalls
+		
+		add_district = district_city
+		add_district = district_farming
+		
+		add_building = building_capital
+		add_building = building_factory_1
+		add_building = building_holo_theatres
+	}
+}
+
+#Create Humans on Luna
+planet_event = {
+	id = sfu_spawn_fed.11
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		set_owner = event_target:ufp
+		while = {
+			count = 5
+			create_pop = {
+				species = event_target:humanSpecies
+				ethos = {ethic = "ethic_materialist"}
+			}
+		}
+		while = {
+			count = 4
+			create_pop = {
+				species = event_target:humanSpecies
+				ethos = {ethic = "ethic_pacifist"}
+			}
+		}
+		clear_planet_modifiers = yes
+		
+		add_modifier = { days=-1 modifier = "lunar_colonization_authority" }
+		
+		add_deposit = d_geothermal_vent
+		
+		add_deposit = d_mineral_fields
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_rich_mountain
+		
+		#add_deposit = d_luna_university
+		
+		add_district = district_city
+		add_district = district_generator
+		add_district = district_mining
+		
+		add_building = building_colony_shelter
+		add_building = building_hydroponics_farm
+	}
+}
+
+#Create Humans on Mars
+planet_event = {
+	id = sfu_spawn_fed.12
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		set_owner = event_target:ufp
+		while = {
+			count = 3
+			create_pop = {
+				species = event_target:humanSpecies
+				ethos = {ethic = "ethic_militarist"}
+			}
+		}
+		while = {
+			count = 3
+			create_pop = {
+				species = event_target:humanSpecies
+				ethos = {ethic = "ethic_egalitarian"}
+			}
+		}
+		clear_planet_modifiers = yes
+		
+		add_modifier = { days = -1 modifier = "martian_colonization_authority" }
+		
+		clear_deposits = yes
+		
+		add_deposit = d_arid_highlands
+		add_deposit = d_arid_highlands
+		add_deposit = d_geothermal_vent
+		
+		add_deposit = d_rich_mountain
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_mineral_fields
+		
+		add_district = district_mining
+		
+		add_building = building_colony_shelter
+		add_building = building_hydroponics_farm
+	}
+}
+
+#Setup Alpha Centauri System
+country_event = {
+	id = sfu_spawn_fed.4
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		#Let random at-start resources stand, overwrite counter-examples
+		every_system_within_border = {
+			limit = { has_star_flag = sfu_system_alpha_centauri }
+			### Culden-Feyr
+			every_planet = {
+				limit = { has_planet_flag = sfu_homeworld_centauri }
+				planet_event = { id = sfu_spawn_fed.20 days = 0 }
+			}
+			every_system_planet = {
+				limit = {
+					has_deposit_for = shipclass_mining_station
+					OR = {
+						has_resource = { type = minerals amount > 0 }
+						has_resource = { type = energy amount > 0 }
+					}
+					has_mining_station = no
+				}
+				create_mining_station = { owner = event_target:ufp }
+			}
+		}
+	}
+}
+
+#Setup Culden-Feyer
+planet_event = {
+	id = sfu_spawn_fed.20
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		every_planet = {
+			limit = { has_planet_flag = sfu_homeworld_centauri }
+			save_event_target_as = sfu_homeworld_centauri
+		}
+		create_species = { 
+						name = "Centauran" 
+						class = HUM
+						portrait = human 
+						homeworld = event_target:sfu_homeworld_centauri
+						namelist = "HUMAN1"
+						traits = {
+							trait = "trait_sfu_transplant" #0
+							trait = "trait_adaptive" #2
+							trait = "trait_strong" #1
+							trait = "trait_nomadic" #1
+							trait = "trait_wasteful" #-1
+							trait = "trait_quarrelsome" #-1
+							ideal_planet_class = "pc_ocean" 
+						} 
+					}
+		last_created_species = { save_global_event_target_as = centauranSpecies }
+		set_owner = event_target:ufp
+		while = {
+			count = 8
+			create_pop = {
+				species = event_target:centauranSpecies
+				ethos = {ethic = "ethic_militarist"}
+			}
+		}
+		while = {
+			count = 6
+			create_pop = {
+				species = event_target:centauranSpecies
+				ethos = {ethic = "ethic_egalitarian"}
+			}
+		}
+		while = {
+			count = 2
+			create_pop = {
+				species = event_target:centauranSpecies
+				ethos = {ethic = "ethic_materialist"}
+			}
+		}
+		
+		clear_planet_modifiers = yes
+		
+		add_modifier = { days=-1 modifier = "federation_full_member_planet" }
+		add_modifier = { days=-1 modifier = "centauran_society" }
+		
+		add_district = district_city
+		add_district = district_generator
+		add_district = district_mining
+		add_district = district_farming
+		add_district = district_farming
+		
+		add_building = building_capital
+		add_building = building_factory_1
+	}
+}
+
+#Setup Vulcan System
+country_event = {
+	id = sfu_spawn_fed.5
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		#Let random at-start resources stand, overwrite counter-examples
+		every_system_within_border = {
+			limit = { has_star_flag = sfu_system_vulcan }
+			### Vulcan
+			every_planet = {
+				limit = { has_planet_flag = sfu_homeworld_vulcan }
+				planet_event = { id = sfu_spawn_fed.30 days = 0 }
+			}
+			### Vultrax
+			every_planet = {
+				limit = { has_planet_flag = sfu_homeworld_vultrax }
+				planet_event = { id = sfu_spawn_fed.31 days = 0 }
+			}
+			### Leriat d
+			every_planet = {
+				limit = { has_planet_flag = sfu_planet_leriat_d }
+				clear_deposits = yes
+				add_deposit = d_minerals_5
+			}
+			every_system_planet = {
+				limit = {
+					has_deposit_for = shipclass_mining_station
+					OR = {
+						has_resource = { type = minerals amount > 0 }
+						has_resource = { type = energy amount > 0 }
+					}
+					has_mining_station = no
+				}
+				create_mining_station = { owner = event_target:ufp }
+			}
+		}
+	}
+}
+
+#Create Vulcans on Vulcan
+planet_event = {
+	id = sfu_spawn_fed.30
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		every_planet = {
+			limit = { has_planet_flag = sfu_homeworld_vulcan }
+			save_event_target_as = sfu_homeworld_vulcan
+		}
+		create_species = {
+			name = "Vulcan"
+			class = HUM
+			portrait = humanoid_05
+			homeworld = event_target:sfu_homeworld_vulcan 
+			namelist = "HUMAN1"
+			traits = {
+				trait = "trait_sfu_psionic" #0
+				trait = "trait_sfu_transplant" #0
+				trait = "trait_venerable" #4
+				trait = "trait_intelligent" #2
+				trait = "trait_strong" #1
+				trait = "trait_long_childhood" #-1
+				trait = "trait_very_slow_breeders" #-3
+				trait = "trait_sedentary" #-1
+				ideal_planet_class = "pc_desert" 
+			}
+		}
+		last_created_species = { save_global_event_target_as = vulcanSpecies }
+		set_owner = event_target:ufp
+		while = {
+			count = 15
+			create_pop = {
+				species = event_target:vulcanSpecies
+				ethos = {ethic = "ethic_pacifist"}
+			}
+		}
+		while = {
+			count = 14
+			create_pop = {
+				species = event_target:vulcanSpecies
+				ethos = {ethic = "ethic_materialist"}
+			}
+		}
+		while = {
+			count = 12
+			create_pop = {
+				species = event_target:vulcanSpecies
+				ethos = {ethic = "ethic_xenophile"}
+			}
+		}
+		clear_planet_modifiers = yes
+		
+		add_modifier = { days=-1 modifier="federation_full_member_planet" }
+		add_modifier = { days=-1 modifier="vulcan_society" }
+		add_deposit = d_vulcan_science_academy
+		
+		add_district = district_city
+		add_district = district_city
+		add_district = district_city
+		add_district = district_generator
+		add_district = district_generator
+		add_district = district_generator
+		add_district = district_mining
+		add_district = district_mining
+		add_district = district_mining
+		add_district = district_farming
+		add_district = district_farming
+		add_district = district_farming
+		
+		add_building = building_capital
+		add_building = building_foundry_1
+		add_building = building_factory_1
+		add_building = building_factory_1
+		add_building = building_holo_theatres
+		add_building = building_research_lab_1
+	}
+}
+
+#Create Vulcans on Vultrax
+planet_event = {
+	id = sfu_spawn_fed.31
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		set_owner = event_target:ufp
+		while = {
+			count = 8
+			create_pop = {
+				species = event_target:vulcanSpecies
+				ethos = {ethic = "ethic_pacifist"}
+			}
+		}
+		while = {
+			count = 8
+			create_pop = {
+				species = event_target:vulcanSpecies
+				ethos = {ethic = "ethic_materialist"}
+			}
+		}
+		while = {
+			count = 7
+			create_pop = {
+				species = event_target:vulcanSpecies
+				ethos = {ethic = "ethic_xenophile"}
+			}
+		}
+		clear_planet_modifiers = yes
+		
+		add_modifier = { days=-1 modifier="federation_associate_member_planet" }
+		
+		add_district = district_city
+		add_district = district_city
+		add_district = district_generator
+		add_district = district_generator
+		add_district = district_mining
+		add_district = district_mining
+		add_district = district_mining
+		
+		add_building = building_capital
+		add_building = building_factory_1
+		add_building = building_factory_1
+		add_building = building_holo_theatres
+		add_building = building_hydroponics_farm
+	}
+}
+
+#Setup Andor System
+country_event = {
+	id = sfu_spawn_fed.6
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		#Let random at-start resources stand, overwrite counter-examples
+		every_system_within_border = {
+			limit = { has_star_flag = sfu_system_andor }
+			### Andor
+			every_planet = {
+				limit = { has_planet_flag = sfu_homeworld_andor }
+				planet_event = { id = sfu_spawn_fed.40 days = 0 }
+			}
+			### Sapphirex
+			every_planet = {
+				limit = { has_planet_flag = sfu_homeworld_sapphirex }
+				planet_event = { id = sfu_spawn_fed.41 days = 0 }
+			}
+			### Dhowkreen b
+			every_planet = {
+				limit = { has_planet_flag = sfu_homeworld_dhowkreen }
+				planet_event = { id = sfu_spawn_fed.42 days = 0 }
+			}
+			### Zhurkarak d
+			every_planet = {
+				limit = { has_planet_flag = sfu_homeworld_zhurkarak }
+				planet_event = { id = sfu_spawn_fed.43 days = 0 }
+			}
+			every_system_planet = {
+				limit = {
+					has_deposit_for = shipclass_mining_station
+					OR = {
+						has_resource = { type = minerals amount > 0 }
+						has_resource = { type = energy amount > 0 }
+					}
+					has_mining_station = no
+				}
+				create_mining_station = { owner = event_target:ufp }
+			}
+		}
+	}
+}
+
+#Create Andorians on Andor
+planet_event = {
+	id = sfu_spawn_fed.40
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		every_planet = {
+			limit = { has_planet_flag = sfu_homeworld_andor }
+			save_event_target_as = sfu_homeworld_andor
+		}
+		create_species = {
+			name = "Andorian"
+			class = HUM
+			portrait = humanoid_04
+			homeworld = event_target:sfu_homeworld_andor
+			namelist = "HUMAN1"
+			traits = {
+				trait = "trait_ingenious" #2
+				trait = "trait_strong" #1
+				trait = "trait_traditional" #1
+				trait = "trait_sfu_perceptive" #1
+				trait = "trait_slow_breeders" #-2
+				trait = "trait_sfu_low_pain_tolerance" #-1
+				ideal_planet_class = "pc_arctic" 
+			}
+		}
+		last_created_species = { save_global_event_target_as = andorianSpecies }
+		set_owner = event_target:ufp
+		while = {
+			count = 20
+			create_pop = {
+				species = event_target:andorianSpecies
+				ethos = {ethic = "ethic_militarist"}
+			}
+		}
+		while = {
+			count = 15
+			create_pop = {
+				species = event_target:andorianSpecies
+				ethos = {ethic = "ethic_egalitarian"}
+			}
+		}
+		clear_planet_modifiers = yes
+		
+		add_modifier = { days=-1 modifier="federation_full_member_planet" }
+		add_modifier = { days=-1 modifier="andorian_society" }
+		
+		add_district = district_city
+		add_district = district_city
+		add_district = district_city
+		add_district = district_generator
+		add_district = district_generator
+		add_district = district_generator
+		add_district = district_mining
+		add_district = district_mining
+		add_district = district_mining
+		add_district = district_farming
+		add_district = district_farming
+		add_district = district_farming
+		
+		add_building = building_capital
+		add_building = building_foundry_1
+		add_building = building_factory_1
+		add_building = building_holo_theatres
+		add_building = building_research_lab_1
+	}
+}
+
+#Create Andorians on Sapphirex
+planet_event = {
+	id = sfu_spawn_fed.41
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		set_owner = event_target:ufp
+		while = {
+			count = 4
+			create_pop = {
+				species = event_target:andorianSpecies
+				ethos = {ethic = "ethic_egalitarian"}
+			}
+		}
+		while = {
+			count = 4
+			create_pop = {
+				species = event_target:andorianSpecies
+				ethos = {ethic = "ethic_militarist"}
+			}
+		}
+		
+		clear_planet_modifiers = yes
+		
+		add_district = district_generator
+		
+		add_district = district_mining
+		
+		add_building = building_colony_shelter
+		add_building = building_hydroponics_farm
+	}
+}
+
+#Create Andorians on Dhowkreen
+planet_event = {
+	id = sfu_spawn_fed.42
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		set_owner = event_target:ufp
+		while = {
+			count = 4
+			create_pop = {
+				species = event_target:andorianSpecies
+				ethos = {ethic = "ethic_egalitarian"}
+			}
+		}
+		while = {
+			count = 4
+			create_pop = {
+				species = event_target:andorianSpecies
+				ethos = {ethic = "ethic_xenophile"}
+			}
+		}
+		
+		clear_planet_modifiers = yes
+		
+		add_district = district_generator
+		add_district = district_mining
+		add_district = district_farming
+		
+		add_building = building_colony_shelter
+	}
+}
+
+#Create Andorians on Zhurkarak
+planet_event = {
+	id = sfu_spawn_fed.43
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		set_owner = event_target:ufp
+		while = {
+			count = 2
+			create_pop = {
+				species = event_target:andorianSpecies
+				ethos = {ethic = "ethic_egalitarian"}
+			}
+		}
+		while = {
+			count = 2
+			create_pop = {
+				species = event_target:andorianSpecies
+				ethos = {ethic = "ethic_xenophile"}
+			}
+		}
+		clear_planet_modifiers = yes
+		
+		add_district = district_mining
+		
+		add_building = building_colony_shelter
+	}
+}
+
+#Setup Rigel System
+country_event = {
+	id = sfu_spawn_fed.7
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		#Let random at-start resources stand, overwrite counter-examples
+		every_system_within_border = {
+			limit = { has_star_flag = sfu_system_rigel }
+			### Rigel
+			every_planet = {
+				limit = { has_planet_flag = sfu_homeworld_rigel }
+				planet_event = { id = sfu_spawn_fed.50 days = 0 }
+			}
+			### Thel'naar
+			every_planet = {
+				limit = { has_planet_flag = sfu_homeworld_thellnaar }
+				planet_event = { id = sfu_spawn_fed.51 days = 0 }
+			}
+			### Yee'laa
+			every_planet = {
+				limit = { has_planet_flag = sfu_homeworld_yeelaa }
+				planet_event = { id = sfu_spawn_fed.52 days = 0 }
+			}
+			### Strongport
+			every_planet = {
+				limit = { has_planet_flag = sfu_homeworld_strongport }
+				planet_event = { id = sfu_spawn_fed.53 days = 0 }
+			}
+			### Filii'lon
+			every_planet = {
+				limit = { has_planet_flag = sfu_homeworld_filiilon }
+				planet_event = { id = sfu_spawn_fed.54 days = 0 }
+			}
+			every_system_planet = {
+				limit = {
+					has_deposit_for = shipclass_mining_station
+					OR = {
+						has_resource = { type = minerals amount > 0 }
+						has_resource = { type = energy amount > 0 }
+					}
+					has_mining_station = no
+				}
+				create_mining_station = { owner = event_target:ufp }
+			}
+		}
+	}
+}
+
+#Create Rigelians on Rigel
+planet_event = {
+	id = sfu_spawn_fed.50
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		every_planet = {
+			limit = { has_planet_flag = sfu_homeworld_rigel }
+			save_event_target_as = sfu_homeworld_rigel
+		}
+		create_species = {
+			name = "Rigelian"
+			class = HUM
+			portrait = humanoid_hp_07
+			homeworld = event_target:sfu_homeworld_rigel
+			namelist = "HUMAN1"
+			traits = {
+				trait = "trait_sfu_transplant" #0
+				trait = "trait_sfu_radiation_resistance" #0
+				trait = "trait_enduring" #+1
+				trait = "trait_charismatic" #+2
+				trait = "trait_thrifty" #+2
+				trait = "trait_strong" #+1
+				trait = "trait_extravagant" #-4
+				ideal_planet_class = pc_continental
+			}
+		}
+		last_created_species = { save_global_event_target_as = rigellianSpecies }
+		set_owner = event_target:ufp
+		while = {
+			count = 8
+			create_pop = {
+				species = event_target:rigellianSpecies
+				ethos = {ethic = "ethic_pacifist"}
+			}
+		}
+		while = {
+			count = 8
+			create_pop = {
+				species = event_target:rigellianSpecies
+				ethos = {ethic = "ethic_egalitarian"}
+			}
+		}
+		while = {
+			count = 17
+			create_pop = {
+				species = event_target:rigellianSpecies
+				ethos = {ethic = "ethic_xenophile"}
+			}
+		}
+		clear_planet_modifiers = yes
+		
+		add_modifier = { days=-1 modifier="federation_full_member_planet" }
+		add_modifier = { days=-1 modifier="rigellian_society" }
+		
+		add_district = district_city
+		add_district = district_city
+		add_district = district_city
+		add_district = district_generator
+		add_district = district_generator
+		add_district = district_generator
+		add_district = district_mining
+		add_district = district_mining
+		add_district = district_mining
+		add_district = district_farming
+		add_district = district_farming
+		add_district = district_farming
+		
+		add_building = building_capital
+		add_building = building_factory_1
+		add_building = building_factory_1
+		add_building = building_holo_theatres
+		add_building = building_research_lab_1
+	}
+}
+
+#Create Rigellians on thellnaar
+planet_event = {
+	id = sfu_spawn_fed.51
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		set_owner = event_target:ufp
+		while = {
+			count = 2
+			create_pop = {
+				species = event_target:rigellianSpecies
+				ethos = {ethic = "ethic_egalitarian"}
+			}
+		}
+		while = {
+			count = 2
+			create_pop = {
+				species = event_target:rigellianSpecies
+				ethos = {ethic = "ethic_xenophile"}
+			}
+		}
+		clear_planet_modifiers = yes
+		
+		add_district = district_mining
+		
+		add_building = building_colony_shelter
+	}
+}
+
+#Create Rigellians on yeelaa
+planet_event = {
+	id = sfu_spawn_fed.52
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		set_owner = event_target:ufp
+		while = {
+			count = 2
+			create_pop = {
+				species = event_target:rigellianSpecies
+				ethos = {ethic = "ethic_egalitarian"}
+			}
+		}
+		while = {
+			count = 2
+			create_pop = {
+				species = event_target:rigellianSpecies
+				ethos = {ethic = "ethic_xenophile"}
+			}
+		}
+		clear_planet_modifiers = yes
+		
+		add_district = district_mining
+		
+		add_building = building_colony_shelter
+	}
+}
+
+#Create Rigellians on strongport
+planet_event = {
+	id = sfu_spawn_fed.53
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		set_owner = event_target:ufp
+		while = {
+			count = 8
+			create_pop = {
+				species = event_target:rigellianSpecies
+				ethos = {ethic = "ethic_egalitarian"}
+			}
+		}
+		while = {
+			count = 8
+			create_pop = {
+				species = event_target:rigellianSpecies
+				ethos = {ethic = "ethic_xenophile"}
+			}
+		}
+		while = {
+			count = 8
+			create_pop = {
+				species = event_target:rigellianSpecies
+				ethos = {ethic = "ethic_pacifist"}
+			}
+		}
+		clear_planet_modifiers = yes
+		
+		add_modifier = { days=-1 modifier="federation_associate_member_planet" }
+		
+		add_district = district_city
+		add_district = district_city
+		add_district = district_city
+		add_district = district_generator
+		add_district = district_generator
+		add_district = district_mining
+		add_district = district_mining
+		add_district = district_farming
+		add_district = district_farming
+		
+		add_building = building_capital
+		add_building = building_factory_1
+		add_building = building_factory_1
+		add_building = building_research_lab_1
+	}
+}
+
+#Create Rigellians on filiilon
+planet_event = {
+	id = sfu_spawn_fed.54
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		set_owner = event_target:ufp
+		while = {
+			count = 2
+			create_pop = {
+				species = event_target:rigellianSpecies
+				ethos = {ethic = "ethic_egalitarian"}
+			}
+		}
+		while = {
+			count = 2
+			create_pop = {
+				species = event_target:rigellianSpecies
+				ethos = {ethic = "ethic_xenophile"}
+			}
+		}
+		clear_planet_modifiers = yes
+		
+		add_district = district_mining
+		
+		add_building = building_colony_shelter
+	}
+}
