@@ -1,0 +1,89 @@
+FED = {
+	archetype = BIOLOGICAL
+	randomized = no
+	portraits = {
+		"human"
+	}	
+	graphical_culture = federation
+	move_pop_sound_effect = "moving_pop_confirmation"
+}
+
+GOR = {
+	archetype = BIOLOGICAL
+	randomized = no
+	portraits = {
+		"human"
+	}	
+	graphical_culture = gorn
+	move_pop_sound_effect = "moving_pop_confirmation"
+}
+
+HYD = {
+	archetype = BIOLOGICAL
+	randomized = no
+	portraits = {
+		"human"
+	}	
+	graphical_culture = hydran
+	move_pop_sound_effect = "moving_pop_confirmation"
+}
+
+KZN = {
+	archetype = BIOLOGICAL
+	randomized = no
+	portraits = {
+		"human"
+	}	
+	graphical_culture = kzinti
+	move_pop_sound_effect = "moving_pop_confirmation"
+}
+
+KLN = {
+	archetype = BIOLOGICAL
+	randomized = no
+	portraits = {
+		"human"
+	}	
+	graphical_culture = klingon
+	move_pop_sound_effect = "moving_pop_confirmation"
+}
+
+ROM = {
+	archetype = BIOLOGICAL
+	randomized = no
+	portraits = {
+		"human"
+	}	
+	graphical_culture = romulan
+	move_pop_sound_effect = "moving_pop_confirmation"
+}
+
+LYR = {
+	archetype = BIOLOGICAL
+	randomized = no
+	portraits = {
+		"human"
+	}	
+	graphical_culture = lyran
+	move_pop_sound_effect = "moving_pop_confirmation"
+}
+
+THO = {
+	archetype = BIOLOGICAL
+	randomized = no
+	portraits = {
+		"human"
+	}	
+	graphical_culture = tholian
+	move_pop_sound_effect = "moving_pop_confirmation"
+}
+
+CON = {
+	archetype = BIOLOGICAL
+	randomized = no
+	portraits = {
+		"human"
+	}	
+	graphical_culture = concordate
+	move_pop_sound_effect = "moving_pop_confirmation"
+}
