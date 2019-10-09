@@ -1,0 +1,577 @@
+# United Federation of Planets
+federation = {
+	name = "United Federation of Planets"
+	adjective = "Federation"
+	spawn_enabled = always # yes / no / always
+	species_bio=""
+	ship_prefix = "USS"
+	
+	species = {
+		class = "FED"
+		portrait = "human"
+		name = "Human"
+		plural = "Humans"
+		adjective = "Human"
+		name_list = "Human"
+		trait = "trait_quick_learners"
+		
+	}
+	
+	room = "personality_erudite_explorers_room"
+	
+	authority = "auth_democratic"
+	civics = { "civic_free_haven" "civic_parliamentary_system" }
+	government = gov_moral_democracy
+
+	ethic = "ethic_pacifist"
+	ethic = "ethic_xenophile"
+	ethic = "ethic_egalitarian"
+	
+	ftl=warp	
+	
+	planet_name = "Earth"
+	planet_class = "pc_continental"
+	initializer = "human_system_initializer"
+	system_name = "Sol"
+	
+	graphical_culture = "federation"
+	city_graphical_culture = "humanoid_01"
+	
+	empire_flag = {
+		icon= {
+			category = "human"
+			file = "flag_human_9.dds"
+		}
+		background= {
+			category = "backgrounds"
+			file = "00_solid.dds"
+		}
+		colors={
+			"blue"
+			"black"
+			"null"
+			"null"
+		}
+	}
+	
+	ruler = {
+		name = "Frank Zappa"
+		gender = male
+		portrait = "human_male_01"
+		texture = 1
+		clothes = 1
+	}	
+}
+
+# Confederation of the Gorn
+gorn = {
+	name = "Confederation of the Gorn"
+	adjective = "Gorn"
+	spawn_enabled = always # yes / no / always
+	species_bio=""
+	ship_prefix = "GCS"
+	
+		species = {
+		class = "GOR"
+		portrait = "human"
+		name = "Human"
+		plural = "Humans"
+		adjective = "Human"
+		name_list = "Human"
+		trait = "trait_quick_learners"
+		
+	}
+	room = "personality_erudite_explorers_room"
+	
+	authority = "auth_democratic"
+	civics = { "civic_free_haven" "civic_parliamentary_system" }
+	government = gov_moral_democracy
+
+	ethic = "ethic_pacifist"
+	ethic = "ethic_xenophile"
+	ethic = "ethic_egalitarian"
+	
+	ftl=warp	
+	
+	planet_name = "Ghdar"
+	planet_class = "pc_continental"
+	initializer = "gorn_system_initializer"
+	system_name = "Ghdar"
+	
+	graphical_culture = "gorn"
+	city_graphical_culture = "humanoid_01"
+	
+	empire_flag = {
+		icon= {
+			category = "human"
+			file = "flag_human_9.dds"
+		}
+		background= {
+			category = "backgrounds"
+			file = "00_solid.dds"
+		}
+		colors={
+			"blue"
+			"black"
+			"null"
+			"null"
+		}
+	}
+	
+	ruler = {
+		name = "Frank Zappa"
+		gender = male
+		portrait = "human_male_01"
+		texture = 1
+		clothes = 1
+	}	
+}
+
+# Hydran Kingdom
+hydran = {
+	name = "Hydran Kingdom"
+	adjective = "Hydran"
+	spawn_enabled = always # yes / no / always
+	species_bio=""
+	ship_prefix = "HMS"
+	
+		species = {
+		class = "HYD"
+		portrait = "human"
+		name = "Human"
+		plural = "Humans"
+		adjective = "Human"
+		name_list = "Human"
+		trait = "trait_quick_learners"
+		
+	}
+	room = "personality_erudite_explorers_room"
+	
+	authority = "auth_democratic"
+	civics = { "civic_free_haven" "civic_parliamentary_system" }
+	government = gov_moral_democracy
+
+	ethic = "ethic_pacifist"
+	ethic = "ethic_xenophile"
+	ethic = "ethic_egalitarian"
+	
+	ftl=warp	
+	
+	planet_name = "Hydrax"
+	planet_class = "pc_continental"
+	initializer = "hydran_system_initializer"
+	system_name = "Hydrax"
+	
+	graphical_culture = "hydran"
+	city_graphical_culture = "humanoid_01"
+	
+	empire_flag = {
+		icon= {
+			category = "human"
+			file = "flag_human_9.dds"
+		}
+		background= {
+			category = "backgrounds"
+			file = "00_solid.dds"
+		}
+		colors={
+			"blue"
+			"black"
+			"null"
+			"null"
+		}
+	}
+	
+	ruler = {
+		name = "Frank Zappa"
+		gender = male
+		portrait = "human_male_01"
+		texture = 1
+		clothes = 1
+	}	
+}
+
+# Kzinti Hegemony
+kzinti = {
+	name = "Kzinti Hegemony"
+	adjective = "Kzinti"
+	spawn_enabled = always # yes / no / always
+	species_bio=""
+	ship_prefix = "KHS"
+	
+		species = {
+		class = "KZN"
+		portrait = "human"
+		name = "Human"
+		plural = "Humans"
+		adjective = "Human"
+		name_list = "Human"
+		trait = "trait_quick_learners"
+		
+	}
+	room = "personality_erudite_explorers_room"
+	
+	authority = "auth_democratic"
+	civics = { "civic_free_haven" "civic_parliamentary_system" }
+	government = gov_moral_democracy
+
+	ethic = "ethic_pacifist"
+	ethic = "ethic_xenophile"
+	ethic = "ethic_egalitarian"
+	
+	ftl=warp	
+	
+	planet_name = "Kzintai"
+	planet_class = "pc_continental"
+	initializer = "kzinti_system_initializer"
+	system_name = "Kzintai"
+	
+	graphical_culture = "kzinti"
+	city_graphical_culture = "humanoid_01"
+	
+	empire_flag = {
+		icon= {
+			category = "human"
+			file = "flag_human_9.dds"
+		}
+		background= {
+			category = "backgrounds"
+			file = "00_solid.dds"
+		}
+		colors={
+			"blue"
+			"black"
+			"null"
+			"null"
+		}
+	}
+	
+	ruler = {
+		name = "Frank Zappa"
+		gender = male
+		portrait = "human_male_01"
+		texture = 1
+		clothes = 1
+	}	
+}
+
+# Klingon Empire
+klingon = {
+	name = "Klingon Empire"
+	adjective = "Klingon"
+	spawn_enabled = always # yes / no / always
+	species_bio=""
+	ship_prefix = "IKV"
+	
+		species = {
+		class = "KLN"
+		portrait = "human"
+		name = "Human"
+		plural = "Humans"
+		adjective = "Human"
+		name_list = "Human"
+		trait = "trait_quick_learners"
+		
+	}
+	room = "personality_erudite_explorers_room"
+	
+	authority = "auth_democratic"
+	civics = { "civic_free_haven" "civic_parliamentary_system" }
+	government = gov_moral_democracy
+
+	ethic = "ethic_pacifist"
+	ethic = "ethic_xenophile"
+	ethic = "ethic_egalitarian"
+	
+	ftl=warp	
+	
+	planet_name = "Klinshai"
+	planet_class = "pc_continental"
+	initializer = "klingon_system_initializer"
+	system_name = "Klinshai"
+	
+	graphical_culture = "klingon"
+	city_graphical_culture = "humanoid_01"
+	
+	empire_flag = {
+		icon= {
+			category = "human"
+			file = "flag_human_9.dds"
+		}
+		background= {
+			category = "backgrounds"
+			file = "00_solid.dds"
+		}
+		colors={
+			"blue"
+			"black"
+			"null"
+			"null"
+		}
+	}
+	
+	ruler = {
+		name = "Frank Zappa"
+		gender = male
+		portrait = "human_male_01"
+		texture = 1
+		clothes = 1
+	}	
+}
+
+# Romulan Star Empire 
+romulan = {
+	name = "Romulan Star Empire"
+	adjective = "Romulan"
+	spawn_enabled = always # yes / no / always
+	species_bio=""
+	ship_prefix = "RIS"
+	
+		species = {
+		class = "ROM"
+		portrait = "human"
+		name = "Human"
+		plural = "Humans"
+		adjective = "Human"
+		name_list = "Human"
+		trait = "trait_quick_learners"
+		
+	}
+	room = "personality_erudite_explorers_room"
+	
+	authority = "auth_democratic"
+	civics = { "civic_free_haven" "civic_parliamentary_system" }
+	government = gov_moral_democracy
+
+	ethic = "ethic_pacifist"
+	ethic = "ethic_xenophile"
+	ethic = "ethic_egalitarian"
+	
+	ftl=warp	
+	
+	planet_name = "Romulus"
+	planet_class = "pc_continental"
+	initializer = "romulan_system_initializer"
+	system_name = "Romulus"
+	
+	graphical_culture = "romulan"
+	city_graphical_culture = "humanoid_01"
+	
+	empire_flag = {
+		icon= {
+			category = "human"
+			file = "flag_human_9.dds"
+		}
+		background= {
+			category = "backgrounds"
+			file = "00_solid.dds"
+		}
+		colors={
+			"blue"
+			"black"
+			"null"
+			"null"
+		}
+	}
+	
+	ruler = {
+		name = "Frank Zappa"
+		gender = male
+		portrait = "human_male_01"
+		texture = 1
+		clothes = 1
+	}	
+}
+
+
+# Lyran Star Empire
+lyran = {
+	name = "Lyran Star Empire"
+	adjective = "Lyran"
+	spawn_enabled = always # yes / no / always
+	species_bio=""
+	ship_prefix = "LFS"
+	
+		species = {
+		class = "LYR"
+		portrait = "human"
+		name = "Human"
+		plural = "Humans"
+		adjective = "Human"
+		name_list = "Human"
+		trait = "trait_quick_learners"
+		
+	}
+	room = "personality_erudite_explorers_room"
+	
+	authority = "auth_democratic"
+	civics = { "civic_free_haven" "civic_parliamentary_system" }
+	government = gov_moral_democracy
+
+	ethic = "ethic_pacifist"
+	ethic = "ethic_xenophile"
+	ethic = "ethic_egalitarian"
+	
+	ftl=warp	
+	
+	planet_name = "Lyrantan"
+	planet_class = "pc_continental"
+	initializer = "lyran_system_initializer"
+	system_name = "Lyrantan"
+	
+	graphical_culture = "lyran"
+	city_graphical_culture = "humanoid_01"
+	
+	empire_flag = {
+		icon= {
+			category = "human"
+			file = "flag_human_9.dds"
+		}
+		background= {
+			category = "backgrounds"
+			file = "00_solid.dds"
+		}
+		colors={
+			"blue"
+			"black"
+			"null"
+			"null"
+		}
+	}
+	
+	ruler = {
+		name = "Frank Zappa"
+		gender = male
+		portrait = "human_male_01"
+		texture = 1
+		clothes = 1
+	}	
+}
+
+# Tholian Holdfast
+tholian = {
+	name = "Tholian Holdfast"
+	adjective = "Tholian"
+	spawn_enabled = always # yes / no / always
+	species_bio=""
+	ship_prefix = "TDFS"
+	
+		species = {
+		class = "THO"
+		portrait = "human"
+		name = "Human"
+		plural = "Humans"
+		adjective = "Human"
+		name_list = "Human"
+		trait = "trait_quick_learners"
+		
+	}
+		room = "personality_erudite_explorers_room"
+	
+	authority = "auth_democratic"
+	civics = { "civic_free_haven" "civic_parliamentary_system" }
+	government = gov_moral_democracy
+
+	ethic = "ethic_pacifist"
+	ethic = "ethic_xenophile"
+	ethic = "ethic_egalitarian"
+	
+	ftl=warp	
+	
+	planet_name = "Tholia"
+	planet_class = "pc_continental"
+	initializer = "tholian_system_initializer"
+	system_name = "Tholia"
+	
+	graphical_culture = "tholian"
+	city_graphical_culture = "humanoid_01"
+	
+	empire_flag = {
+		icon= {
+			category = "human"
+			file = "flag_human_9.dds"
+		}
+		background= {
+			category = "backgrounds"
+			file = "00_solid.dds"
+		}
+		colors={
+			"blue"
+			"black"
+			"null"
+			"null"
+		}
+	}
+	
+	ruler = {
+		name = "Frank Zappa"
+		gender = male
+		portrait = "human_male_01"
+		texture = 1
+		clothes = 1
+	}
+}
+
+# Interstellar Concordium
+concordate = {
+	name = "Interstellar Concordium"
+	adjective = "Concordium"
+	spawn_enabled = always # yes / no / always
+	species_bio=""
+	ship_prefix = "CSS"
+	
+		species = {
+		class = "CON"
+		portrait = "human"
+		name = "Human"
+		plural = "Humans"
+		adjective = "Human"
+		name_list = "Human"
+		trait = "trait_quick_learners"
+		
+	}
+		room = "personality_erudite_explorers_room"
+	
+	authority = "auth_democratic"
+	civics = { "civic_free_haven" "civic_parliamentary_system" }
+	government = gov_moral_democracy
+
+	ethic = "ethic_pacifist"
+	ethic = "ethic_xenophile"
+	ethic = "ethic_egalitarian"
+	
+	ftl=warp	
+	
+	planet_name = "Veltressa"
+	planet_class = "pc_continental"
+	initializer = "veltressai_system_initializer"
+	system_name = "Veltressa"
+	
+	graphical_culture = "concordate"
+	city_graphical_culture = "humanoid_01"
+	
+	empire_flag = {
+		icon= {
+			category = "human"
+			file = "flag_human_9.dds"
+		}
+		background= {
+			category = "backgrounds"
+			file = "00_solid.dds"
+		}
+		colors={
+			"blue"
+			"black"
+			"null"
+			"null"
+		}
+	}
+	
+	ruler = {
+		name = "Frank Zappa"
+		gender = male
+		portrait = "human_male_01"
+		texture = 1
+		clothes = 1
+	}
+}
