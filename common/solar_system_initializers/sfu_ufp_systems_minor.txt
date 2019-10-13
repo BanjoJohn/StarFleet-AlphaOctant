@@ -21,6 +21,17 @@ sfu_antares_initializer = {
 		radius = 140
 	}
 	
+	usage = misc_system_init
+	usage_odds = {
+		base = 2000000
+		modifier = {
+			factor = 0
+			NOT = { has_star_flag = empire_cluster }
+		}
+	}
+	max_instances = 1
+	spawn_chance = 100
+	
 	planet = {
 		name = "Antar-eane'se"
 		class = "pc_g_star"
@@ -155,6 +166,17 @@ sfu_orion_initializer = {
 		type = rocky_asteroid_belt
 		radius = 250
 	}
+	
+	usage = misc_system_init
+	usage_odds = {
+		base = 2000000
+		modifier = {
+			factor = 0
+			NOT = { has_star_flag = empire_cluster }
+		}
+	}
+	max_instances = 1
+	spawn_chance = 100
 	
 	planet = {
 		name = "Orion"
