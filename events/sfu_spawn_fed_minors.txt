@@ -139,7 +139,7 @@ country_event = {
 				
 			}### End Ore'nn Planet
 			every_system_planet = {
-				limit = { has_planet_flag = sfu_planet_orion }
+				limit = { has_planet_flag = sfu_planet_felka }
 				create_species = {
 					name = "Squidbillies"
 					class = "MOL"
