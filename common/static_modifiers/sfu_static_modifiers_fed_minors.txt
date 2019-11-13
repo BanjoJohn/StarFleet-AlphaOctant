@@ -19,3 +19,11 @@ orion_society = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_consecrated_worlds.dds"
 	icon_frame = 1
 }
+
+tellarite_society = {
+	pop_government_ethic_attraction = -0.50
+	planet_jobs_unity_produces_mult = 0.20
+	job_culture_worker_add = 1
+	icon = "gfx/interface/icons/planet_modifiers/pm_consecrated_worlds.dds"
+	icon_frame = 1
+}

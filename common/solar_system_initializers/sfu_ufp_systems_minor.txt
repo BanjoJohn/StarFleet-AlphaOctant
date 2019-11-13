@@ -439,3 +439,114 @@ sfu_osiris_initializer = {
 		size = 20
 	}
 }
+
+##########################################################################
+# TELLARITES
+##########################################################################
+sfu_tellar_initializer = {
+	name = "Hahrnohk"
+	
+	class = "sc_k"
+	
+	flags = { sfu_system_tellar }
+	
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 390
+	}
+	
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 140
+	}
+	
+	usage = misc_system_init
+	usage_odds = {
+		base = 2000000
+		modifier = {
+			factor = 0
+			NOT = { has_star_flag = empire_cluster }
+		}
+	}
+	max_instances = 1
+	spawn_chance = 100
+	
+	planet = {
+		name = "Hahrnohk"
+		class = "pc_k_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 60
+		has_ring = no
+		satellite_naming_policy = upper_case_roman_numerals
+	}
+	
+	planet = {
+		name = "Inahrohk"
+		class = pc_molten
+		orbit_distance = 70
+		size = 6
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Lahrohk"
+		class = pc_molten
+		orbit_distance = 30
+		size = 8
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Trilhrok"
+		class = pc_barren
+		orbit_distance = 30
+		size = 13
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Qadhrok"
+		class = pc_barren_cold
+		orbit_distance = 30
+		size = 16
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Philhrohk"
+		class = pc_gas_giant
+		orbit_distance = 50
+		size = 30
+		has_ring = yes
+	}
+	
+	planet = {
+		name = "Hezahrohk"
+		class = pc_gas_giant
+		orbit_distance = 50
+		size = 30
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Tellarite Prime"
+		class = "pc_arid"
+		orbit_distance = 40
+		orbit_angle = {min=0 max=360}
+		size = 16
+		has_ring = no
+		deposit_blockers = none
+		modifiers = none
+		
+		flags = { sfu_planet_tellar }
+	}
+	
+		planet = {
+		name = "Okahrohk"
+		class = pc_gas_giant
+		orbit_distance = 50
+		size = 30
+		has_ring = no
+	}
+}

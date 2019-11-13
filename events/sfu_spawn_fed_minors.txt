@@ -27,8 +27,10 @@ event = {
 			limit = { has_country_flag = sfu_empire_ufp }
 			### Orions
 			country_event = { id=sfu_spawn_fed_minors.2 days=0 }
-			### ANTAREANS
+			### Tellarites
 			country_event = { id=sfu_spawn_fed_minors.3 days=0 }
+			### ANTAREANS
+			country_event = { id=sfu_spawn_fed_minors.4 days=0 }
 		}
 	}
 }
@@ -144,6 +146,102 @@ country_event = {
 
 country_event = {
 	id = sfu_spawn_fed_minors.3
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		### Tellarite System
+		every_system = {
+			limit = { has_star_flag = sfu_system_tellar }
+			### Tellarite Planet
+			every_system_planet = {
+				limit = { has_planet_flag = sfu_planet_tellar }
+				create_species = {
+					name = "Tellarite"
+					class = HUM
+					portrait = humanoid_hp_02
+					homeworld = THIS
+					namelist = "HUMAN1"
+					traits = {
+						trait = "trait_sfu_transplant" #0
+						trait = trait_very_strong #+3
+						trait = trait_natural_engineers #+1
+						trait = trait_industrious #+2
+						trait = trait_quarrelsome #-1
+						trait = trait_sedentary #-1
+						trait = trait_repugnant #-2
+						ideal_planet_class = pc_arid
+					}
+				}
+				last_created_species = { save_global_event_target_as = tellariteSpecies }
+				create_country = {
+					name = "Tellarite Star Union"
+					name_list = "HUMAN1"
+					civics = {
+						civic = civic_cutthroat_politics
+						civic = civic_meritocracy
+					}
+					authority = auth_democratic
+					species = event_target:tellariteSpecies
+					flag = random
+					ethos = {
+						ethic = ethic_xenophile
+						ethic = ethic_materialist
+						ethic = ethic_egalitarian
+					}
+				}
+				last_created_country = { save_event_target_as = sfu_minor_tellarite }
+				set_owner = event_target:sfu_minor_tellar
+				
+				generate_start_deposits_and_blockers = {}
+				generate_start_buildings_and_districts = {}
+				
+				add_district = district_generator
+				add_district = district_generator
+				add_district = district_mining
+				add_district = district_farming
+				
+				add_building = building_holo_theatres
+				
+				while = {
+					count = 12
+					create_pop = {
+						species = event_target:tellariteSpecies
+						ethos = {ethic = "ethic_materialist"}
+					}
+				}
+				while = {
+					count = 11
+					create_pop = {
+						species = event_target:tellariteSpecies
+						ethos = {ethic = "ethic_xenophile"}
+					}
+				}
+				while = {
+					count = 12
+					create_pop = {
+						species = event_target:tellariteSpecies
+						ethos = {ethic = "ethic_egalitarian"}
+					}
+				}
+				
+				clear_planet_modifiers = yes
+				add_modifier = { modifier = tellarite_society days=-1}
+				
+			}### End Ore'nn Planet
+			create_starbase = {
+				size = starbase_starport
+				owner = event_target:sfu_minor_tellarite
+				module = shipyard
+				module = trading_hub
+				building = crew_quarters
+			}
+		}#End system effects
+	}#Immediate
+}
+
+country_event = {
+	id = sfu_spawn_fed_minors.4
 	hide_window = yes
 	is_triggered_only = yes
 	fire_only_once = yes
