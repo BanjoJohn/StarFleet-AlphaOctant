@@ -1,0 +1,928 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:java="http://www.yworks.com/xml/yfiles-common/1.0/java" xmlns:sys="http://www.yworks.com/xml/yfiles-common/markup/primitives/2.0" xmlns:x="http://www.yworks.com/xml/yfiles-common/markup/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:y="http://www.yworks.com/xml/graphml" xmlns:yed="http://www.yworks.com/xml/yed/3" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://www.yworks.com/xml/schema/graphml/1.1/ygraphml.xsd">
+  <!--Created by yEd 3.19-->
+  <key attr.name="Description" attr.type="string" for="graph" id="d0"/>
+  <key for="port" id="d1" yfiles.type="portgraphics"/>
+  <key for="port" id="d2" yfiles.type="portgeometry"/>
+  <key for="port" id="d3" yfiles.type="portuserdata"/>
+  <key attr.name="url" attr.type="string" for="node" id="d4"/>
+  <key attr.name="description" attr.type="string" for="node" id="d5"/>
+  <key for="node" id="d6" yfiles.type="nodegraphics"/>
+  <key for="graphml" id="d7" yfiles.type="resources"/>
+  <key attr.name="url" attr.type="string" for="edge" id="d8"/>
+  <key attr.name="description" attr.type="string" for="edge" id="d9"/>
+  <key for="edge" id="d10" yfiles.type="edgegraphics"/>
+  <graph edgedefault="directed" id="G">
+    <data key="d0" xml:space="preserve"/>
+    <node id="n0">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="120.0" width="240.0" x="330.0" y="60.0"/>
+          <y:Fill color="#00B200" transparent="false"/>
+          <y:BorderStyle color="#FF9900" raised="false" type="dashed" width="3.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="20" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="28.501953125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#000000" underlinedText="true" verticalTextPosition="bottom" visible="true" width="206.24609375" x="4.0" xml:space="preserve" y="4.0">Industrial Agriculture</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="28.0" horizontalTextPosition="center" iconData="1" iconTextGap="4" modelName="internal" modelPosition="tr" textColor="#000000" verticalTextPosition="bottom" visible="true" width="28.0" x="208.0" y="4.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="43.203125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="bl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="210.21875" x="4.0" xml:space="preserve" y="72.796875">Building: Hydroponic Farm
+District: Agriculture</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n1" yfiles.foldertype="group">
+      <data key="d4" xml:space="preserve"/>
+      <data key="d6">
+        <y:ProxyAutoBoundsNode>
+          <y:Realizers active="0">
+            <y:GroupNode>
+              <y:Geometry height="388.501953125" width="150.0" x="120.0" y="210.84326171875"/>
+              <y:Fill color="#F5F5F5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="dashed" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" backgroundColor="#EBEBEB" borderDistance="0.0" fontFamily="Dialog" fontSize="20" fontStyle="bolditalic" hasLineColor="false" height="28.501953125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="150.0" x="0.0" xml:space="preserve" y="0.0">Legend</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+              <y:State closed="false" closedHeight="50.0" closedWidth="50.0" innerGraphDisplayEnabled="false"/>
+              <y:Insets bottom="15" bottomF="15.0" left="15" leftF="15.0" right="15" rightF="15.0" top="15" topF="15.0"/>
+              <y:BorderInsets bottom="0" bottomF="0.0" left="0" leftF="0.0" right="0" rightF="0.0" top="0" topF="0.0"/>
+            </y:GroupNode>
+            <y:GroupNode>
+              <y:Geometry height="50.0" width="50.0" x="-405.0" y="316.966796875"/>
+              <y:Fill color="#F5F5F5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="dashed" width="1.0"/>
+              <y:NodeLabel alignment="right" autoSizePolicy="node_width" backgroundColor="#EBEBEB" borderDistance="0.0" fontFamily="Dialog" fontSize="15" fontStyle="plain" hasLineColor="false" height="22.37646484375" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="59.02685546875" x="-4.513427734375" xml:space="preserve" y="0.0">Folder 2</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+              <y:State closed="true" closedHeight="50.0" closedWidth="50.0" innerGraphDisplayEnabled="false"/>
+              <y:Insets bottom="5" bottomF="5.0" left="5" leftF="5.0" right="5" rightF="5.0" top="5" topF="5.0"/>
+              <y:BorderInsets bottom="0" bottomF="0.0" left="0" leftF="0.0" right="0" rightF="0.0" top="0" topF="0.0"/>
+            </y:GroupNode>
+          </y:Realizers>
+        </y:ProxyAutoBoundsNode>
+      </data>
+      <graph edgedefault="directed" id="n1:">
+        <node id="n1::n0">
+          <data key="d6">
+            <y:ShapeNode>
+              <y:Geometry height="60.0" width="120.0" x="135.0" y="254.34521484375"/>
+              <y:Fill color="#00B200" transparent="false"/>
+              <y:BorderStyle color="#FF9900" raised="false" type="dashed" width="3.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" underlinedText="true" verticalTextPosition="bottom" visible="true" width="106.234375" x="6.8828125" xml:space="preserve" y="18.19921875">Starting Tech</y:NodeLabel>
+              <y:Shape type="rectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n1::n1">
+          <data key="d6">
+            <y:ShapeNode>
+              <y:Geometry height="60.0" width="120.0" x="135.0" y="344.34521484375"/>
+              <y:Fill color="#00B200" transparent="false"/>
+              <y:BorderStyle color="#000000" raised="false" type="dashed" width="3.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" underlinedText="true" verticalTextPosition="bottom" visible="true" width="110.6875" x="4.65625" xml:space="preserve" y="18.19921875">MP Start Tech</y:NodeLabel>
+              <y:Shape type="rectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n1::n2">
+          <data key="d6">
+            <y:ShapeNode>
+              <y:Geometry height="60.0" width="120.0" x="135.0" y="434.34521484375"/>
+              <y:Fill color="#00B200" transparent="false"/>
+              <y:BorderStyle color="#000000" raised="false" type="line" width="4.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" underlinedText="true" verticalTextPosition="bottom" visible="true" width="100.9140625" x="9.54296875" xml:space="preserve" y="18.19921875">Normal Tech</y:NodeLabel>
+              <y:Shape type="rectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n1::n3">
+          <data key="d6">
+            <y:ShapeNode>
+              <y:Geometry height="60.0" width="120.0" x="135.0" y="524.34521484375"/>
+              <y:Fill color="#00B200" transparent="false"/>
+              <y:BorderStyle color="#800080" raised="false" type="line" width="4.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" underlinedText="true" verticalTextPosition="bottom" visible="true" width="81.3671875" x="19.31640625" xml:space="preserve" y="18.19921875">Rare Tech</y:NodeLabel>
+              <y:Shape type="rectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+      </graph>
+    </node>
+    <node id="n2">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="120.0" width="240.0" x="329.99999999999994" y="1110.0"/>
+          <y:Fill color="#00B200" transparent="false"/>
+          <y:BorderStyle color="#FF9900" raised="false" type="dashed" width="3.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="20" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="28.501953125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#000000" underlinedText="true" verticalTextPosition="bottom" visible="true" width="188.541015625" x="4.0" xml:space="preserve" y="4.0">Planetary Defenses</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="28.0" horizontalTextPosition="center" iconData="2" iconTextGap="4" modelName="internal" modelPosition="tr" textColor="#000000" verticalTextPosition="bottom" visible="true" width="28.0" x="208.00000000000006" y="4.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="bl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="163.0703125" x="4.0" xml:space="preserve" y="92.3984375">Building: Stronghold</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n3">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="120.0" width="240.0" x="330.0" y="660.0"/>
+          <y:Fill color="#00B200" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="dashed" width="3.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="20" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="28.501953125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#000000" underlinedText="true" verticalTextPosition="bottom" visible="true" width="205.123046875" x="4.0" xml:space="preserve" y="4.0">New Worlds Protocol</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="28.0" horizontalTextPosition="center" iconData="3" iconTextGap="4" modelName="internal" modelPosition="tr" textColor="#000000" verticalTextPosition="bottom" visible="true" width="28.0" x="208.0" y="4.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="43.203125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="bl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="236.0390625" x="4.0" xml:space="preserve" y="72.796875">Ship Size: Colony Ship
+Ship Size: Private Colony Ship</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n4">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="120.0" width="240.0" x="330.0" y="1410.0"/>
+          <y:Fill color="#00B200" transparent="false"/>
+          <y:BorderStyle color="#FF9900" raised="false" type="dashed" width="3.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="20" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="28.501953125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#000000" underlinedText="true" verticalTextPosition="bottom" visible="true" width="140.689453125" x="4.0" xml:space="preserve" y="4.0">Leuisure Zone</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="28.0" horizontalTextPosition="center" iconData="4" iconTextGap="4" modelName="internal" modelPosition="tr" textColor="#000000" verticalTextPosition="bottom" visible="true" width="28.0" x="208.0" y="4.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="bl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="186.234375" x="4.0" xml:space="preserve" y="92.3984375">Building: Leisure Zones</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n5">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="120.0" width="240.0" x="330.0" y="510.0"/>
+          <y:Fill color="#00B200" transparent="false"/>
+          <y:BorderStyle color="#FF9900" raised="false" type="dashed" width="3.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="20" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="28.501953125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#000000" underlinedText="true" verticalTextPosition="bottom" visible="true" width="209.60546875" x="4.0" xml:space="preserve" y="4.0">Interplanetary Comm.</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="28.0" horizontalTextPosition="center" iconData="4" iconTextGap="4" modelName="internal" modelPosition="tr" textColor="#000000" verticalTextPosition="bottom" visible="true" width="28.0" x="208.0" y="4.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="bl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="212.015625" x="4.0" xml:space="preserve" y="92.3984375">Building: Commercial Zone</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n6">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="1908.1328125" width="30.0" x="600.0" y="-66.5703125"/>
+          <y:Fill color="#C0C0C0" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="4.0" x="13.0" y="952.06640625">
+            <y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n7">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="120.0" width="240.0" x="690.0" y="60.0"/>
+          <y:Fill color="#00B200" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="3.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="20" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="28.501953125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#000000" underlinedText="true" verticalTextPosition="bottom" visible="true" width="149.56640625" x="4.0" xml:space="preserve" y="4.0">Eco-Simulation</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="28.0" horizontalTextPosition="center" iconData="1" iconTextGap="4" modelName="internal" modelPosition="tr" textColor="#000000" verticalTextPosition="bottom" visible="true" width="28.0" x="208.0" y="4.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="bl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="171.59375" x="4.0" xml:space="preserve" y="92.3984375">Jobs: +1 Food/Farmer</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n8">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="120.0" width="240.0" x="690.0" y="810.0"/>
+          <y:Fill color="#00B200" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="3.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="20" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="28.501953125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#000000" underlinedText="true" verticalTextPosition="bottom" visible="true" width="192.92578125" x="4.0" xml:space="preserve" y="4.0">Doc: Space Combat</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="28.0" horizontalTextPosition="center" iconData="2" iconTextGap="4" modelName="internal" modelPosition="tr" textColor="#000000" verticalTextPosition="bottom" visible="true" width="28.0" x="208.0" y="4.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="bl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="163.6171875" x="4.0" xml:space="preserve" y="92.3984375">Effect: Fleet Size +20</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n9">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="1908.1328125" width="30.0" x="960.0" y="-66.5703125"/>
+          <y:Fill color="#C0C0C0" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="4.0" x="13.0" y="952.06640625">
+            <y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n10">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="120.0" width="240.0" x="1050.0" y="810.0"/>
+          <y:Fill color="#00B200" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="3.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="20" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="28.501953125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#000000" underlinedText="true" verticalTextPosition="bottom" visible="true" width="147.349609375" x="4.0" xml:space="preserve" y="4.0">Doc: Flagships</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="28.0" horizontalTextPosition="center" iconData="2" iconTextGap="4" modelName="internal" modelPosition="tr" textColor="#000000" verticalTextPosition="bottom" visible="true" width="28.0" x="208.0" y="4.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="bl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="163.6171875" x="4.0" xml:space="preserve" y="92.3984375">Effect: Fleet Size +20</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n11">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="120.0" width="240.0" x="690.0" y="960.0"/>
+          <y:Fill color="#00B200" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="3.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="20" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="28.501953125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#000000" underlinedText="true" verticalTextPosition="bottom" visible="true" width="188.47265625" x="4.0" xml:space="preserve" y="4.0">Doc: Support Vess.</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="28.0" horizontalTextPosition="center" iconData="2" iconTextGap="4" modelName="internal" modelPosition="tr" textColor="#000000" verticalTextPosition="bottom" visible="true" width="28.0" x="208.0" y="4.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="bl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="162.7265625" x="4.0" xml:space="preserve" y="92.3984375">Effect: Nav. Cap. +30</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n12">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="120.0" width="240.0" x="690.0" y="660.0"/>
+          <y:Fill color="#00B200" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="3.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="20" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="28.501953125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#000000" underlinedText="true" verticalTextPosition="bottom" visible="true" width="197.4375" x="4.0" xml:space="preserve" y="4.0">Basic Blocker Clear.</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="28.0" horizontalTextPosition="center" iconData="3" iconTextGap="4" modelName="internal" modelPosition="tr" textColor="#000000" verticalTextPosition="bottom" visible="true" width="28.0" x="208.0" y="4.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="bl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="230.7734375" x="4.0" xml:space="preserve" y="92.3984375">Feature: Clear Basic Blockers</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n13">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="120.0" width="240.0" x="330.0" y="210.0"/>
+          <y:Fill color="#00B200" transparent="false"/>
+          <y:BorderStyle color="#FF9900" raised="false" type="dashed" width="3.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="20" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="28.501953125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#000000" underlinedText="true" verticalTextPosition="bottom" visible="true" width="175.181640625" x="4.0" xml:space="preserve" y="4.0">Planetary Govern.</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="28.0" horizontalTextPosition="center" iconData="5" iconTextGap="4" modelName="internal" modelPosition="tr" textColor="#000000" verticalTextPosition="bottom" visible="true" width="28.0" x="208.0" y="4.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="62.8046875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="bl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="192.453125" x="4.0" xml:space="preserve" y="53.1953125">Building: Planet Admin.
+Building: Monument
+Building: Police Stations</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n14">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="120.0" width="240.0" x="690.0" y="210.0"/>
+          <y:Fill color="#00B200" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="3.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="20" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="28.501953125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#000000" underlinedText="true" verticalTextPosition="bottom" visible="true" width="154.0" x="4.0" xml:space="preserve" y="4.0">Imp. Unification</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="28.0" horizontalTextPosition="center" iconData="4" iconTextGap="4" modelName="internal" modelPosition="tr" textColor="#000000" verticalTextPosition="bottom" visible="true" width="28.0" x="208.0" y="4.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="43.203125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="bl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="188.8984375" x="4.0" xml:space="preserve" y="72.796875">Effect: Additional Edicts
+Unity: +5%</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n15">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="120.0" width="240.0" x="1050.0" y="1410.0"/>
+          <y:Fill color="#00B200" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="3.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="20" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="28.501953125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#000000" underlinedText="true" verticalTextPosition="bottom" visible="true" width="90.669921875" x="4.0" xml:space="preserve" y="4.0">Tri-Video</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="28.0" horizontalTextPosition="center" iconData="4" iconTextGap="4" modelName="internal" modelPosition="tr" textColor="#000000" verticalTextPosition="bottom" visible="true" width="28.0" x="208.0" y="4.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="bl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="211.1328125" x="4.0" xml:space="preserve" y="92.3984375">Building: Trivideo Theatres</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n16">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="120.0" width="240.0" x="1050.0" y="210.0"/>
+          <y:Fill color="#00B200" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="3.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="20" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="28.501953125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#000000" underlinedText="true" verticalTextPosition="bottom" visible="true" width="162.90625" x="4.0" xml:space="preserve" y="4.0">Colonial Bureau.</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="28.0" horizontalTextPosition="center" iconData="4" iconTextGap="4" modelName="internal" modelPosition="tr" textColor="#000000" verticalTextPosition="bottom" visible="true" width="28.0" x="208.0" y="4.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="bl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="183.1484375" x="4.0" xml:space="preserve" y="92.3984375">Effect: Admin. Cap. +20</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n17">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="1908.1328125" width="30.0" x="1320.0" y="-66.5703125"/>
+          <y:Fill color="#C0C0C0" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="4.0" x="13.0" y="952.06640625">
+            <y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n18">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="120.0" width="240.0" x="1050.0" y="510.0"/>
+          <y:Fill color="#00B200" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="4.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="20" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="28.501953125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#000000" underlinedText="true" verticalTextPosition="bottom" visible="true" width="179.60546875" x="4.0" xml:space="preserve" y="4.0">Interstellar Comm.</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="28.0" horizontalTextPosition="center" iconData="4" iconTextGap="4" modelName="internal" modelPosition="tr" textColor="#000000" verticalTextPosition="bottom" visible="true" width="28.0" x="208.0" y="4.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="bl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="225.359375" x="4.0" xml:space="preserve" y="92.3984375">Building: Commercial Zone 2</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n19">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="120.0" width="240.0" x="1410.0" y="810.0"/>
+          <y:Fill color="#00B200" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="3.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="20" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="28.501953125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#000000" underlinedText="true" verticalTextPosition="bottom" visible="true" width="176.3046875" x="4.0" xml:space="preserve" y="4.0">Doc. Aux. Vessels</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="28.0" horizontalTextPosition="center" iconData="2" iconTextGap="4" modelName="internal" modelPosition="tr" textColor="#000000" verticalTextPosition="bottom" visible="true" width="28.0" x="208.0" y="4.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="bl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="163.6171875" x="4.0" xml:space="preserve" y="92.3984375">Effect: Fleet Size +20</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n20">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="120.0" width="240.0" x="1050.0" y="660.0"/>
+          <y:Fill color="#00B200" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="3.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="20" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="28.501953125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#000000" underlinedText="true" verticalTextPosition="bottom" visible="true" width="168.501953125" x="4.0" xml:space="preserve" y="4.0">Adv. Block Clear.</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="28.0" horizontalTextPosition="center" iconData="3" iconTextGap="4" modelName="internal" modelPosition="tr" textColor="#000000" verticalTextPosition="bottom" visible="true" width="28.0" x="208.0" y="4.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="bl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="222.75" x="4.0" xml:space="preserve" y="92.3984375">Feature: Clear Adv. Blockers</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n21">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="120.0" width="240.0" x="1050.0" y="960.0"/>
+          <y:Fill color="#00B200" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="3.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="20" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="28.501953125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#000000" underlinedText="true" verticalTextPosition="bottom" visible="true" width="177.369140625" x="4.0" xml:space="preserve" y="4.0">Interstellar Logist.</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="28.0" horizontalTextPosition="center" iconData="2" iconTextGap="4" modelName="internal" modelPosition="tr" textColor="#000000" verticalTextPosition="bottom" visible="true" width="28.0" x="208.0" y="4.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="bl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="162.7265625" x="4.0" xml:space="preserve" y="92.3984375">Effect: Nav. Cap. +30</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n22">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="120.0" width="240.0" x="1410.0" y="210.0"/>
+          <y:Fill color="#00B200" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="3.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="20" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="28.501953125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#000000" underlinedText="true" verticalTextPosition="bottom" visible="true" width="186.28515625" x="4.0" xml:space="preserve" y="4.0">Interstellar Bureau.</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="28.0" horizontalTextPosition="center" iconData="4" iconTextGap="4" modelName="internal" modelPosition="tr" textColor="#000000" verticalTextPosition="bottom" visible="true" width="28.0" x="208.0" y="4.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="bl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="183.1484375" x="4.0" xml:space="preserve" y="92.3984375">Effect: Admin. Cap. +20</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n23">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="1908.1328125" width="30.0" x="1680.0" y="-66.5703125"/>
+          <y:Fill color="#C0C0C0" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="4.0" x="13.0" y="952.06640625">
+            <y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n24">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="120.0" width="240.0" x="1050.0" y="60.0"/>
+          <y:Fill color="#00B200" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="3.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="20" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="28.501953125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#000000" underlinedText="true" verticalTextPosition="bottom" visible="true" width="117.359375" x="4.0" xml:space="preserve" y="4.0">Gene Crops</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="28.0" horizontalTextPosition="center" iconData="1" iconTextGap="4" modelName="internal" modelPosition="tr" textColor="#000000" verticalTextPosition="bottom" visible="true" width="28.0" x="208.0" y="4.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="43.203125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="bl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="223.5625" x="4.0" xml:space="preserve" y="72.796875">Building: Hydroponic Farm 2
+Jobs: +1 Food/Farmer</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n25">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="120.0" width="240.0" x="1410.0" y="60.0"/>
+          <y:Fill color="#00B200" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="3.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="20" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="28.501953125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#000000" underlinedText="true" verticalTextPosition="bottom" visible="true" width="156.24609375" x="4.0" xml:space="preserve" y="4.0">Soil Enrichment</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="28.0" horizontalTextPosition="center" iconData="1" iconTextGap="4" modelName="internal" modelPosition="tr" textColor="#000000" verticalTextPosition="bottom" visible="true" width="28.0" x="208.0" y="4.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="bl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="171.59375" x="4.0" xml:space="preserve" y="92.3984375">Jobs: +1 Food/Farmer</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n26">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="120.0" width="240.0" x="1050.0" y="1260.0"/>
+          <y:Fill color="#00B200" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="3.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="20" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="28.501953125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#000000" underlinedText="true" verticalTextPosition="bottom" visible="true" width="152.9453125" x="4.0" xml:space="preserve" y="4.0">Macro Genetics</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="28.0" horizontalTextPosition="center" iconData="1" iconTextGap="4" modelName="internal" modelPosition="tr" textColor="#000000" verticalTextPosition="bottom" visible="true" width="28.0" x="208.0" y="4.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="bl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="218.2421875" x="4.0" xml:space="preserve" y="92.3984375">Building: Planet. Gene. Hos.</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n27">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="120.0" width="240.0" x="1410.0" y="360.0"/>
+          <y:Fill color="#00B200" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="3.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="20" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="28.501953125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#000000" underlinedText="true" verticalTextPosition="bottom" visible="true" width="148.47265625" x="4.0" xml:space="preserve" y="4.0">Xeno Relations</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="28.0" horizontalTextPosition="center" iconData="4" iconTextGap="4" modelName="internal" modelPosition="tr" textColor="#000000" verticalTextPosition="bottom" visible="true" width="28.0" x="208.0" y="4.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="62.8046875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="bl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="141.3515625" x="4.0" xml:space="preserve" y="53.1953125">Trust Growth +5%
+Max Rivalries: +1
+Influence: +1</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n28">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="120.0" width="240.0" x="330.0" y="1260.0"/>
+          <y:Fill color="#00B200" transparent="false"/>
+          <y:BorderStyle color="#FF9900" raised="false" type="dashed" width="3.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="20" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="28.501953125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#000000" underlinedText="true" verticalTextPosition="bottom" visible="true" width="145.1328125" x="4.0" xml:space="preserve" y="4.0">Sp. Age Health</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="28.0" horizontalTextPosition="center" iconData="1" iconTextGap="4" modelName="internal" modelPosition="tr" textColor="#000000" verticalTextPosition="bottom" visible="true" width="28.0" x="208.0" y="4.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="bl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="217.359375" x="4.0" xml:space="preserve" y="92.3984375">Building: Planetary Hospital</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n29">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="120.0" width="240.0" x="1770.0" y="60.0"/>
+          <y:Fill color="#00B200" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="3.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="20" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="28.501953125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#000000" underlinedText="true" verticalTextPosition="bottom" visible="true" width="125.1328125" x="4.0" xml:space="preserve" y="4.0">Artificial Life</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="28.0" horizontalTextPosition="center" iconData="1" iconTextGap="4" modelName="internal" modelPosition="tr" textColor="#000000" verticalTextPosition="bottom" visible="true" width="28.0" x="208.0" y="4.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="43.203125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="bl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="223.5625" x="4.0" xml:space="preserve" y="72.796875">Building: Hydroponic Farm 3
+Jobs: +1 Food/Farmer</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n30">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="60.0" width="240.0" x="330.0" y="-120.0"/>
+          <y:Fill color="#C0C0C0" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="20" fontStyle="bolditalic" hasBackgroundColor="false" hasLineColor="false" height="28.501953125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" underlinedText="true" verticalTextPosition="bottom" visible="true" width="57.359375" x="91.3203125" xml:space="preserve" y="4.0">Tier 0</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n31">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="60.0" width="240.0" x="690.0" y="-120.0"/>
+          <y:Fill color="#C0C0C0" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="20" fontStyle="bolditalic" hasBackgroundColor="false" hasLineColor="false" height="28.501953125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" underlinedText="true" verticalTextPosition="bottom" visible="true" width="187.359375" x="26.3203125" xml:space="preserve" y="4.0">Tier 1: Sublight Era</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="b" textColor="#000000" verticalTextPosition="bottom" visible="true" width="57.3671875" x="91.31640625" xml:space="preserve" y="32.3984375">Y0-Y60</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n32">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="60.0" width="240.0" x="1050.0" y="-120.0"/>
+          <y:Fill color="#C0C0C0" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="20" fontStyle="bolditalic" hasBackgroundColor="false" hasLineColor="false" height="28.501953125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" underlinedText="true" verticalTextPosition="bottom" visible="true" width="189.6640625" x="25.16796875" xml:space="preserve" y="4.0">Tier 2: Early Years I</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="b" textColor="#000000" verticalTextPosition="bottom" visible="true" width="66.265625" x="86.8671875" xml:space="preserve" y="32.3984375">Y60-Y90</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n33">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="60.0" width="240.0" x="1410.0" y="-120.0"/>
+          <y:Fill color="#C0C0C0" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="20" fontStyle="bolditalic" hasBackgroundColor="false" hasLineColor="false" height="28.501953125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" underlinedText="true" verticalTextPosition="bottom" visible="true" width="57.359375" x="91.3203125" xml:space="preserve" y="4.0">Tier 3</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="b" textColor="#000000" verticalTextPosition="bottom" visible="true" width="75.1640625" x="82.41796875" xml:space="preserve" y="32.3984375">Y90-Y120</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n34">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="120.0" width="240.0" x="1050.0" y="1110.0"/>
+          <y:Fill color="#00B200" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="3.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="20" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="28.501953125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#000000" underlinedText="true" verticalTextPosition="bottom" visible="true" width="161.8125" x="4.0" xml:space="preserve" y="4.0">Adv. Planet. Def.</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="28.0" horizontalTextPosition="center" iconData="2" iconTextGap="4" modelName="internal" modelPosition="tr" textColor="#000000" verticalTextPosition="bottom" visible="true" width="28.0" x="208.0" y="4.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="bl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="141.78125" x="4.0" xml:space="preserve" y="92.3984375">Building: Fortress</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n35">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="120.0" width="240.0" x="1410.0" y="960.0"/>
+          <y:Fill color="#00B200" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="3.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="20" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="28.501953125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#000000" underlinedText="true" verticalTextPosition="bottom" visible="true" width="171.83203125" x="4.0" xml:space="preserve" y="4.0">Warp Era Warfare</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="28.0" horizontalTextPosition="center" iconData="2" iconTextGap="4" modelName="internal" modelPosition="tr" textColor="#000000" verticalTextPosition="bottom" visible="true" width="28.0" x="208.0" y="4.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="bl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="162.7265625" x="4.0" xml:space="preserve" y="92.3984375">Effect: Nav. Cap. +30</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <edge id="e0" source="n0" target="n7">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e1" source="n8" target="n10">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e2" source="n3" target="n12">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e3" source="n4" target="n15">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e4" source="n13" target="n14">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e5" source="n14" target="n16">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e6" source="n5" target="n18">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e7" source="n18" target="n19">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="1380.0" y="570.5"/>
+            <y:Point x="1380.0" y="870.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e8" source="n10" target="n19">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e9" source="n12" target="n20">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e10" source="n11" target="n21">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e11" source="n16" target="n22">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e12" source="n7" target="n24">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e13" source="n24" target="n25">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e14" source="n16" target="n27">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="1380.0" y="270.0"/>
+            <y:Point x="1380.0" y="420.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e15" source="n28" target="n26">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e16" source="n2" target="n34">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e17" source="n25" target="n29">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e18" source="n21" target="n35">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+  </graph>
+  <data key="d7">
+    <y:Resources>
+      <y:Resource id="1">
+        <yed:ScaledIcon xScale="1.0" yScale="1.0">
+          <yed:ImageIcon image="6"/>
+        </yed:ScaledIcon>
+      </y:Resource>
+      <y:Resource id="2">
+        <yed:ScaledIcon xScale="1.0" yScale="1.0">
+          <yed:ImageIcon image="7"/>
+        </yed:ScaledIcon>
+      </y:Resource>
+      <y:Resource id="3">
+        <yed:ScaledIcon xScale="1.0" yScale="1.0">
+          <yed:ImageIcon image="8"/>
+        </yed:ScaledIcon>
+      </y:Resource>
+      <y:Resource id="4">
+        <yed:ScaledIcon xScale="1.0" yScale="1.0">
+          <yed:ImageIcon image="9"/>
+        </yed:ScaledIcon>
+      </y:Resource>
+      <y:Resource id="5">
+        <yed:ScaledIcon xScale="1.0" yScale="1.0">
+          <yed:ImageIcon image="10"/>
+        </yed:ScaledIcon>
+      </y:Resource>
+      <y:Resource id="6" type="java.awt.image.BufferedImage" xml:space="preserve">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</y:Resource>
+      <y:Resource id="7" type="java.awt.image.BufferedImage" xml:space="preserve">iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAGAklEQVR4Xn1WWWxUZRS+GGIpdNpO&#13;
+O9OZuXPnbnNn7tx9tname4sgRWUHCbQVaIuspUCxhZalVRYLpUgFAUHcXkh8ITxIYtQHg08+aKIx&#13;
+ITHxxaj4giyGtT2e/28HSWM4yZf/3ptzvrP+Z4ZhniHi2nhxrDdlqd3xZnswO2Duy5xWNztn9P6K&#13;
+Q2Zfus3sqUgnOhNeVJ021faZ4rN9s4z9qUZrqOp4+nzDd+mPG383j1be5lZG7rkr/Pf5NbE79jvV&#13;
+N8ovzv4hOVJ3LjFQvTC6IOWZyvO/wi4Kh+xj2f7E2fqfUh81Pkicrwel24HSGhZmBF2QFyiAfL4Q&#13;
+yubyoO5NQfKD+gfpC42/xI/XnohvLo8zz8pGalFVZ6TqYvJC/a3Uhw1gHssCu1SGAtUNM0KF4GkI&#13;
+Ar8uBu6MH2ZwLnCZpRBqiYI9Wg2pi/X/JEfrriR6q+qQ6rmp3Ay/LCpbx7KfYsT3ExfqIYkOQs1R&#13;
+mMG6oCBWAqHVEQh3WvSbssOGwBIZZoaLIR8dh7ssqo+2D5Mna6/aXdkM83QmxQ1isX4weyhxtu5O&#13;
+4v06IMDUgUNSUhp5i4nEEXBppTTyIscLQrsG4nod3OU+kNEx0ae25+ruxYdqLhorDD7H/1y025pv&#13;
+n6y6Hj9TA09wthZrnARxgw6eRo7Wv0AtAXelH2bKRZAvFILvJQGkjQboB8upvkNtayFxqu43u6+i&#13;
+Q5mv5DH++X6vPpB81zlV/RgBzmkEnvH3akDabECBVkLJ3Vk/iB0aKDttCL0WhcK4l5avCM/I7jg4&#13;
+qE/tJ/DIebvyit6eVBi+Xa22hzPf26NVgFlA7nRO10BgkUQnJrBEAm0wjeQOzUbtT0K0LwFl80K0&#13;
+ZEJHjAZG7Sc5nBNVv6obnVcZYaPeZo1U3rROVEIOJjlPVoKwHuu8UcdpyoAxlIHgSgVcegmeYTCP&#13;
+Z8E4UgH8GhXC2HRC/B9HFpDzltFbMcLIXcagMZx5bA5nwBxGI3oijiPpsYlnayQL8jYT/AtF8NQH&#13;
+6VSRDKgT4pzqZanuE/vh7EPrQOYyE+m2Ro2hijEEPMHRigmjSWPSbEIubtDAOxfLEnLRBsfeTD1x&#13;
+YBzNYdKecB4o/4ZRdlqn9MPlY9rhNOgI7VAam+ZgaTTgVingXyCA72UB2GUyqANJ8MzmII8toE33&#13;
+vSJQxxyOsLRFx6ziQHgmMa7vT19jxK36kdhbqTHtYAoICElgmQRFSS9GyePNVXHODYjujUNsEB00&#13;
+BqGkOkBLRki5ZoV+K0p4gWuNAHJRHsQjbXfyc4Zvi3Sqg8m7CFAHE0BOebsJJbUBmBV1TzjCSIXX&#13;
+NfqdPHMtCoSQzDM7SNcFGWXvHA4ivTa1J0GqA4m7ka3WOSa0WpwX3Re/ru5H8hwOJGl0xekyuoPI&#13;
+Oii0PDRS71wO3FV+6pyMaL5YRIMJ7zDRLgHR/ZPY6/whtsQ2MP4mUQxv1y+REkT7nwK+4x0Bl11K&#13;
+ifl1UewFT99JWYIIcquLy8swGI3qR/odtHXIOY4X8hq3TLIZxmCeF9rVNmW3fSOyxwZlEpE9qNjn&#13;
+QEldABseA75DxfF003VNiMO7LFqqsqYQJSb6OVul1/pbalf3eqo9LrqMSl5kQ0Kn9km4x3oc7jEh&#13;
+3GsRJcB3TN8PfFuUkpKVQUBut28Bj1mEwYu3mehT9FCMyVuNL7hFssU8tVGnscuFKqlLvybvMsYR&#13;
+GCFOSacGpfUB8LwQxOVWBDOlIpoF6QnpgbeJQwccNh/13zAnbLaZP+Iv31KmgZmeI8/JdG5VuEns&#13;
+1L6VdxpjcreBZSGR++jeL4xjk+cEIbBcok5dRinMihRDaQMLwqYYoP64tFX/ObgqvIbhmPyp5DmZ&#13;
+zi7ha/hN6iV5h36Taw3TiSHE3BoFpO06SDsQXTotDyGnJVwXuS1sUL9kF8urGC9TMJV0qkwrnh0Q&#13;
+Qq3KFq5VuRpcq/yJWT1E0jFxmzYudVGMobNHwubYX+wK6VpgsbinrInDiWHyppI9S/LYJlZlV4gr&#13;
+uWZ5iG9TPuPXR79CfB1qj15mm6VR3yKhwzufTZB/IVONc/Ivw2b77o9kUekAAAAASUVORK5CYII=</y:Resource>
+      <y:Resource id="8" type="java.awt.image.BufferedImage" xml:space="preserve">iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAFGUlEQVR4XoWUW2xURRjHB0IstUu7&#13;
+Lbvd3dPds+fs2d2z57p79tbtbi9s64UqUgQEKzfTaovQ0toCBYq05dpCoQIVRAkB0YTEF8KDJEZ9&#13;
+MPXJB000JiQmvhgVX5CL4br9nDPLqcuWtF/yy3dm5pv/N9+cmUFoBmPeDJkDfRGF7w2tkQfjg+qh&#13;
+5AfBkdRpdW/ygLgt2iJvj0e1Ts2KQ+fkz53RbKqtSNoTSSsjyaPRjxd9H73Y8Efs04Zbsc8a7kYv&#13;
+1t+LXqi/HTufvh45m/4xfKz2jLYvtdTfHLHk6zzVqCbOpR5J9Gsf1v0cOZ++r4xWgWezDPR6Hpg2&#13;
+EYShGITP1kHkQpoQvZC+r43X/BoaTo2FNsVCaKZq2LU8rxxJnNM+qr2pi3h7g1CWdMCzTAkU2E1Q&#13;
+SBdDSdAK9iUMeDoV4PvDJHl5Iw3i3ti/0fG6K1pfshZLzc3XRvQKv0c+nLhIb+Dvudb7iXixYoEC&#13;
+hwnmUwtgfkUW0sa+iDODKVBGvN52twRAO1P7IHy85qralahEuZWYFzFmcX/iQOhUzW1L2kkmFcuW&#13;
+KdGnoic1wG1rgxPUkyk9yd3QSPU56TWJNvTn+nuVRvV48lrwVDVUrPZCoat4uuAsmIQyEA/FIXS6&#13;
+BrTx2t/VXfG3vI3eAmRvtFvFwfDJ4HjqEQa4boXseb7AbBS6S8DTIYGugXkYHK66IraGvYhu5VPq&#13;
+aOUP6okk6Aj7YlDkL50mMCu4av3nq+9XEZ3gWPI3fmNwFXJvFFuUY1U3lLEq0BGH4+TkTBOYDfwv&#13;
+SjQrSHiblLEEYM2bUl/8GPJ0SUPSaOUjebQS5NEESeBYzk4XmA2cwIQr93TLIB8lWg+UgcrLyNer&#13;
+nJBG4hkMSIcx2DNtAsx3Pl1EP6YGucdXR78n+uKkI0QnIw3EvkXeHmVcPBjLCAejIOoMxwD3kdU8&#13;
+MdldDKUJO9heYcCxjAVLvRNMfNkTMfq9cK7z4dMUA6w3Ke6JTiCmQzwU2BfJCPsjoBM4EAHfjiCU&#13;
+VtmnVrhAXgj65fP1qRAYCuODEAH/7hCwm0SwNzFgfd4J1EoW2E4R+AGN6GAeCjvCXyC6xdfJD4Xv&#13;
+YIAf0kD3/vdCUP4STbZBXxXTLgA/GCbi+rjuA3uz3/49Gk4WJMJGnx7LD2p3fB3KGeR6g3kRC17j&#13;
+ceAUA2GoeJ0jq1+YpkhFxpgu+ERsDiSZwe7gn8zaQDuyL2YYrlu8pJfs738MrgDfDyjiS6EkZAWu&#13;
+Ryar9PVn8T/2xrdBztikt0edcK5gVYQk9Iy7lW/x7lCv+3aq4MX4dqlkP0siVnJDmfYA7g9mx4yY&#13;
+HLLt7DihT/mHbeV3W1KWBeQxKnuBcrk7hU+47cojbrsMXJ8C3DYFFtZR5Ec7VrCkjcf/R4+Zasu5&#13;
+Yxn8ZHzpbPIoKOdFnUOtdCfZLnHCs1WaxJDg8pdpcrbLqh3g6cF9W2XwYHRvkN9mt8g/OVf7lqNF&#13;
+aJ4hbtg8ZzO3mOkUvsNiGU+vBFSzB4p8ZvJSMh0CSTIDk2yH+EtFM7cBOVFhvrhh86hX6Wr6Hf4S&#13;
+2y3eoNt4cgcK8etasZYD3Afsu2LWG986XeItdxv/FbXM04ysyJQvmm9zzPUOt2uddzOedNW2lP7L&#13;
+XFn+wNZEZ5gtwiTbJUxin2G3CA9xtX+72/mJijXeneUNTnxiUEG+2ExWYFlM8bYm1+ryJfSIYxX7&#13;
+Of22/2vMN65W/2VqDXvC1uR+y/ocpSGbrSh/smH/AWIA1l0ofC6GAAAAAElFTkSuQmCC</y:Resource>
+      <y:Resource id="9" type="java.awt.image.BufferedImage" xml:space="preserve">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&#13;
+7ODM+A/JJdZAgNXfFwAAAABJRU5ErkJggg==</y:Resource>
+      <y:Resource id="10" type="java.awt.image.BufferedImage" xml:space="preserve">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&#13;
+7ODM+A/JJdZAgNXfFwAAAABJRU5ErkJggg==</y:Resource>
+    </y:Resources>
+  </data>
+</graphml>
