@@ -1,0 +1,55 @@
+@distance = 50
+@base_moon_distance = 10
+
+#TODO:
+# ADD Veltressai SPECIES & HOME WORLD/SYSTEM, CLASS M
+# ADD Q'NAABIAN, CLASS R
+# ADD PRONHOULITES, CLASS M
+# ADD ROVILLIANS, CLASS N
+# ADD KORLIVILAR, CLASS M 
+
+
+#NOTES:
+# sfu_homeworld_* are flags for planets with pops at start, used during game spawn
+# sfu_planet_* are down the line calls to this planet for events.
+#
+# Nomenclature is for programmer clarity when doing calls
+
+########################################
+# Veltressa System
+########################################
+
+sfu_Veltressa_system_initializer = {
+
+}
+
+########################################
+# Q'NAABIA System
+########################################
+
+sfu_Qnaabia_system_initializer = {
+
+}
+
+########################################
+# PRONHOULA System
+########################################
+
+sfu_Pronhoula_system_initializer = {
+
+}
+
+########################################
+# KORLIVALA System
+########################################
+
+sfu_Korlivala_system_initializer = {
+
+}
+########################################
+# ROVILLA System
+########################################
+
+sfu_Rovilla_system_initializer = {
+
+}

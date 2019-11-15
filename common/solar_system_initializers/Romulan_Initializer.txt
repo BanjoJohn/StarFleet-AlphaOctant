@@ -1,0 +1,19 @@
+@distance = 50
+@base_moon_distance = 10
+
+#TODO:
+# ADD ROMULAN SPECIES & HOME WORLD/SYSTEM
+
+#NOTES:
+# sfu_homeworld_* are flags for planets with pops at start, used during game spawn
+# sfu_planet_* are down the line calls to this planet for events.
+#
+# Nomenclature is for programmer clarity when doing calls
+
+########################################
+# ROMULUS System
+########################################
+
+sfu_Romulus_system_initializer = {
+
+}

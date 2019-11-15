@@ -1,0 +1,25 @@
+@distance = 50
+@base_moon_distance = 10
+
+#TODO:
+# ADD GORN SPECIES & HOME WORLD/SYSTEM
+# GHDAR 1, GHDAR
+# GHDAR 2, GEYDAR
+# GHDAR 3, GIHDAHR
+
+# Gray Scale, Brown Scale, Green Scale 
+# SKOLEAN SPECIES, CLASS M HOME WORLD, weak, dextrous, chameleon
+
+#NOTES:
+# sfu_homeworld_* are flags for planets with pops at start, used during game spawn
+# sfu_planet_* are down the line calls to this planet for events.
+#
+# Nomenclature is for programmer clarity when doing calls
+
+########################################
+# GHDAR System
+########################################
+
+sfu_Ghdar_system_initializer = {
+
+}

@@ -1,0 +1,422 @@
+@distance = 50
+@base_moon_distance = 10
+
+#TODO:
+# IN GURPS PRIME DIRECTIVE, IT LISTS THE HOME SYSTEM AS HYDRAX, IS THAT JUST THE PLANET?
+# OR THE SYSTEM AS WELL? 
+
+#NOTES:
+# sfu_homeworld_* are flags for planets with pops at start, used during game spawn
+# sfu_planet_* are down the line calls to this planet for events.
+#
+# Nomenclature is for programmer clarity when doing calls
+
+########################################
+# Beta Capi C
+########################################
+sfu_beta_capi_c_initializer = {
+	name = "Beta Capi C"
+	
+	class = "sc_g"
+	
+	flags = {
+		empire_home_system
+		beta_capi_c_system
+		sfu_hydran_home_system
+		sfu_system_beta_capi_c
+	}
+	
+	usage = custom_empire
+	
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+		
+		generate_home_system_resources = no
+	}
+	
+	planet = {
+		name = "Beta Capi C"
+		class = "pc_g_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Beta Capi C I"
+		class = "pc_molten"
+		orbit_distance = 40
+		orbit_angle = {min=0 max=360}
+		size = 10
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Beta Capi C II"
+		orbit_distance = 40
+		orbit_angle = {min=0 max=360}
+		size = 16
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Beta Capi C III"
+		orbit_distance = 40
+		orbit_angle = {min=0 max=360}
+		size = 16
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Hydrax"
+		class = "pc_class_s"
+		orbit_distance = 150
+		orbit_angle = {min=0 max=360}
+		size = 50
+		starting_planet = yes
+		has_ring = yes
+		entity = "gas_giant"
+		deposit_blockers = none
+		modifiers = none
+		
+		flags = { sfu_planet_hydrax sfu_homeworld_hydrax }
+		init_effect = {
+			if = {
+				limit = { NOT = { any_country = { has_country_flag = sfu_empire_hydran } } }
+				create_species = { 
+					name = "Hydran" 
+					class = "MOL"
+					portrait = "mol16"
+					name = "Hydran"
+					plural = "Hydrans"
+					adjective = "Hydran"
+					name_list = "MOL3"
+					homeworld = THIS
+					traits = {
+						trait = trait_sfu_methane_breathers #+0
+						trait = "trait_thrifty" #+2
+						trait = "trait_charismatic" #+2
+						trait = "trait_sfu_trisexual" #-2
+						ideal_planet_class = "pc_class_s"
+					}
+				} 
+				last_created_species = { save_global_event_target_as = hydranSpecies }
+				create_country = {
+					name = "Hydran Kingdom"
+					ship_prefix = "HKS"
+					type = default
+					ignore_initial_colony_error = yes
+					civics = { civic = "civic_hydran_monarchy" civic = "civic_hydran_merchant_guilds" }
+					authority = auth_imperial
+					name_list = "MOL1"
+					ethos = { ethic = "ethic_authoritarian" ethic = "ethic_xenophile" ethic = "ethic_spiritualist" }
+					species = event_target:hydranSpecies
+					flag = {
+						icon = { category = "pointy" file = "flag_pointy_1.dds" }
+						background = { category = "backgrounds" file = "00_solid.dds" }
+						colors = { "green" "yellow" "null" "null" }
+					}
+				}
+				set_capital = yes
+			}
+		}
+		change_orbit = 15
+		
+		moon = {
+			name = "Hydrax a"
+			count = 1
+			orbit_distance = 15
+			orbit_angle = {min=0 max=360}
+			has_ring = no
+		}
+		
+		moon = {
+			name = "Hydrax b"
+			count = 1
+			orbit_distance = 15
+			orbit_angle = {min=0 max=360}
+			has_ring = no
+		}
+		
+		moon = {
+			name = "Hydrax c"
+			count = 1
+			orbit_distance = 15
+			orbit_angle = {min=0 max=360}
+			has_ring = no
+		}
+		
+		moon = {
+			name = "Hydrax d"
+			count = 1
+			orbit_distance = 15
+			orbit_angle = {min=0 max=360}
+			has_ring = no
+		}
+		
+		moon = {
+			name = "Hydrax e"
+			count = 1
+			orbit_distance = 15
+			orbit_angle = {min=0 max=360}
+			has_ring = no
+		}
+	}
+	
+	neighbor_system = {
+		distance = { min=10 max = @distance }
+		initializer = sfu_alpha_capi_initializer
+	}
+	neighbor_system = {
+		distance = { min=10 max=@distance }
+		initializer = sfu_gamma_capi_initializer
+	}
+	neighbor_system = {
+		distance = { min=10 max=@distance }
+		initializer = sfu_delta_capi_initializer
+	}
+}
+
+sfu_alpha_capi_initializer = {
+	name = "Alpha Capi"
+	
+	class = "sc_k"
+	
+	flags = { sfu_system_alpha_capi }
+	
+	planet = {
+		name = "Alpha Capi"
+		class = "pc_k_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 25
+		has_ring = no
+	}
+	
+	planet = {
+		count = 2
+		class = pc_molten
+		orbit_distance = 20
+		orbit_angle = { min = 0 max = 360 }
+	}
+	
+	planet = {
+		count = 3
+		orbit_distance = 20
+		orbit_angle = { min = 0 max = 360 }
+	}
+	
+	planet = {
+		name = "Hyreak"
+		class = "pc_class_s"
+		orbit_distance = 60
+		orbit_angle = {min=0 max=360}
+		size = 25
+		starting_planet = yes
+		has_ring = yes
+		entity = "gas_giant"
+		deposit_blockers = none
+		modifiers = none
+		
+		flags = {sfu_homeworld_hyreak sfu_planet_hyreak}
+		
+		change_orbit = 15
+		
+		moon = {
+			name = "Hyreak a"
+			count = 1
+			orbit_distance = 15
+			orbit_angle = {min=0 max=360}
+			has_ring = no
+		}
+		
+		moon = {
+			name = "Hyreak b"
+			count = 1
+			orbit_distance = 15
+			orbit_angle = {min=0 max=360}
+			has_ring = no
+		}
+	}
+}
+
+sfu_gamma_capi_initializer = {
+	name = "Gamma Capi"
+	
+	class = "sc_m"
+	
+	flags = { sfu_system_gamma_capi }
+	
+	planet = {
+		name = "Gamma Capi"
+		class = "pc_k_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 20
+		has_ring = no
+	}
+	
+	planet = {
+		count = 2
+		orbit_distance = 20
+		orbit_angle = { min = 0 max = 360 }
+	}
+	
+	planet = {
+		name = "Anthraxan"
+		class = "pc_class_s"
+		orbit_distance = 60
+		orbit_angle = {min=0 max=360}
+		size = 50
+		starting_planet = yes
+		has_ring = yes
+		entity = "gas_giant"
+		deposit_blockers = none
+		modifiers = none
+		
+		flags = {sfu_homeworld_anthraxan sfu_planet_anthraxan}
+		
+		change_orbit = 15
+		
+		moon = {
+			name = "Anthraxan a"
+			orbit_distance = 15
+			orbit_angle = {min=0 max=360}
+			has_ring = no
+		}
+		
+		moon = {
+			name = "Anthraxan b"
+			orbit_distance = 15
+			orbit_angle = {min=0 max=360}
+			has_ring = no
+		}
+	}
+	
+	planet = {
+		name = "Hoplishka"
+		class = "pc_class_s"
+		orbit_distance = 120
+		orbit_angle = {min=0 max=360}
+		size = 30
+		starting_planet = yes
+		has_ring = yes
+		entity = "gas_giant"
+		deposit_blockers = none
+		modifiers = none
+		
+		flags = {sfu_homeworld_hoplishka sfu_planet_hoplishka}
+		
+		change_orbit = 15
+		
+		moon = {
+			name = "Hoplishka a"
+			class = pc_frozen
+			orbit_distance = 15
+			orbit_angle = {min=0 max=360}
+			has_ring = no
+		}
+		
+		moon = {
+			name = "Hoplishka b"
+			class = pc_frozen
+			orbit_distance = 15
+			orbit_angle = {min=0 max=360}
+			has_ring = no
+		}
+	}
+}
+
+sfu_delta_capi_initializer = {
+	name = "Delta Capi"
+	
+	class = "sc_f"
+	
+	flags = { sfu_system_delta_capi }
+	
+	planet = {
+		name = "Delta Capi"
+		class = "pc_f_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 20
+		has_ring = no
+	}
+	
+	planet = {
+		count = 7
+		orbit_distance = 20
+		orbit_angle = { min = 0 max = 360 }
+	}
+	
+	planet = {
+		name = "Hynopkerm"
+		class = "pc_class_s"
+		orbit_distance = 60
+		orbit_angle = {min=0 max=360}
+		size = 30
+		starting_planet = yes
+		has_ring = yes
+		entity = "gas_giant"
+		deposit_blockers = none
+		modifiers = none
+		
+		flags = {sfu_homeworld_hynopkerm sfu_planet_hynopkerm}
+		
+		change_orbit = 15
+		
+		moon = {
+			name = "Hynopkerm a"
+			class = pc_barren_cold
+			orbit_distance = 15
+			orbit_angle = {min=0 max=360}
+			has_ring = no
+		}
+		moon = {
+			name = "Hynopkerm b"
+			class = pc_barren_cold
+			orbit_distance = 15
+			orbit_angle = {min=0 max=360}
+			has_ring = no
+		}
+	}
+	
+	planet = {
+		name = "Hydramax"
+		class = "pc_class_s"
+		orbit_distance = 60
+		orbit_angle = {min=0 max=360}
+		size = 50
+		starting_planet = yes
+		has_ring = yes
+		entity = "gas_giant"
+		deposit_blockers = none
+		modifiers = none
+		
+		flags = {sfu_homeworld_hydramax sfu_planet_hydramax}
+		
+		change_orbit = 15
+		
+		moon = {
+			name = "Hydramax a"
+			class = pc_frozen
+			orbit_distance = 15
+			orbit_angle = {min=0 max=360}
+			has_ring = no
+		}
+		
+		moon = {
+			name = "Hydramax b"
+			class = pc_frozen
+			orbit_distance = 15
+			orbit_angle = {min=0 max=360}
+			has_ring = no
+		}
+	}
+}
