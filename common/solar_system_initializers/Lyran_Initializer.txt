@@ -19,5 +19,49 @@
 
 sfu_Lyrantan_system_initializer = {
 
+	name = "Lyrantan"
+	
+	class = "sc_g"
+	
+	flags = {
+		empire_home_system
+		sfu_lyran_home_system
+		sfu_system_lyrantan
+	}
+	
+	usage =  custom_empire
+	
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+		generate_home_system_resources = no
+	}
+	
+	planet = {
+		name = "Lyrantan Primary"
+		class = "pc_g_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+		satellite_naming_policy = upper_case_roman_numerals
+	}
+
+	planet = {
+		name = "Lyrantan"
+		class = "pc_continental"
+		orbit_distance = 24
+		orbit_angle = 55
+		size = 18
+		starting planet = yes
+		has_ring = no
+		deposit_blockers = none
+		modifiers = none
+	}
+
 }
 
