@@ -3,9 +3,7 @@
 
 #TODO:
 # ADD GORN SPECIES & HOME WORLD/SYSTEM
-# GHDAR 1, GHDAR
-# GHDAR 2, GEYDAR
-# GHDAR 3, GIHDAHR
+# GHDAR 1, GHDAR  GHDAR 2, GEYDAR,   GHDAR 3, GIHDAHR
 
 # Gray Scale, Brown Scale, Green Scale 
 # SKOLEAN SPECIES, CLASS M HOME WORLD, weak, dextrous, chameleon
@@ -21,5 +19,75 @@
 ########################################
 
 sfu_Ghdar_system_initializer = {
+
+	name = "Ghdar"
+	
+	class = "sc_g"
+	
+	flags = {
+		empire_home_system
+		sfu_gorn_home_system
+		sfu_system_ghdar
+	}
+	
+	usage =  custom_empire
+	
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+		generate_home_system_resources = no
+	}
+	
+	planet = {
+		name = "Ghdar Primary"
+		class = "pc_g_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+		satellite_naming_policy = upper_case_roman_numerals
+	}
+	
+	planet = {
+		name = "Ghdar"
+		class = "pc_continental"
+		orbit_distance = 20
+		orbit_angle = 0
+		size = 18
+		starting planet = yes
+		has_ring = no
+		deposit_blockers = none
+		modifiers = none
+		
+	}
+	
+		planet = {
+		name = "Geydar"
+		class = "pc_continental"
+		orbit_distance = 25
+		orbit_angle = 60
+		size = 17
+		has_ring = no
+		deposit_blockers = none
+		modifiers = none
+		
+	}
+	
+			planet = {
+		name = "Gihdahr"
+		class = "pc_continental"
+		orbit_distance = 30
+		orbit_angle = 120
+		size = 16
+		has_ring = no
+		deposit_blockers = none
+		modifiers = none
+		
+	}
+
 
 }
