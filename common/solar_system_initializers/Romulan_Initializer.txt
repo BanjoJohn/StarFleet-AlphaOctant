@@ -3,6 +3,7 @@
 
 #TODO:
 # ADD ROMULAN SPECIES & HOME WORLD/SYSTEM
+# ADD REMUS SYSTEM
 
 #NOTES:
 # sfu_homeworld_* are flags for planets with pops at start, used during game spawn
@@ -15,5 +16,75 @@
 ########################################
 
 sfu_Romulus_system_initializer = {
+	
+	name = "Romulus"
+	
+	class = "sc_g"
+	
+	flags = {
+		empire_home_system
+		sfu_romulan_home_system
+		sfu_system_romulus
+	}
+	
+	usage =  custom_empire
+	
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+		generate_home_system_resources = no
+	}
+	
+	planet = {
+		name = "Romulus Primary"
+		class = "pc_g_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+		satellite_naming_policy = upper_case_roman_numerals
+	}
+	
+}
 
+########################################
+# REMUS System
+########################################
+
+sfu_Remus_system_initializer = {
+	
+	name = "Remus"
+	
+	class = "sc_g"
+	
+	flags = {
+		sfu_system_remus
+	}
+	
+	usage =  custom_empire
+	
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+		generate_home_system_resources = no
+	}
+	
+	planet = {
+		name = "Remus Primary"
+		class = "pc_g_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+		satellite_naming_policy = upper_case_roman_numerals
+	}
+	
 }
