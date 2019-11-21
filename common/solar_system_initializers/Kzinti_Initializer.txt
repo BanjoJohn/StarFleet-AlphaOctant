@@ -16,4 +16,47 @@
 
 sfu_Kzintai_system_initializer = {
 
+	name = "Kzintai"
+	
+	class = "sc_g"
+	
+	flags = {
+		empire_home_system
+		sfu_kzinti_home_system
+		sfu_system_kzintai
+	}
+	
+	usage =  custom_empire
+	
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+		generate_home_system_resources = no
+	}
+	
+	planet = {
+		name = "Kzintai Primary"
+		class = "pc_g_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+		satellite_naming_policy = upper_case_roman_numerals
+	}
+	
+	planet = {
+		name = "Kzintai"
+		class = "pc_continental"
+		orbit_distance = 25
+		orbit_angle = 15
+		size = 18
+		starting planet = yes
+		has_ring = no
+		deposit_blockers = none
+		modifiers = none
+	}
 }
